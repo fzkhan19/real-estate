@@ -1,12 +1,12 @@
 "use client";
-import {Home, Menu} from "lucide-react";
+import { Home, Menu } from "lucide-react";
 import Link from "next/link";
-import React, {Suspense, useMemo} from "react";
+import React, { Suspense, useMemo } from "react";
 
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
-import {Button} from "../../ui/button";
-import {Separator} from "../../ui/separator";
+import { Button } from "../../ui/button";
+import { Separator } from "../../ui/separator";
 import {
 	Sheet,
 	SheetContent,
@@ -22,7 +22,7 @@ import {
 	NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import {ToggleTheme as ToggleThemeComponent} from "../toggle-theme";
+import { ToggleTheme as ToggleThemeComponent } from "../toggle-theme";
 
 interface RouteProps {
 	href: string;
@@ -39,20 +39,20 @@ const CustomNavigationMenu = React.memo(() => {
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
-				href: "#about",
-				label: "About",
+				href: "#services",
+				label: "Our Services",
 			},
 			{
-				href: "#projects",
-				label: "Projects",
+				href: "#prices",
+				label: "Price List",
+			},
+			{
+				href: "#testimonials",
+				label: "Testimonials",
 			},
 			{
 				href: "#contact",
-				label: "Contact",
-			},
-			{
-				href: "/blog",
-				label: "Blog",
+				label: "Contact Us",
 			},
 		],
 		[],
@@ -81,20 +81,20 @@ export const Navbar = () => {
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
-				href: "#about",
-				label: "About",
+				href: "#services",
+				label: "Our Services",
 			},
 			{
-				href: "#projects",
-				label: "Projects",
+				href: "#prices",
+				label: "Price List",
+			},
+			{
+				href: "#testimonials",
+				label: "Testimonials",
 			},
 			{
 				href: "#contact",
-				label: "Contact",
-			},
-			{
-				href: "/blog",
-				label: "Blog",
+				label: "Contact Us",
 			},
 		],
 		[],
