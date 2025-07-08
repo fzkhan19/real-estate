@@ -1,4 +1,6 @@
 import Providers from "@/components/layout/Providers";
+import Footer from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
@@ -6,8 +8,6 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { Navbar } from "@/components/layout/navbar";
-import Footer from "@/components/layout/footer";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -30,6 +30,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
+			<head>
+				<meta name="apple-mobile-web-app-title" content="MyWebSite" />
+			</head>
 			<body className={cn("", inter.variable, manrope.variable)}>
 				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth">
 					<Analytics />
@@ -41,7 +44,7 @@ export default function RootLayout({
 					<Providers>
 						<Navbar />
 						{children}
-						<Footer/>
+						<Footer />
 					</Providers>
 				</main>
 			</body>
