@@ -25,13 +25,13 @@ export default function Footer() {
 					<Label className="self-start font-normal text-sm md:self-end">
 						© {new Date().getFullYear()} PHONE EMPIRE
 					</Label>
-					<Label className="self-center pt-6 font-normal text-base md:self-end">
+					<Label className="self-center pt-6 font-normal text-base md:mt-8 md:self-end">
 						<Link
 							className="rounded-sm bg-blue-50 p-1 font-semibold text-primary underline decoration-primary"
 							href="https://faiz-khan.in"
 							target="_blank"
 						>
-							Website built by Faiz Khan
+							This website is built by FAIZ KHAN
 							<ArrowUpRightIcon className="-mt-1 inline-block size-6 text-primary" />
 						</Link>
 					</Label>
