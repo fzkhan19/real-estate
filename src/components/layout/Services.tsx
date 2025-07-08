@@ -1,6 +1,6 @@
 "use client";
-import {Button} from "@/components/ui/button";
-import {Card, CardContent} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
 	Carousel,
 	CarouselContent,
@@ -9,8 +9,9 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import {Laptop, Settings, Smartphone, Wrench} from "lucide-react";
+import { Laptop, Settings, Smartphone, Wrench } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const mobileServices = [
 	{ title: "Screen Repair", image: "/services/screen-repair.jpg" },
@@ -24,12 +25,9 @@ const mobileServices = [
 
 const laptopServices = [
 	{ title: "Hardware Upgrades", image: "/services/hardware-upgrade.jpg" },
-	{ title: "Screen Replacement", image: "/services/laptop-screen.jpg" },
-	{ title: "Keyboard Replacement", image: "/services/keyboard.webp" },
 	{ title: "Battery Replacement", image: "/services/laptop-battery.webp" },
 	{ title: "Hard Drive Services", image: "/services/hard-drive.webp" },
 	{ title: "RAM Upgrade", image: "/services/ram.webp" },
-	{ title: "Cooling System Repair", image: "/services/cooling.webp" },
 ];
 
 const softwareServices = [
@@ -46,7 +44,7 @@ const ServiceCarousel = ({
 	title,
 	icon: Icon,
 	services,
-	delay = 0
+	delay = 0,
 }: {
 	title: string;
 	icon: React.ElementType;
@@ -58,11 +56,15 @@ const ServiceCarousel = ({
 			<Icon className="size-5 md:size-6" />
 			{title}
 		</h3>
-		<Carousel opts={{ align: "start", loop: true }}  plugins={[
-        Autoplay({
-          delay: delay,
-        }),
-      ]} className="w-full">
+		<Carousel
+			opts={{ align: "start", loop: true }}
+			plugins={[
+				Autoplay({
+					delay: delay,
+				}),
+			]}
+			className="w-full"
+		>
 			<CarouselContent>
 				{services.map((service, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -79,7 +81,7 @@ const ServiceCarousel = ({
 											className="max-h-[300px] w-full md:max-h-[400px]"
 										/>
 									</div>
-									<p className="w-full text-muted-foreground text-sm">
+									<p className="w-full font-semibold text-lg text-muted-foreground">
 										{service.title}
 									</p>
 								</CardContent>
@@ -105,7 +107,6 @@ export const Services = () => (
 					Professional repair services for all your devices
 				</p>
 			</div>
-
 			<div className="space-y-16">
 				<ServiceCarousel
 					title="Mobile Phone Repairs"
@@ -126,12 +127,13 @@ export const Services = () => (
 					delay={1800}
 				/>
 			</div>
-
-			<div className="mt-12 text-center">
-				<Button size="lg" className="gap-2">
-					Book a Service <Wrench className="h-4 w-4" />
-				</Button>
-			</div>
+			<Link href="#contact">
+				<div className="mt-12 text-center">
+					<Button size="lg" className="gap-2">
+						Book a Service <Wrench className="h-4 w-4" />
+					</Button>
+				</div>
+			</Link>
 		</div>
 	</div>
 );

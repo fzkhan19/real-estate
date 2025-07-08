@@ -22,7 +22,6 @@ import {
 	NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import { ToggleTheme as ToggleThemeComponent } from "../toggle-theme";
 
 interface RouteProps {
 	href: string;
@@ -111,8 +110,21 @@ export const Navbar = () => {
 				"bg-white/50 saturate-150 backdrop-blur backdrop-contrast-125 dark:bg-black/50",
 			)}
 		>
-			<Link className="-mt-3 flex items-center gap-4 text-xl md:pl-4" href="/">
-				<Image src={"/logo.png"} alt="logo" width={120} height={30} />
+			<Link className="flex items-center gap-4 text-xl md:pl-4" href="/">
+				<Image
+					src={"/logo.png"}
+					alt="logo"
+					className="hidden md:block"
+					width={170}
+					height={70}
+				/>
+				<Image
+					src={"/logo.png"}
+					alt="logo"
+					className="md:hidden"
+					width={120}
+					height={20}
+				/>
 			</Link>
 
 			{/* <!-- Mobile --> */}
@@ -130,16 +142,16 @@ export const Navbar = () => {
 					>
 						<div>
 							<SheetHeader className="mb-4 ml-4">
-								<SheetTitle className="flex items-center">
+								<SheetTitle className="flex">
 									<Link
-										className="flex items-center gap-3 font-bold text-lg "
+										className="-ml-2 flex gap-3 self-start font-bold text-lg"
 										href="/"
 									>
 										<Image
 											src={"/logo.png"}
 											alt="logo"
 											width={120}
-											height={32}
+											height={20}
 										/>
 									</Link>
 								</SheetTitle>

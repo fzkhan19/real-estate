@@ -359,8 +359,8 @@ const PriceTable = ({
 	);
 
 	return (
-		<Card className="mb-8 bg-white shadow-primary/20 shadow-sm">
-			<CardContent className="p-6">
+		<Card className="mb-8 border-none bg-white shadow-none md:border md:shadow-primary/20 md:shadow-sm">
+			<CardContent className="p-0 md:p-6">
 				<h3 className="mb-4 font-semibold text-2xl text-primary"> {title} </h3>
 				<div className="relative mb-4">
 					<input
@@ -384,7 +384,7 @@ const PriceTable = ({
 								{headers.map((header) => (
 									<th
 										key={header}
-										className="p-4 text-left font-medium text-primary"
+										className="p-4 text-left font-medium text-primary text-sm md:text-base"
 									>
 										{formatHeader(header)}
 									</th>
@@ -400,7 +400,10 @@ const PriceTable = ({
 									className="border-b transition-colors hover:bg-slate-50"
 								>
 									{headers.map((header) => (
-										<td key={header} className="p-4 font-medium">
+										<td
+											key={header}
+											className="p-4 font-medium text-sm md:text-base"
+										>
 											{repair[header]}
 										</td>
 									))}

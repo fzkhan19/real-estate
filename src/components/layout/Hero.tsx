@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight, PhoneCall } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Hero = () => (
 	<div className="w-full py-6 md:py-8 lg:py-10">
@@ -24,15 +25,21 @@ export const Hero = () => (
 						</p>
 					</div>
 
-
 					<div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-						<Button size="lg" className="w-full gap-4 sm:w-auto" variant="outline">
-							Book a repair <PhoneCall className="h-4 w-4" />
-						</Button>
-
-						<Button size="lg" className="w-full gap-4 sm:w-auto">
-							Get a quote <MoveRight className="h-4 w-4" />
-						</Button>
+						<Link href="tel:+49017670440689">
+							<Button
+								size="lg"
+								className="w-full gap-4 sm:w-auto"
+								variant="outline"
+							>
+								Book a repair <PhoneCall className="h-4 w-4" />
+							</Button>
+						</Link>
+						<Link href="#contact">
+							<Button size="lg" className="w-full gap-4 sm:w-auto">
+								Get a quote <MoveRight className="h-4 w-4" />
+							</Button>
+						</Link>
 					</div>
 				</div>
 
@@ -42,7 +49,6 @@ export const Hero = () => (
 						src="/stock/phone-repair-2.jpg"
 						width="500"
 						height="350"
-
 						className="aspect-square w-full max-w-[400px] rounded-md bg-muted shadow-lg shadow-primary/30 lg:max-w-[500px]"
 					/>
 				</div>
