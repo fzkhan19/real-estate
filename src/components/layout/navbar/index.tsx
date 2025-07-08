@@ -73,7 +73,6 @@ const CustomNavigationMenu = React.memo(() => {
 
 const MemoizedSheetContent = React.memo(SheetContent);
 const MemoizedSheetFooter = React.memo(SheetFooter);
-const ToggleTheme = React.memo(ToggleThemeComponent);
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
@@ -103,7 +102,7 @@ export const Navbar = () => {
 	return (
 		<header
 			className={cn(
-				"sticky top-0 right-0 left-0 z-40 flex w-[90%] items-center justify-between md:mx-auto",
+				"sticky top-0 right-0 left-0 z-40 flex w-full items-center justify-between md:mx-auto",
 				"border border-secondary p-4",
 				// "shadow-primary/10 shadow-sm",
 				"border-0 hover:shadow-primary/20",
@@ -164,7 +163,6 @@ export const Navbar = () => {
 						<MemoizedSheetFooter className="w-full flex-col items-start justify-start sm:flex-col">
 							<Separator className="mb-2" />
 							<div className="flex w-full items-center justify-between">
-								<ToggleTheme />
 								<Link className="mx-3" href={"/"}>
 									<Button
 										className="w-full justify-start"
@@ -193,7 +191,6 @@ export const Navbar = () => {
 						<Home className="size-5" />
 					</Button>
 				</Link>
-				<ToggleTheme />
 			</div>
 		</header>
 	);

@@ -8,7 +8,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
 			disableTransitionOnChange
 			enableSystem
 			attribute="class"
-			defaultTheme="system"
+			defaultTheme="light"
 		>
 			<QueryProviders>{children}</QueryProviders>
 		</ThemeProvider>
