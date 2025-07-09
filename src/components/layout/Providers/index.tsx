@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { NextIntlClientProvider } from "next-intl";
 import QueryProviders from "./query-client-provider";
 import { ThemeProvider } from "./theme-provider";
 const Providers = ({ children }: { children: ReactNode }) => {
@@ -10,7 +11,9 @@ const Providers = ({ children }: { children: ReactNode }) => {
 			attribute="class"
 			defaultTheme="light"
 		>
-			<QueryProviders>{children}</QueryProviders>
+			<QueryProviders>
+				<NextIntlClientProvider>{children}</NextIntlClientProvider>
+			</QueryProviders>
 		</ThemeProvider>
 	);
 };

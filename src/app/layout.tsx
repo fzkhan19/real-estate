@@ -1,13 +1,11 @@
 import Providers from "@/components/layout/Providers";
-import Footer from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
 import { JSON_LD, METADATA } from "@/constants/Metadata";
+import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Script from "next/script";
-import "./globals.css";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -23,13 +21,21 @@ const manrope = Manrope({
 
 export const metadata: Metadata = METADATA;
 
-export default function RootLayout({
+export function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
 	children,
+	params,
 }: Readonly<{
 	children: React.ReactNode;
+	params: Promise<{ locale: string }>;
 }>) {
+	const { locale } = await params;
+
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang={locale} suppressHydrationWarning>
 			<head>
 				<meta name="apple-mobile-web-app-title" content="MyWebSite" />
 			</head>
@@ -41,11 +47,8 @@ export default function RootLayout({
 						dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
 						type="application/ld+json"
 					/>
-					<Providers>
-						<Navbar />
-						{children}
-						<Footer />
-					</Providers>
+
+					<Providers>{children}</Providers>
 				</main>
 			</body>
 		</html>

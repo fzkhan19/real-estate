@@ -1,29 +1,30 @@
 // Footer code
 import { ArrowUpRightIcon, Facebook, Instagram, Twitter } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { Label } from "@/components/ui/label";
 
 export default function Footer() {
+	const t = useTranslations("footer");
+	const tNav = useTranslations("navigation");
 	return (
 		<footer className="flex w-full flex-col gap-6 bg-primary/90 px-4 py-6 text-white">
 			<div className="flex w-full flex-col justify-between gap-4 md:flex-row">
 				<div className="flex flex-col gap-2">
-					<Label className="font-medium">Sales & Technical Support</Label>
-					<Label className="font-medium">Address</Label>
-					<Label className="font-normal text-sm">
-						Phone Empire, Kaiserstraße 22, 66849 Landstuhl, Germany
-					</Label>
-					<Label className="mt-2 font-medium">Contact Information</Label>
+					<Label className="font-medium">{t("salesSupport")}</Label>
+					<Label className="font-medium">{t("address")}</Label>
+					<Label className="font-normal text-sm">{t("addressText")}</Label>
+					<Label className="mt-2 font-medium">{t("contactInfo")}</Label>
 
 					<div className="flex flex-col flex-wrap gap-x-4 gap-y-2 md:flex-row [&>*]:font-normal [&>*]:text-sm">
-						<Label>Telephone: +49 017670440689</Label>
-						<Label>E-Mail: phoneempire@gmx.de</Label>
+						<Label>{t("telephone")}</Label>
+						<Label>{t("email")}</Label>
 					</div>
 				</div>
 				<div className="order-2 flex flex-col md:order-1">
 					<Label className="self-start font-normal text-sm md:self-end">
-						© {new Date().getFullYear()} PHONE EMPIRE
+						{t("copyright")}
 					</Label>
 					<Label className="self-center pt-6 font-normal text-base md:mt-8 md:self-end">
 						<Link
@@ -31,7 +32,7 @@ export default function Footer() {
 							href="https://faiz-khan.in"
 							target="_blank"
 						>
-							This website is built by FAIZ KHAN
+							{t("builtBy")}
 							<ArrowUpRightIcon className="-mt-1 inline-block size-6 text-primary" />
 						</Link>
 					</Label>
@@ -40,16 +41,16 @@ export default function Footer() {
 			<div className="flex w-full flex-col justify-between gap-4 md:flex-row">
 				<div className="order-1 flex flex-row gap-4 self-center text-sm underline underline-offset-4 md:order-2 md:self-end">
 					<Link href="#services" className="text-center md:text-left">
-						Our Services
+						{tNav("ourServices")}
 					</Link>
 					<Link href="#prices" className="text-center md:text-left">
-						Price List
+						{tNav("priceList")}
 					</Link>
 					<Link href="#testimonials" className="text-center md:text-left">
-						Testimonials
+						{tNav("testimonials")}
 					</Link>
 					<Link href="#contact" className="text-center md:text-left">
-						Contact Us
+						{tNav("contactUs")}
 					</Link>
 				</div>
 

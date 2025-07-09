@@ -10,34 +10,80 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Laptop, Settings, Smartphone, Wrench } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-const mobileServices = [
-	{ title: "Screen Repair", image: "/services/screen-repair.jpg" },
-	{ title: "Water-Damage Repair", image: "/services/water-damage.png" },
-	{ title: "Camera Repair", image: "/services/camera-repair.jpg" },
-	{ title: "Battery Replacement", image: "/services/battery.png" },
-	{ title: "Button Repair", image: "/services/button-repair.jpeg" },
-	{ title: "Charge Port Repair", image: "/services/charge-port.jpg" },
-	{ title: "Microphone/Speaker Repair", image: "/services/speaker.webp" },
+const getMobileServices = (t: ReturnType<typeof useTranslations>) => [
+	{
+		title: t("mobileServices.screenRepair"),
+		image: "/services/screen-repair.jpg",
+	},
+	{
+		title: t("mobileServices.waterDamage"),
+		image: "/services/water-damage.png",
+	},
+	{
+		title: t("mobileServices.cameraRepair"),
+		image: "/services/camera-repair.jpg",
+	},
+	{
+		title: t("mobileServices.batteryReplacement"),
+		image: "/services/battery.png",
+	},
+	{
+		title: t("mobileServices.buttonRepair"),
+		image: "/services/button-repair.jpeg",
+	},
+	{
+		title: t("mobileServices.chargePortRepair"),
+		image: "/services/charge-port.jpg",
+	},
+	{ title: t("mobileServices.speakerRepair"), image: "/services/speaker.webp" },
 ];
 
-const laptopServices = [
-	{ title: "Hardware Upgrades", image: "/services/hardware-upgrade.jpg" },
-	{ title: "Battery Replacement", image: "/services/laptop-battery.webp" },
-	{ title: "Hard Drive Services", image: "/services/hard-drive.webp" },
-	{ title: "RAM Upgrade", image: "/services/ram.webp" },
+const getLaptopServices = (t: ReturnType<typeof useTranslations>) => [
+	{
+		title: t("laptopServices.hardwareUpgrades"),
+		image: "/services/hardware-upgrade.jpg",
+	},
+	{
+		title: t("laptopServices.batteryReplacement"),
+		image: "/services/laptop-battery.webp",
+	},
+	{
+		title: t("laptopServices.hardDriveServices"),
+		image: "/services/hard-drive.webp",
+	},
+	{ title: t("laptopServices.ramUpgrade"), image: "/services/ram.webp" },
 ];
 
-const softwareServices = [
-	{ title: "Virus Removal", image: "/services/virus-removal.jpg" },
-	{ title: "Software Installation", image: "/services/software.webp" },
-	{ title: "System Optimization", image: "/services/optimization.jpg" },
-	{ title: "Data Recovery", image: "/services/data-recovery.webp" },
-	{ title: "Operating System Install", image: "/services/os.png" },
-	{ title: "Diagnostic Scan", image: "/services/diagnostic.webp" },
-	{ title: "Driver Updates", image: "/services/drivers.webp" },
+const getSoftwareServices = (t: ReturnType<typeof useTranslations>) => [
+	{
+		title: t("softwareServices.virusRemoval"),
+		image: "/services/virus-removal.jpg",
+	},
+	{
+		title: t("softwareServices.softwareInstallation"),
+		image: "/services/software.webp",
+	},
+	{
+		title: t("softwareServices.systemOptimization"),
+		image: "/services/optimization.jpg",
+	},
+	{
+		title: t("softwareServices.dataRecovery"),
+		image: "/services/data-recovery.webp",
+	},
+	{ title: t("softwareServices.osInstall"), image: "/services/os.png" },
+	{
+		title: t("softwareServices.diagnosticScan"),
+		image: "/services/diagnostic.webp",
+	},
+	{
+		title: t("softwareServices.driverUpdates"),
+		image: "/services/drivers.webp",
+	},
 ];
 
 const ServiceCarousel = ({
@@ -96,44 +142,52 @@ const ServiceCarousel = ({
 	</div>
 );
 
-export const Services = () => (
-	<div className="w-full bg-slate-50 py-20" id="services">
-		<div className="container px-4">
-			<div className="mb-16 text-center">
-				<h2 className="mb-4 font-semibold text-2xl text-primary tracking-tighter md:text-4xl">
-					Our Repair Services
-				</h2>
-				<p className="text-base text-muted-foreground md:text-lg">
-					Professional repair services for all your devices
-				</p>
-			</div>
-			<div className="space-y-16">
-				<ServiceCarousel
-					title="Mobile Phone Repairs"
-					icon={Smartphone}
-					services={mobileServices}
-					delay={1000}
-				/>
-				<ServiceCarousel
-					title="Laptop & PC Repairs"
-					icon={Laptop}
-					services={laptopServices}
-					delay={1400}
-				/>
-				<ServiceCarousel
-					title="Software Services"
-					icon={Settings}
-					services={softwareServices}
-					delay={1800}
-				/>
-			</div>
-			<Link href="#contact">
-				<div className="mt-12 text-center">
-					<Button size="lg" className="gap-2">
-						Book a Service <Wrench className="h-4 w-4" />
-					</Button>
+export const Services = () => {
+	const t = useTranslations("services");
+
+	const mobileServices = getMobileServices(t);
+	const laptopServices = getLaptopServices(t);
+	const softwareServices = getSoftwareServices(t);
+
+	return (
+		<div className="w-full bg-slate-50 py-20" id="services">
+			<div className="container px-4">
+				<div className="mb-16 text-center">
+					<h2 className="mb-4 font-semibold text-2xl text-primary tracking-tighter md:text-4xl">
+						{t("title")}
+					</h2>
+					<p className="text-base text-muted-foreground md:text-lg">
+						{t("subtitle")}
+					</p>
 				</div>
-			</Link>
+				<div className="space-y-16">
+					<ServiceCarousel
+						title={t("mobile")}
+						icon={Smartphone}
+						services={mobileServices}
+						delay={1000}
+					/>
+					<ServiceCarousel
+						title={t("laptop")}
+						icon={Laptop}
+						services={laptopServices}
+						delay={1400}
+					/>
+					<ServiceCarousel
+						title={t("software")}
+						icon={Settings}
+						services={softwareServices}
+						delay={1800}
+					/>
+				</div>
+				<Link href="#contact">
+					<div className="mt-12 text-center">
+						<Button size="lg" className="gap-2">
+							{t("bookService")} <Wrench className="h-4 w-4" />
+						</Button>
+					</div>
+				</Link>
+			</div>
 		</div>
-	</div>
-);
+	);
+};

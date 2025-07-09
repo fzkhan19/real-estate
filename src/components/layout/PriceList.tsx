@@ -2,6 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 // --- Data for IPHONE Repairs ---
@@ -330,10 +331,19 @@ const samsungRepairs = [
 	},
 ];
 
-// A function to format the header titles from camelCase
-const formatHeader = (key: string) => {
-	const result = key.replace(/([A-Z])/g, " $1");
-	return result.charAt(0).toUpperCase() + result.slice(1);
+// A function to format the header titles from camelCase with translations
+const formatHeader = (key: string, t: (key: string) => string) => {
+	const headerMapping: Record<string, string> = {
+		model: t("model"),
+		screenOem: t("screenOem"),
+		batteryOem: t("batteryOem"),
+		backCover: t("backCover"),
+		display: t("display"),
+		battery: t("battery"),
+		chargingPort: t("chargingPort"),
+	};
+
+	return headerMapping[key] || key;
 };
 
 // --- Dynamic PriceTable Component ---
@@ -342,6 +352,7 @@ const PriceTable = ({
 	repairs,
 }: { title: string; repairs: Array<Record<string, string>> }) => {
 	const [searchTerm, setSearchTerm] = useState("");
+	const t = useTranslations("prices");
 
 	// Return null if there are no repairs to display
 	if (!repairs || repairs.length === 0) {
@@ -365,7 +376,7 @@ const PriceTable = ({
 				<div className="relative mb-4">
 					<input
 						type="text"
-						placeholder="Search..."
+						placeholder={t("search")}
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
 						className="w-full rounded-lg border p-2 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -386,7 +397,7 @@ const PriceTable = ({
 										key={header}
 										className="p-4 text-left font-medium text-primary text-sm md:text-base"
 									>
-										{formatHeader(header)}
+										{formatHeader(header, t)}
 									</th>
 								))}
 							</tr>
@@ -418,21 +429,25 @@ const PriceTable = ({
 };
 
 // --- Main PriceList Component ---
-export const PriceList = () => (
-	<div className="my-0 w-full bg-slate-50 py-10" id="prices">
-		<div className="container px-4">
-			<div className="mb-16 text-center">
-				<h2 className="mb-4 font-semibold text-2xl text-primary tracking-tighter md:text-4xl">
-					Our Price List
-				</h2>
-				<p className="text-base text-muted-foreground md:text-lg">
-					Competitive pricing for quality repairs
-				</p>
-			</div>
-			<div className="space-y-8">
-				<PriceTable title="iPhone Repairs" repairs={iphoneRepairs} />
-				<PriceTable title="Samsung Repairs" repairs={samsungRepairs} />
+export const PriceList = () => {
+	const t = useTranslations("prices");
+
+	return (
+		<div className="my-0 w-full bg-slate-50 py-10" id="prices">
+			<div className="container px-4">
+				<div className="mb-16 text-center">
+					<h2 className="mb-4 font-semibold text-2xl text-primary tracking-tighter md:text-4xl">
+						{t("title")}
+					</h2>
+					<p className="text-base text-muted-foreground md:text-lg">
+						{t("subtitle")}
+					</p>
+				</div>
+				<div className="space-y-8">
+					<PriceTable title={t("iphone")} repairs={iphoneRepairs} />
+					<PriceTable title={t("samsung")} repairs={samsungRepairs} />
+				</div>
 			</div>
 		</div>
-	</div>
-);
+	);
+};

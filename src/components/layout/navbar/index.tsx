@@ -1,5 +1,6 @@
 "use client";
 import { Home, Menu } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import React, { Suspense, useMemo } from "react";
 
@@ -35,33 +36,34 @@ const MemoizedRouteList = React.lazy(() =>
 );
 
 const CustomNavigationMenu = React.memo(() => {
+	const t = useTranslations("navigation");
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
 				href: "#services",
-				label: "Our Services",
+				label: t("ourServices"),
 			},
 			{
 				href: "#prices",
-				label: "Price List",
+				label: t("priceList"),
 			},
 			{
 				href: "#testimonials",
-				label: "Testimonials",
+				label: t("testimonials"),
 			},
 			{
 				href: "#contact",
-				label: "Contact Us",
+				label: t("contactUs"),
 			},
 		],
-		[],
+		[t],
 	);
 
 	return (
 		<NavigationMenu className="mx-auto hidden lg:block">
 			<NavigationMenuList>
 				<NavigationMenuItem>
-					<Suspense fallback={<div>Loading...</div>}>
+					<Suspense fallback={<div>{t("loading")}</div>}>
 						<MemoizedRouteList routeList={routeList} />
 					</Suspense>
 				</NavigationMenuItem>
@@ -75,27 +77,28 @@ const MemoizedSheetFooter = React.memo(SheetFooter);
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
+	const t = useTranslations("navigation");
 
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
 				href: "#services",
-				label: "Our Services",
+				label: t("ourServices"),
 			},
 			{
 				href: "#prices",
-				label: "Price List",
+				label: t("priceList"),
 			},
 			{
 				href: "#testimonials",
-				label: "Testimonials",
+				label: t("testimonials"),
 			},
 			{
 				href: "#contact",
-				label: "Contact Us",
+				label: t("contactUs"),
 			},
 		],
-		[],
+		[t],
 	);
 
 	return (

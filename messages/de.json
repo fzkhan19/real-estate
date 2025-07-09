@@ -1,0 +1,105 @@
+{
+  "notFound": {
+    "notFound": "Hoppla! Die Seite, die Sie suchen, existiert nicht.",
+    "brokenLink": "Sie wurde möglicherweise entfernt, oder der Link ist defekt.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "hero": {
+    "parkingNotice": "Achtung! Parkplätze sind derzeit nicht verfügbar.",
+    "title": "Handy-, Laptop- und PC-Reparaturen",
+    "subtitle": "Denen Sie vertrauen können",
+    "description": "Lassen Sie sich nicht von technischen Problemen aus der Ruhe bringen. Unsere erfahrenen Techniker bieten schnelle, zuverlässige Reparaturen für alle Ihre Geräte - Smartphones, Laptops und PCs. Von gesprungenen Bildschirmen über Software-Fehlerbehebung bis hin zu Hardware-Upgrades und Virenentfernung - wir bringen Ihre Technologie wieder wie neu zum Laufen.",
+    "bookRepair": "Reparatur buchen",
+    "getQuote": "Angebot erhalten",
+    "altText": "Tech-Reparatur"
+  },
+  "navigation": {
+    "ourServices": "Unsere Dienstleistungen",
+    "priceList": "Preisliste",
+    "testimonials": "Kundenbewertungen",
+    "contactUs": "Kontakt",
+    "loading": "Wird geladen..."
+  },
+  "services": {
+    "title": "Unsere Reparaturdienstleistungen",
+    "subtitle": "Professionelle Reparaturdienstleistungen für alle Ihre Geräte",
+    "mobile": "Handy-Reparaturen",
+    "laptop": "Laptop- und PC-Reparaturen",
+    "software": "Software-Dienstleistungen",
+    "bookService": "Service buchen",
+    "mobileServices": {
+      "screenRepair": "Bildschirm-Reparatur",
+      "waterDamage": "Wasserschaden-Reparatur",
+      "cameraRepair": "Kamera-Reparatur",
+      "batteryReplacement": "Akku-Austausch",
+      "buttonRepair": "Taste-Reparatur",
+      "chargePortRepair": "Ladeanschluss-Reparatur",
+      "speakerRepair": "Mikrofon/Lautsprecher-Reparatur"
+    },
+    "laptopServices": {
+      "hardwareUpgrades": "Hardware-Upgrades",
+      "batteryReplacement": "Akku-Austausch",
+      "hardDriveServices": "Festplatten-Services",
+      "ramUpgrade": "RAM-Upgrade"
+    },
+    "softwareServices": {
+      "virusRemoval": "Virenentfernung",
+      "softwareInstallation": "Software-Installation",
+      "systemOptimization": "System-Optimierung",
+      "dataRecovery": "Datenrettung",
+      "osInstall": "Betriebssystem-Installation",
+      "diagnosticScan": "Diagnose-Scan",
+      "driverUpdates": "Treiber-Updates"
+    }
+  },
+  "prices": {
+    "title": "Unsere Preisliste",
+    "subtitle": "Wettbewerbsfähige Preise für qualitativ hochwertige Reparaturen",
+    "iphone": "iPhone-Reparaturen",
+    "samsung": "Samsung-Reparaturen",
+    "search": "Suchen...",
+    "model": "Modell",
+    "screenOem": "Bildschirm Original",
+    "batteryOem": "Akku Original",
+    "backCover": "Rückseite",
+    "display": "Display",
+    "battery": "Akku",
+    "chargingPort": "Ladeanschluss"
+  },
+  "testimonials": {
+    "title": "Kundenbewertungen",
+    "subtitle": "Was unsere Kunden über uns sagen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontaktieren Sie uns für alle Anfragen",
+    "sendMessage": "Senden Sie uns eine Nachricht",
+    "contactInfo": "Kontaktinformationen",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "phone": "Ihr Telefon",
+      "subject": "Betreff",
+      "message": "Ihre Nachricht",
+      "sendButton": "Nachricht senden"
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "businessHours": "Geschäftszeiten",
+      "location": "Standort",
+      "hours": "Montag - Freitag: 11:00 - 18:00 Uhr\nSamstag: 11:00 - 16:00 Uhr\nSonntag: Geschlossen"
+    }
+  },
+  "footer": {
+    "salesSupport": "Verkauf & Technischer Support",
+    "address": "Adresse",
+    "addressText": "Phone Empire, Kaiserstraße 22, 66849 Landstuhl, Deutschland",
+    "contactInfo": "Kontaktinformationen",
+    "telephone": "Telefon: +49 017670440689",
+    "email": "E-Mail: phoneempire@gmx.de",
+    "copyright": "© 2027 PHONE EMPIRE",
+    "builtBy": "Diese Website wurde von FAIZ KHAN erstellt"
+  }
+}

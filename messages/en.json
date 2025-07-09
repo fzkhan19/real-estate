@@ -1,0 +1,105 @@
+{
+  "notFound": {
+    "notFound": "Oops! The page you're looking for doesn't exist.",
+    "brokenLink": "It might have been removed, or the link may be broken.",
+    "backHome":"Go Back Home"
+  },
+  "hero": {
+    "parkingNotice": "Heads Up! Parking is unavailable for the time being.",
+    "title": "Phone, Laptop & PC Repairs",
+    "subtitle": "You Can Trust",
+    "description": "Don't let technical issues disrupt your life. Our skilled technicians provide fast, reliable repairs for all your devices - smartphones, laptops, and PCs. From cracked screens to software troubleshooting, hardware upgrades to virus removal, we'll get your technology working like new again.",
+    "bookRepair": "Book a repair",
+    "getQuote": "Get a quote",
+    "altText": "tech repair"
+  },
+  "navigation": {
+    "ourServices": "Our Services",
+    "priceList": "Price List",
+    "testimonials": "Testimonials",
+    "contactUs": "Contact Us",
+    "loading": "Loading..."
+  },
+  "services": {
+    "title": "Our Repair Services",
+    "subtitle": "Professional repair services for all your devices",
+    "mobile": "Mobile Phone Repairs",
+    "laptop": "Laptop & PC Repairs",
+    "software": "Software Services",
+    "bookService": "Book a Service",
+    "mobileServices": {
+      "screenRepair": "Screen Repair",
+      "waterDamage": "Water-Damage Repair",
+      "cameraRepair": "Camera Repair",
+      "batteryReplacement": "Battery Replacement",
+      "buttonRepair": "Button Repair",
+      "chargePortRepair": "Charge Port Repair",
+      "speakerRepair": "Microphone/Speaker Repair"
+    },
+    "laptopServices": {
+      "hardwareUpgrades": "Hardware Upgrades",
+      "batteryReplacement": "Battery Replacement",
+      "hardDriveServices": "Hard Drive Services",
+      "ramUpgrade": "RAM Upgrade"
+    },
+    "softwareServices": {
+      "virusRemoval": "Virus Removal",
+      "softwareInstallation": "Software Installation",
+      "systemOptimization": "System Optimization",
+      "dataRecovery": "Data Recovery",
+      "osInstall": "Operating System Install",
+      "diagnosticScan": "Diagnostic Scan",
+      "driverUpdates": "Driver Updates"
+    }
+  },
+  "prices": {
+    "title": "Our Price List",
+    "subtitle": "Competitive pricing for quality repairs",
+    "iphone": "iPhone Repairs",
+    "samsung": "Samsung Repairs",
+    "search": "Search...",
+    "model": "Model",
+    "screenOem": "Screen Oem",
+    "batteryOem": "Battery Oem",
+    "backCover": "Back Cover",
+    "display": "Display",
+    "battery": "Battery",
+    "chargingPort": "Charging Port"
+  },
+  "testimonials": {
+    "title": "Customer Testimonials",
+    "subtitle": "What our customers say about us"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for any inquiries",
+    "sendMessage": "Send us a message",
+    "contactInfo": "Contact Information",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "phone": "Your Phone",
+      "subject": "Subject",
+      "message": "Your Message",
+      "sendButton": "Send Message"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "businessHours": "Business Hours",
+      "location": "Location",
+      "hours": "Monday - Friday: 11:00 AM - 6:00 PM\nSaturday: 11:00 AM - 4:00 PM\nSunday: Closed"
+    }
+  },
+  "footer": {
+    "salesSupport": "Sales & Technical Support",
+    "address": "Address",
+    "addressText": "Phone Empire, Kaiserstraße 22, 66849 Landstuhl, Germany",
+    "contactInfo": "Contact Information",
+    "telephone": "Telephone: +49 017670440689",
+    "email": "E-Mail: phoneempire@gmx.de",
+    "copyright": "© 2027 PHONE EMPIRE",
+    "builtBy": "This website is built by FAIZ KHAN"
+  }
+}

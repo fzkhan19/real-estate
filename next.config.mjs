@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-import {setupDevPlatform} from '@cloudflare/next-on-pages/next-dev';
+import { setupDevPlatform } from "@cloudflare/next-on-pages/next-dev";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig = {
 	images: {
 		domains: [],
@@ -31,11 +34,11 @@ const nextConfig = {
 	},
 };
 
-if (process.env.NEXT_PUBLIC_NODE_ENV === 'development') {
+if (process.env.NEXT_PUBLIC_NODE_ENV === "development") {
 	await setupDevPlatform();
 }
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
 // export default MillionLint.next({
 // 	rsc: true,
 // })(nextConfig);
