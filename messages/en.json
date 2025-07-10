@@ -34,7 +34,8 @@
       "batteryReplacement": "Battery Replacement",
       "buttonRepair": "Button Repair",
       "chargePortRepair": "Charge Port Repair",
-      "speakerRepair": "Microphone/Speaker Repair"
+      "speakerRepair": "Microphone/Speaker Repair",
+      "carrierUnlock": "Unlock your carrier service"
     },
     "laptopServices": {
       "hardwareUpgrades": "Hardware Upgrades",

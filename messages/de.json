@@ -34,7 +34,8 @@
       "batteryReplacement": "Akku-Austausch",
       "buttonRepair": "Taste-Reparatur",
       "chargePortRepair": "Ladeanschluss-Reparatur",
-      "speakerRepair": "Mikrofon/Lautsprecher-Reparatur"
+      "speakerRepair": "Mikrofon/Lautsprecher-Reparatur",
+      "carrierUnlock": "Deine Mobilfunkanbieter entsperren"
     },
     "laptopServices": {
       "hardwareUpgrades": "Hardware-Upgrades",

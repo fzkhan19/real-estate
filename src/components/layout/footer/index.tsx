@@ -9,7 +9,7 @@ export default function Footer() {
 	const t = useTranslations("footer");
 	const tNav = useTranslations("navigation");
 	return (
-		<footer className="flex w-full flex-col gap-6 bg-primary/90 px-4 py-6 text-white">
+		<footer className="flex w-full flex-col gap-6 bg-primary/90 px-4 py-6 pb-32 text-white md:pb-6">
 			<div className="flex w-full flex-col justify-between gap-4 md:flex-row">
 				<div className="flex flex-col gap-2">
 					<Label className="font-medium">{t("salesSupport")}</Label>

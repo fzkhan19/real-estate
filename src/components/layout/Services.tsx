@@ -40,6 +40,10 @@ const getMobileServices = (t: ReturnType<typeof useTranslations>) => [
 		image: "/services/charge-port.jpg",
 	},
 	{ title: t("mobileServices.speakerRepair"), image: "/services/speaker.webp" },
+	{
+		title: t("mobileServices.carrierUnlock"),
+		image: "/services/carrier-unlock.png",
+	},
 ];
 
 const getLaptopServices = (t: ReturnType<typeof useTranslations>) => [
