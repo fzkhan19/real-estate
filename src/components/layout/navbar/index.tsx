@@ -1,8 +1,9 @@
 "use client";
 import { Home, Menu } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
-import React, { Suspense, useMemo } from "react";
+import { useParams } from "next/navigation";
+import React, { Suspense, useMemo, useTransition } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -17,11 +18,14 @@ import {
 	SheetTrigger,
 } from "../../ui/sheet";
 
+import { Label } from "@/components/ui/label";
 import {
 	NavigationMenu,
 	NavigationMenuItem,
 	NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Switch } from "@/components/ui/switch";
+import { usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 
 interface RouteProps {
@@ -78,6 +82,21 @@ const MemoizedSheetFooter = React.memo(SheetFooter);
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
 	const t = useTranslations("navigation");
+	const locale = useLocale();
+	const pathname = usePathname();
+	const params = useParams();
+	const [isPending, startTransition] = useTransition();
+	// const [isChecked, setIsChecked] = React.useState(pathname.includes("en"));
+
+	const handleLocaleSwitch = (checked: boolean) => {
+		const nextLocale = checked ? "en" : "de";
+		const path = pathname || "/";
+		startTransition(() => {
+			window.location.href = `/${nextLocale}${path}`;
+		});
+	};
+
+	const isEnglish = locale === "en";
 
 	const routeList: RouteProps[] = useMemo(
 		() => [
@@ -131,7 +150,16 @@ export const Navbar = () => {
 			</Link>
 
 			{/* <!-- Mobile --> */}
-			<div className="flex items-center lg:hidden">
+			<div className="flex items-center gap-4 lg:hidden">
+				<div className="mr-4 flex items-center gap-2 md:hidden">
+					<Label>DE</Label>
+					<Switch
+						checked={isEnglish}
+						onCheckedChange={handleLocaleSwitch}
+						disabled={isPending}
+					/>
+					<Label>EN</Label>
+				</div>
 				<Sheet open={isOpen} onOpenChange={setIsOpen}>
 					<SheetTrigger asChild>
 						<Menu
@@ -195,6 +223,16 @@ export const Navbar = () => {
 
 			{/* <!-- Desktop --> */}
 			<CustomNavigationMenu />
+
+			<div className="mr-12 hidden items-center gap-2 md:flex">
+				<Label>DE</Label>
+				<Switch
+					checked={isEnglish}
+					onCheckedChange={handleLocaleSwitch}
+					disabled={isPending}
+				/>
+				<Label>EN</Label>
+			</div>
 
 			<div className="hidden items-center lg:flex">
 				<Link href={"/"}>
