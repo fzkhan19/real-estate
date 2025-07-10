@@ -86,7 +86,6 @@ export const Navbar = () => {
 	const pathname = usePathname();
 	const params = useParams();
 	const [isPending, startTransition] = useTransition();
-	// const [isChecked, setIsChecked] = React.useState(pathname.includes("en"));
 
 	const handleLocaleSwitch = (checked: boolean) => {
 		const nextLocale = checked ? "en" : "de";
