@@ -1,6 +1,8 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
+export const runtime = "edge";
+
 export const metadata = { title: "404 : Not Found" };
 
 export default function NotFound() {
