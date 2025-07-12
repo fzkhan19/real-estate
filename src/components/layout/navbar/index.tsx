@@ -84,7 +84,6 @@ export const Navbar = () => {
 	const t = useTranslations("navigation");
 	const locale = useLocale();
 	const pathname = usePathname();
-	const params = useParams();
 	const [isPending, startTransition] = useTransition();
 
 	const handleLocaleSwitch = (checked: boolean) => {
@@ -131,16 +130,16 @@ export const Navbar = () => {
 				"bg-white/50 saturate-150 backdrop-blur backdrop-contrast-125 dark:bg-black/50",
 			)}
 		>
-			<Link className="flex items-center gap-4 text-xl md:pl-4" href="/">
+			<Link className="-mt-3 flex items-center gap-4 text-xl md:pl-4" href="/">
 				<Image
-					src={"/logo.png"}
+					src={"/logo1.png"}
 					alt="logo"
 					className="hidden md:block"
-					width={170}
+					width={150}
 					height={70}
 				/>
 				<Image
-					src={"/logo.png"}
+					src={"/logo1.png"}
 					alt="logo"
 					className="md:hidden"
 					width={120}
@@ -178,7 +177,7 @@ export const Navbar = () => {
 										href="/"
 									>
 										<Image
-											src={"/logo.png"}
+											src={"/logo1.png"}
 											alt="logo"
 											width={120}
 											height={20}

@@ -5,7 +5,7 @@
     "backHome": "Zurück zur Startseite"
   },
   "hero": {
-    "parkingNotice": "Achtung! Parkplätze sind derzeit nicht verfügbar.",
+    "parkingNotice": "Parkplätze auf der rechten Seite der Straße verfügbar",
     "title": "Handy-, Laptop- und PC-Reparaturen",
     "subtitle": "Denen Sie vertrauen können",
     "description": "Lassen Sie sich nicht von technischen Problemen aus der Ruhe bringen. Unsere erfahrenen Techniker bieten schnelle, zuverlässige Reparaturen für alle Ihre Geräte - Smartphones, Laptops und PCs. Von gesprungenen Bildschirmen über Software-Fehlerbehebung bis hin zu Hardware-Upgrades und Virenentfernung - wir bringen Ihre Technologie wieder wie neu zum Laufen.",
@@ -90,7 +90,7 @@
       "email": "E-Mail",
       "businessHours": "Geschäftszeiten",
       "location": "Standort",
-      "hours": "Montag - Freitag: 11:00 - 18:00 Uhr\nSamstag: 11:00 - 16:00 Uhr\nSonntag: Geschlossen"
+      "hours": "Montag - Freitag: 10:15 - 19:00 Uhr\nSamstag: 10:15 - 17:00 Uhr\nSonntag: Geschlossen"
     }
   },
   "footer": {

@@ -5,7 +5,7 @@
     "backHome":"Go Back Home"
   },
   "hero": {
-    "parkingNotice": "Heads Up! Parking is unavailable for the time being.",
+    "parkingNotice": "Parking available on the right side of the road.",
     "title": "Phone, Laptop & PC Repairs",
     "subtitle": "You Can Trust",
     "description": "Don't let technical issues disrupt your life. Our skilled technicians provide fast, reliable repairs for all your devices - smartphones, laptops, and PCs. From cracked screens to software troubleshooting, hardware upgrades to virus removal, we'll get your technology working like new again.",
@@ -90,7 +90,7 @@
       "email": "Email",
       "businessHours": "Business Hours",
       "location": "Location",
-      "hours": "Monday - Friday: 11:00 AM - 6:00 PM\nSaturday: 11:00 AM - 4:00 PM\nSunday: Closed"
+      "hours": "Monday - Friday: 10:15 - 19:00\nSaturday: 10:15 AM - 17:00 PM\nSunday: Closed"
     }
   },
   "footer": {

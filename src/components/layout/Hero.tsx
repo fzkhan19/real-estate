@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { MoveRight, PhoneCall } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
 
 export const Hero = () => {
 	const t = useTranslations("hero");
@@ -60,13 +59,25 @@ export const Hero = () => {
 						</div>
 
 						<div className="mt-8 flex justify-center lg:mt-0 lg:justify-end">
-							<Image
+							<video
+								width="800"
+								height="600"
+								autoPlay
+								preload="auto"
+								muted
+								loop
+								className="aspect-video"
+							>
+								<source src="/shop2.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video>
+							{/* <Image
 								alt={t("altText")}
-								src="/stock/phone-repair-2.jpg"
-								width="500"
+								src="/shop1.jpg"
+								width="700"
 								height="350"
-								className="aspect-square w-full max-w-[400px] rounded-md bg-muted shadow-lg shadow-primary/30 lg:max-w-[500px]"
-							/>
+								className="aspect-square w-full max-w-[600px] rounded-md bg-muted shadow-lg shadow-primary/30 lg:max-w-[700px]"
+							/> */}
 						</div>
 					</div>
 				</div>
