@@ -2,7 +2,6 @@
 import { Home, Menu } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import React, { Suspense, useMemo, useTransition } from "react";
 
 import { cn } from "@/lib/utils";
@@ -26,7 +25,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Switch } from "@/components/ui/switch";
 import { usePathname } from "@/i18n/navigation";
-import Image from "next/image";
 
 interface RouteProps {
 	href: string;
@@ -123,28 +121,15 @@ export const Navbar = () => {
 			className={cn(
 				"sticky top-0 right-0 left-0 z-40 flex w-full items-center justify-between md:mx-auto",
 				"border border-secondary p-4",
-				// "shadow-primary/10 shadow-xs",
+				"text-background dark:text-foreground",
 				"border-0 hover:shadow-primary/20",
 				"transition-all duration-500 ease-in-out",
 				"md:top-0 md:w-full",
-				"bg-white/50 saturate-150 backdrop-blur-sm backdrop-contrast-125 dark:bg-black/50",
+				"backdrop-blur-xs",
 			)}
 		>
 			<Link className="-mt-3 flex items-center gap-4 text-xl md:pl-4" href="/">
-				<Image
-					src={"/logo1.png"}
-					alt="logo"
-					className="hidden md:block"
-					width={150}
-					height={70}
-				/>
-				<Image
-					src={"/logo1.png"}
-					alt="logo"
-					className="md:hidden"
-					width={120}
-					height={20}
-				/>
+				Logo
 			</Link>
 
 			{/* <!-- Mobile --> */}
@@ -176,12 +161,7 @@ export const Navbar = () => {
 										className="-ml-2 flex gap-3 self-start font-bold text-lg"
 										href="/"
 									>
-										<Image
-											src={"/logo1.png"}
-											alt="logo"
-											width={120}
-											height={20}
-										/>
+										Logo
 									</Link>
 								</SheetTitle>
 							</SheetHeader>

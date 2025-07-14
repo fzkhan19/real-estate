@@ -3,8 +3,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-mr: var(--font-mr);
-  --font-in: var(--font-in);
+  --font-custom-primary: var(--font-custom-primary);
+  --font-custom-secondary: var(--font-custom-secondary);
 
   --color-dark: #1b1b1b;
   --color-light: #fff;

@@ -4,20 +4,19 @@ import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { IBM_Plex_Sans, Roboto_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({
+const font = Roboto_Serif({
 	subsets: ["latin"],
-	display: "swap",
-	variable: "--font-in",
+	variable: "--font-custom-primary",
 });
 
-const manrope = Manrope({
+const font2 = IBM_Plex_Sans({
 	subsets: ["latin"],
-	display: "swap",
-	variable: "--font-mr",
+	weight: "400",
+	variable: "--font-custom-secondary",
 });
 
 export const metadata: Metadata = METADATA;
@@ -40,8 +39,8 @@ export default async function RootLayout({
 			<head>
 				<meta name="apple-mobile-web-app-title" content="MyWebSite" />
 			</head>
-			<body className={cn("", inter.variable, manrope.variable)}>
-				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth">
+			<body className={cn("", font.variable, font2.variable)}>
+				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth font-custom-secondary">
 					<Analytics />
 					<Script
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
