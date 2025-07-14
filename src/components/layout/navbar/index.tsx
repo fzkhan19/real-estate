@@ -215,9 +215,9 @@ export const Navbar = () => {
 			<div className="hidden items-center lg:flex">
 				<Link href={"/"}>
 					<Button
-						className="w-full justify-start px-4 py-6 hover:bg-primary/30"
+						className="w-full justify-start px-2 py-6"
 						size="icon"
-						variant="ghost"
+						variant="linkHover2"
 					>
 						<Home className="size-5" />
 					</Button>
