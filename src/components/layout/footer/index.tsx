@@ -1,91 +1,297 @@
-// Footer code
-import { ArrowUpRightIcon, Facebook, Instagram, Twitter } from "lucide-react";
-import { useTranslations } from "next-intl";
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+	Award,
+	Facebook,
+	Instagram,
+	Linkedin,
+	Mail,
+	MapPin,
+	Phone,
+	Send,
+	Shield,
+	Twitter,
+} from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
-import { Label } from "@/components/ui/label";
+const quickLinks = [
+	{ name: "Home", href: "/" },
+	{ name: "Properties", href: "/properties" },
+	{ name: "Services", href: "/services" },
+	{ name: "About", href: "/about" },
+	{ name: "Contact", href: "/contact" },
+	{ name: "Valuation", href: "/valuation" },
+];
 
-export default function Footer() {
-	const t = useTranslations("footer");
-	const tNav = useTranslations("navigation");
+const services = [
+	{ name: "Property Buying", href: "/services#buying" },
+	{ name: "Property Selling", href: "/services#selling" },
+	{ name: "Property Valuation", href: "/services#valuation" },
+	{ name: "Investment Consulting", href: "/services#investment" },
+	{ name: "Market Analysis", href: "/services#analysis" },
+	{ name: "Legal Services", href: "/services#legal" },
+];
+
+const propertyTypes = [
+	{ name: "Single Family Homes", href: "/properties?type=single-family" },
+	{ name: "Condos & Apartments", href: "/properties?type=condo" },
+	{ name: "Townhouses", href: "/properties?type=townhouse" },
+	{ name: "Luxury Properties", href: "/properties?type=luxury" },
+	{ name: "Investment Properties", href: "/properties?type=investment" },
+	{ name: "Commercial Real Estate", href: "/properties?type=commercial" },
+];
+
+const socialLinks = [
+	{
+		name: "Facebook",
+		href: "https://facebook.com/kuhnandpartners",
+		icon: Facebook,
+	},
+	{
+		name: "Twitter",
+		href: "https://twitter.com/kuhnandpartners",
+		icon: Twitter,
+	},
+	{
+		name: "Instagram",
+		href: "https://instagram.com/kuhnandpartners",
+		icon: Instagram,
+	},
+	{
+		name: "LinkedIn",
+		href: "https://linkedin.com/company/kuhnandpartners",
+		icon: Linkedin,
+	},
+];
+
+export const Footer = () => {
+	const [email, setEmail] = useState("");
+	const [isSubscribing, setIsSubscribing] = useState(false);
+
+	const handleNewsletterSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+		setIsSubscribing(true);
+
+		// Simulate subscription
+		await new Promise((resolve) => setTimeout(resolve, 1000));
+
+		setEmail("");
+		setIsSubscribing(false);
+		alert("Thank you for subscribing to our newsletter!");
+	};
+
 	return (
-		<footer className="flex w-full flex-col gap-6 bg-primary/90 px-4 py-6 pb-32 text-white md:pb-6">
-			<div className="flex w-full flex-col justify-between gap-4 md:flex-row">
-				<div className="flex flex-col gap-2">
-					<Label className="font-medium">{t("salesSupport")}</Label>
-					<Label className="font-medium">{t("address")}</Label>
-					<Label className="font-normal text-sm">{t("addressText")}</Label>
-					<Label className="mt-2 font-medium">{t("contactInfo")}</Label>
+		<footer className="bg-gray-900 text-white">
+			<div className="container mx-auto px-4 py-12">
+				<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+					{/* Company Info */}
+					<div className="lg:col-span-1">
+						<div className="mb-4 flex items-center gap-2">
+							<div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+								<span className="font-bold font-playfair text-lg text-white">
+									K&P
+								</span>
+							</div>
+							<span className="font-bold font-playfair text-xl">
+								Kuhn & Partners
+							</span>
+						</div>
+						<p className="mb-6 text-gray-300 text-sm leading-relaxed">
+							Your trusted real estate experts in New York. We've been helping
+							families find their perfect homes and investors build their
+							portfolios since 2008.
+						</p>
 
-					<div className="flex flex-col flex-wrap gap-x-4 gap-y-2 md:flex-row [&>*]:font-normal [&>*]:text-sm">
-						<Label>{t("telephone")}</Label>
-						<Label>{t("email")}</Label>
+						<div className="space-y-3">
+							<div className="flex items-center gap-3">
+								<Phone className="h-4 w-4 flex-shrink-0 text-primary" />
+								<a
+									href="tel:+17326148835"
+									className="text-gray-300 text-sm transition-colors hover:text-white"
+								>
+									(732) 614-8835
+								</a>
+							</div>
+							<div className="flex items-center gap-3">
+								<Mail className="h-4 w-4 flex-shrink-0 text-primary" />
+								<a
+									href="mailto:info@kuhnandpartners.com"
+									className="text-gray-300 text-sm transition-colors hover:text-white"
+								>
+									info@kuhnandpartners.com
+								</a>
+							</div>
+							<div className="flex items-start gap-3">
+								<MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+								<div className="text-gray-300 text-sm">
+									<p>123 Fifth Avenue, Suite 1500</p>
+									<p>New York, NY 10011</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Quick Links */}
+					<div>
+						<h3 className="mb-4 font-playfair font-semibold text-lg">
+							Quick Links
+						</h3>
+						<ul className="space-y-2">
+							{quickLinks.map((link) => (
+								<li key={link.name}>
+									<Link
+										href={link.href}
+										className="text-gray-300 text-sm transition-colors hover:text-white"
+									>
+										{link.name}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					{/* Services */}
+					<div>
+						<h3 className="mb-4 font-playfair font-semibold text-lg">
+							Our Services
+						</h3>
+						<ul className="space-y-2">
+							{services.map((service) => (
+								<li key={service.name}>
+									<Link
+										href={service.href}
+										className="text-gray-300 text-sm transition-colors hover:text-white"
+									>
+										{service.name}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					{/* Property Types */}
+					<div>
+						<h3 className="mb-4 font-playfair font-semibold text-lg">
+							Property Types
+						</h3>
+						<ul className="space-y-2">
+							{propertyTypes.map((type) => (
+								<li key={type.name}>
+									<Link
+										href={type.href}
+										className="text-gray-300 text-sm transition-colors hover:text-white"
+									>
+										{type.name}
+									</Link>
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
-				<div className="order-2 flex flex-col md:order-1">
-					<Label className="self-start font-normal text-sm md:self-end">
-						{t("copyright")}
-					</Label>
-					<Label className="self-center pt-6 font-normal text-base md:mt-8 md:self-end">
-						<Link
-							className="rounded-sm bg-blue-50 p-1 font-semibold text-primary underline decoration-primary"
-							href="https://faiz-khan.in"
-							target="_blank"
-						>
-							{t("builtBy")}
-							<ArrowUpRightIcon className="-mt-1 inline-block size-6 text-primary" />
-						</Link>
-					</Label>
-				</div>
-			</div>
-			<div className="flex w-full flex-col justify-between gap-4 md:flex-row">
-				<div className="order-1 flex flex-row gap-4 self-center text-sm underline underline-offset-4 md:order-2 md:self-end">
-					<Link href="#services" className="text-center md:text-left">
-						{tNav("ourServices")}
-					</Link>
-					<Link href="#prices" className="text-center md:text-left">
-						{tNav("priceList")}
-					</Link>
-					<Link href="#testimonials" className="text-center md:text-left">
-						{tNav("testimonials")}
-					</Link>
-					<Link href="#contact" className="text-center md:text-left">
-						{tNav("contactUs")}
-					</Link>
+
+				{/* Newsletter Signup */}
+				<div className="mt-12 border-gray-800 border-t pt-8">
+					<div className="mx-auto max-w-md text-center">
+						<h3 className="mb-2 font-playfair font-semibold text-lg">
+							Stay Updated
+						</h3>
+						<p className="mb-4 text-gray-300 text-sm">
+							Get the latest property listings and market insights delivered to
+							your inbox.
+						</p>
+						<form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+							<Input
+								type="email"
+								placeholder="Enter your email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								className="border-gray-700 bg-gray-800 text-white placeholder-gray-400"
+								required
+							/>
+							<Button type="submit" disabled={isSubscribing}>
+								{isSubscribing ? "..." : <Send className="h-4 w-4" />}
+							</Button>
+						</form>
+					</div>
 				</div>
 
-				<div className="order-3 flex items-center justify-center md:justify-start md:self-end">
-					<div className="flex items-center">
-						<div className="flex space-x-4">
-							<Link
-								href="https://instagram.com/company"
-								rel="noopener noreferrer"
-								target="_blank"
-								className="transition-opacity hover:opacity-75"
-							>
-								<Instagram size={16} />
-							</Link>
+				{/* Social Media & Bottom Info */}
+				<div className="mt-8 border-gray-800 border-t pt-8">
+					<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+						{/* Social Media */}
+						<div className="flex items-center gap-4">
+							<span className="text-gray-300 text-sm">Follow us:</span>
+							<div className="flex gap-3">
+								{socialLinks.map((social) => {
+									const Icon = social.icon;
+									return (
+										<a
+											key={social.name}
+											href={social.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-gray-400 transition-colors hover:text-white"
+										>
+											<Icon className="h-5 w-5" />
+										</a>
+									);
+								})}
+							</div>
+						</div>
 
+						{/* Certifications */}
+						<div className="flex items-center gap-4">
+							<div className="flex items-center gap-2">
+								<Award className="h-4 w-4 text-primary" />
+								<span className="text-gray-400 text-xs">
+									Licensed & Certified
+								</span>
+							</div>
+							<div className="flex items-center gap-2">
+								<Shield className="h-4 w-4 text-primary" />
+								<span className="text-gray-400 text-xs">Fully Insured</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* Copyright */}
+				<div className="mt-8 border-gray-800 border-t pt-8 text-center">
+					<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+						<p className="text-gray-400 text-sm">
+							© 2024 Kuhn & Partners Real Estate. All rights reserved.
+						</p>
+						<div className="flex items-center gap-6 text-gray-400 text-xs">
 							<Link
-								href="https://twitter.com/company"
-								rel="noopener noreferrer"
-								target="_blank"
-								className="transition-opacity hover:opacity-75"
+								href="/privacy"
+								className="transition-colors hover:text-white"
 							>
-								<Twitter size={16} />
+								Privacy Policy
 							</Link>
 							<Link
-								href="https://facebook.com/company/company"
-								rel="noopener noreferrer"
-								target="_blank"
-								className="transition-opacity hover:opacity-75"
+								href="/terms"
+								className="transition-colors hover:text-white"
 							>
-								<Facebook size={16} />
+								Terms of Service
+							</Link>
+							<Link
+								href="/licenses"
+								className="transition-colors hover:text-white"
+							>
+								Licenses
 							</Link>
 						</div>
+					</div>
+					<div className="mt-4 text-gray-500 text-xs">
+						<p>
+							Real Estate License #: 10401234567 | Equal Housing Opportunity
+						</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 	);
-}
+};
