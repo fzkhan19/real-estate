@@ -290,7 +290,7 @@ export const About = () => {
 								key={index}
 								className="flex items-center gap-3 rounded-lg bg-gray-50 p-4"
 							>
-								<Shield className="h-5 w-5 flex-shrink-0 text-primary" />
+								<Shield className="h-5 w-5 shrink-0 text-primary" />
 								<span className="font-medium text-sm">{cert}</span>
 							</div>
 						))}

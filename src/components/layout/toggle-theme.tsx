@@ -18,7 +18,7 @@ export const ToggleTheme = ({ className }: { className?: string }) => {
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 		>
 			<div className="flex gap-2 dark:hidden">
-				<MoonIcon className="size-4 fill-[#1b1b1b]" />
+				<MoonIcon className="size-4 fill-dark" />
 			</div>
 
 			<div className="hidden gap-2 dark:flex">

@@ -14,7 +14,7 @@ export default function NotFound() {
 			<p className="text-gray-500">{t("brokenLink")}</p>
 			<Link
 				href="/"
-				className="mt-6 rounded-lg bg-primary px-6 py-3 text-white shadow transition duration-300 hover:bg-primary/80 hover:shadow-md"
+				className="mt-6 rounded-lg bg-primary px-6 py-3 text-white shadow-sm transition duration-300 hover:bg-primary/80 hover:shadow-md"
 			>
 				Go Back Home
 			</Link>

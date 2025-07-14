@@ -86,7 +86,7 @@ const OfficeCard = ({ office }: { office: OfficeProps }) => {
 			</CardHeader>
 			<CardContent className="space-y-4">
 				<div className="flex items-start gap-3">
-					<MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+					<MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
 					<div>
 						<p className="font-medium">Address</p>
 						<p className="text-muted-foreground text-sm">{office.address}</p>
@@ -120,7 +120,7 @@ const OfficeCard = ({ office }: { office: OfficeProps }) => {
 				</div>
 
 				<div className="flex items-start gap-3">
-					<Clock className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+					<Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
 					<div>
 						<p className="font-medium">Hours</p>
 						<div className="space-y-1">

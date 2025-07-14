@@ -324,7 +324,7 @@ export default function PropertiesPage() {
 	return (
 		<div className="min-h-screen bg-gray-50">
 			{/* Header */}
-			<div className="border-b bg-white shadow-sm">
+			<div className="border-b bg-white shadow-xs">
 				<div className="container mx-auto px-4 py-8">
 					<h1 className="mb-2 font-bold font-playfair text-3xl sm:text-4xl">
 						Properties
@@ -337,7 +337,7 @@ export default function PropertiesPage() {
 			</div>
 
 			{/* Filters */}
-			<div className="border-b bg-white shadow-sm">
+			<div className="border-b bg-white shadow-xs">
 				<div className="container mx-auto px-4 py-6">
 					<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
 						<div className="lg:col-span-2">

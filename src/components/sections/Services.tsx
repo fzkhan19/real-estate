@@ -123,7 +123,7 @@ const ServiceCard = ({ service }: { service: ServiceProps }) => {
 					{service.features.map((feature, index) => (
 						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						<li key={index} className="flex items-center gap-2 text-sm">
-							<div className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+							<div className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
 							{feature}
 						</li>
 					))}

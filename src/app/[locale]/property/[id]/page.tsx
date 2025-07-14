@@ -171,7 +171,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 					<div className="grid gap-4 lg:grid-cols-4 lg:grid-rows-2">
 						{/* Main Image */}
 						<div className="relative lg:col-span-2 lg:row-span-2">
-							<div className="aspect-square rounded-lg bg-gradient-to-br from-muted to-muted/50">
+							<div className="aspect-square rounded-lg bg-linear-to-br from-muted to-muted/50">
 								<div className="flex h-full items-center justify-center">
 									<Home className="h-24 w-24 text-muted-foreground" />
 								</div>
@@ -189,7 +189,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 						{[1, 2, 3, 4].map((i) => (
 							<div
 								key={i}
-								className="aspect-square rounded-lg bg-gradient-to-br from-muted to-muted/50"
+								className="aspect-square rounded-lg bg-linear-to-br from-muted to-muted/50"
 							>
 								<div className="flex h-full items-center justify-center">
 									<Home className="h-12 w-12 text-muted-foreground" />
@@ -541,7 +541,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 					</h2>
 					<Card>
 						<CardContent className="p-0">
-							<div className="aspect-video bg-gradient-to-br from-muted to-muted/50">
+							<div className="aspect-video bg-linear-to-br from-muted to-muted/50">
 								<div className="flex h-full items-center justify-center">
 									<div className="text-center">
 										<MapPin className="mx-auto h-16 w-16 text-muted-foreground" />
@@ -571,7 +571,7 @@ export default async function PropertyDetailPage({ params }: Props) {
 								key={relatedProperty.id}
 								className="group overflow-hidden transition-shadow hover:shadow-lg"
 							>
-								<div className="aspect-video bg-gradient-to-br from-muted to-muted/50">
+								<div className="aspect-video bg-linear-to-br from-muted to-muted/50">
 									<div className="flex h-full items-center justify-center">
 										<Home className="h-12 w-12 text-muted-foreground" />
 									</div>

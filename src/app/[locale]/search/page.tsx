@@ -166,7 +166,7 @@ export default async function SearchPage({ params }: Props) {
 			</div>
 
 			{/* Search Header */}
-			<section className="bg-gradient-to-r from-primary/10 to-accent/10 py-8">
+			<section className="bg-linear-to-r from-primary/10 to-accent/10 py-8">
 				<div className="container mx-auto px-4">
 					<h1 className="font-bold font-serif text-3xl text-foreground tracking-tight sm:text-4xl">
 						Find Your Perfect Property
@@ -360,7 +360,7 @@ export default async function SearchPage({ params }: Props) {
 									>
 										<div className="relative">
 											{/* Property Image Placeholder */}
-											<div className="aspect-video bg-gradient-to-br from-muted to-muted/50">
+											<div className="aspect-video bg-linear-to-br from-muted to-muted/50">
 												<div className="flex h-full items-center justify-center">
 													<Home className="h-12 w-12 text-muted-foreground" />
 												</div>
@@ -456,7 +456,7 @@ export default async function SearchPage({ params }: Props) {
 					</h2>
 					<Card>
 						<CardContent className="p-0">
-							<div className="aspect-video bg-gradient-to-br from-muted to-muted/50">
+							<div className="aspect-video bg-linear-to-br from-muted to-muted/50">
 								<div className="flex h-full items-center justify-center">
 									<div className="text-center">
 										<MapPin className="mx-auto h-16 w-16 text-muted-foreground" />

@@ -8,7 +8,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 export const runtime = "edge";
 export default function Home() {
 	return (
-		<article className="flex min-h-[100dvh] flex-col">
+		<article className="flex min-h-dvh flex-col">
 			<Hero />
 			<Properties />
 			<Services />

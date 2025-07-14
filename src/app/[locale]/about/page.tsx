@@ -187,7 +187,7 @@ export default async function AboutPage({ params }: Props) {
 			</div>
 
 			{/* Hero Section */}
-			<section className="bg-gradient-to-r from-primary/10 to-accent/10 py-16">
+			<section className="bg-linear-to-r from-primary/10 to-accent/10 py-16">
 				<div className="container mx-auto px-4">
 					<div className="grid items-center gap-12 lg:grid-cols-2">
 						<div>
@@ -212,7 +212,7 @@ export default async function AboutPage({ params }: Props) {
 							</Link>
 						</div>
 						<div className="relative">
-							<div className="aspect-square rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 p-8">
+							<div className="aspect-square rounded-lg bg-linear-to-br from-primary/20 to-accent/20 p-8">
 								<div className="flex h-full flex-col justify-center text-center">
 									<Building className="mx-auto h-24 w-24 text-primary" />
 									<h3 className="mt-4 font-semibold font-serif text-2xl">
@@ -333,9 +333,9 @@ export default async function AboutPage({ params }: Props) {
 								<div
 									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 									key={index}
-									className="flex items-start gap-6 rounded-lg bg-background p-6 shadow-sm"
+									className="flex items-start gap-6 rounded-lg bg-background p-6 shadow-xs"
 								>
-									<div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground">
 										{achievement.year}
 									</div>
 									<div>

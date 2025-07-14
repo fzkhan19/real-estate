@@ -95,7 +95,7 @@ export default async function ContactPage({ params }: Props) {
 			</div>
 
 			{/* Hero Section */}
-			<section className="bg-gradient-to-r from-primary/10 to-accent/10 py-16">
+			<section className="bg-linear-to-r from-primary/10 to-accent/10 py-16">
 				<div className="container mx-auto px-4 text-center">
 					<h1 className="font-bold font-serif text-4xl text-foreground tracking-tight sm:text-5xl md:text-6xl">
 						Contact Kuhn & Partners
@@ -203,7 +203,7 @@ export default async function ContactPage({ params }: Props) {
 								<Card key={index}>
 									<CardContent className="p-6">
 										<div className="flex items-start gap-4">
-											<div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
+											<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
 												<info.icon className="h-6 w-6 text-primary" />
 											</div>
 											<div className="flex-1">
@@ -274,7 +274,7 @@ export default async function ContactPage({ params }: Props) {
 						{/* Map Placeholder */}
 						<Card>
 							<CardContent className="p-0">
-								<div className="aspect-square bg-gradient-to-br from-muted to-muted/50 lg:aspect-video">
+								<div className="aspect-square bg-linear-to-br from-muted to-muted/50 lg:aspect-video">
 									<div className="flex h-full items-center justify-center">
 										<div className="text-center">
 											<MapPin className="mx-auto h-16 w-16 text-muted-foreground" />

@@ -107,7 +107,7 @@ export const Footer = () => {
 
 						<div className="space-y-3">
 							<div className="flex items-center gap-3">
-								<Phone className="h-4 w-4 flex-shrink-0 text-primary" />
+								<Phone className="h-4 w-4 shrink-0 text-primary" />
 								<a
 									href="tel:+17326148835"
 									className="text-gray-300 text-sm transition-colors hover:text-white"
@@ -116,7 +116,7 @@ export const Footer = () => {
 								</a>
 							</div>
 							<div className="flex items-center gap-3">
-								<Mail className="h-4 w-4 flex-shrink-0 text-primary" />
+								<Mail className="h-4 w-4 shrink-0 text-primary" />
 								<a
 									href="mailto:info@kuhnandpartners.com"
 									className="text-gray-300 text-sm transition-colors hover:text-white"
@@ -125,7 +125,7 @@ export const Footer = () => {
 								</a>
 							</div>
 							<div className="flex items-start gap-3">
-								<MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+								<MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
 								<div className="text-gray-300 text-sm">
 									<p>123 Fifth Avenue, Suite 1500</p>
 									<p>New York, NY 10011</p>

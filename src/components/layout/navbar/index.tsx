@@ -123,11 +123,11 @@ export const Navbar = () => {
 			className={cn(
 				"sticky top-0 right-0 left-0 z-40 flex w-full items-center justify-between md:mx-auto",
 				"border border-secondary p-4",
-				// "shadow-primary/10 shadow-sm",
+				// "shadow-primary/10 shadow-xs",
 				"border-0 hover:shadow-primary/20",
 				"transition-all duration-500 ease-in-out",
 				"md:top-0 md:w-full",
-				"bg-white/50 saturate-150 backdrop-blur backdrop-contrast-125 dark:bg-black/50",
+				"bg-white/50 saturate-150 backdrop-blur-sm backdrop-contrast-125 dark:bg-black/50",
 			)}
 		>
 			<Link className="-mt-3 flex items-center gap-4 text-xl md:pl-4" href="/">

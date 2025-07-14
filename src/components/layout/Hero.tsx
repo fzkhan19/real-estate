@@ -66,7 +66,7 @@ export const Hero = () => {
 
 							{/* Stats section */}
 							<div className="hidden justify-end lg:flex">
-								<div className="max-w-md rounded-lg bg-white/10 p-8 backdrop-blur-sm">
+								<div className="max-w-md rounded-lg bg-white/10 p-8 backdrop-blur-xs">
 									<div className="grid grid-cols-2 gap-6 text-center text-white">
 										<div>
 											<div className="font-bold text-3xl text-primary-foreground">

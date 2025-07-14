@@ -177,7 +177,7 @@ export default async function ValuationPage({ params }: Props) {
 			</div>
 
 			{/* Hero Section */}
-			<section className="bg-gradient-to-r from-primary/10 to-accent/10 py-16">
+			<section className="bg-linear-to-r from-primary/10 to-accent/10 py-16">
 				<div className="container mx-auto px-4 text-center">
 					<h1 className="font-bold font-serif text-4xl text-foreground tracking-tight sm:text-5xl md:text-6xl">
 						Professional Property Valuation
@@ -252,7 +252,7 @@ export default async function ValuationPage({ params }: Props) {
 										{type.features.map((feature, idx) => (
 											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 											<div key={idx} className="flex items-center gap-2">
-												<CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
+												<CheckCircle className="h-4 w-4 shrink-0 text-primary" />
 												<span className="text-sm">{feature}</span>
 											</div>
 										))}
