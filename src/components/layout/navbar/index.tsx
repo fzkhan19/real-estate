@@ -133,7 +133,7 @@ export const Navbar = () => {
 			</Link>
 
 			{/* <!-- Mobile --> */}
-			<div className="flex items-center gap-4 lg:hidden">
+			<div className="flex items-center gap-4 py-2 lg:hidden">
 				<div className="mr-4 flex items-center gap-2 md:hidden">
 					<Label>DE</Label>
 					<Switch
@@ -151,14 +151,14 @@ export const Navbar = () => {
 						/>
 					</SheetTrigger>
 					<MemoizedSheetContent
-						className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl border-secondary bg-card"
+						className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl border-secondary bg-transparent text-secondary/90 backdrop-blur-xs"
 						side="left"
 					>
 						<div>
-							<SheetHeader className="mb-4 ml-4">
+							<SheetHeader className="mb-12 ml-4">
 								<SheetTitle className="flex">
 									<Link
-										className="-ml-2 flex gap-3 self-start font-bold text-lg"
+										className="-ml-1 flex gap-3 self-start font-bold text-3xl text-secondary/90"
 										href="/"
 									>
 										Logo
@@ -171,7 +171,7 @@ export const Navbar = () => {
 									<Button
 										key={href}
 										asChild
-										className="justify-start text-base"
+										className="justify-start text-lg"
 										variant="ghost"
 										onClick={() => setIsOpen(false)}
 									>

@@ -7,7 +7,7 @@ export const Hero = () => {
 	return (
 		<>
 			{/* Hero Section with Background Video */}
-			<div className="relative min-h-screen w-full overflow-hidden">
+			<div className="relative max-h-screen w-full overflow-hidden">
 				<Navbar />
 				{/* Background Video */}
 				<video
