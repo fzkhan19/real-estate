@@ -29,9 +29,9 @@ import {
 	TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+export const runtime = "edge";
 
 interface Props {
 	params: Promise<{ locale: string; id: string }>;
@@ -642,5 +642,3 @@ export default async function PropertyDetailPage({ params }: Props) {
 		</div>
 	);
 }
-
-export const runtime = "edge";

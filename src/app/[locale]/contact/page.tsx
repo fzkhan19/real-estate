@@ -15,6 +15,7 @@ import { Link } from "@/i18n/navigation";
 import { Clock, Home, Mail, MapPin, PhoneCall, Send } from "lucide-react";
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+export const runtime = "edge";
 
 interface Props {
 	params: Promise<{ locale: string }>;
@@ -353,5 +354,3 @@ export default async function ContactPage({ params }: Props) {
 		</div>
 	);
 }
-
-export const runtime = "edge";

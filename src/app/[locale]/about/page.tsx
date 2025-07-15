@@ -25,6 +25,8 @@ import {
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
+export const runtime = "edge";
+
 interface Props {
 	params: Promise<{ locale: string }>;
 }
@@ -382,5 +384,3 @@ export default async function AboutPage({ params }: Props) {
 		</div>
 	);
 }
-
-export const runtime = "edge";
