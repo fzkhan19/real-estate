@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Switch } from "@/components/ui/switch";
 import { usePathname } from "@/i18n/navigation";
+import Image from "next/image";
 
 interface RouteProps {
 	href: string;
@@ -129,7 +130,20 @@ export const Navbar = () => {
 			)}
 		>
 			<Link className="-mt-3 flex items-center gap-4 text-xl md:pl-4" href="/">
-				Logo
+				<Image
+					src={"/logo-text.svg"}
+					alt="logo"
+					className="hidden invert md:block"
+					width={200}
+					height={100}
+				/>
+				<Image
+					src={"/logo.svg"}
+					alt="logo"
+					className="md:hidden"
+					width={120}
+					height={20}
+				/>
 			</Link>
 
 			{/* <!-- Mobile --> */}

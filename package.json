@@ -45,7 +45,7 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^11.3.12",
-    "husky": "^9.1.0",
+    "husky": "^9.1.7",
     "lint-staged": "^15.2.7",
     "lucide-react": "^0.523.0",
     "motion": "^12.23.0",
