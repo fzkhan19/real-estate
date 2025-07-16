@@ -9,7 +9,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
 			disableTransitionOnChange
 			enableSystem
 			attribute="class"
-			defaultTheme="light"
+			defaultTheme="dark"
 		>
 			<QueryProviders>
 				<NextIntlClientProvider>{children}</NextIntlClientProvider>

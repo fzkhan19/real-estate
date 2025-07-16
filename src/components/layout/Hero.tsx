@@ -61,18 +61,15 @@ export const Hero = () => {
 
 								<div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
 									<Link href="tel:+17326148835">
-										<Button
-											size="lg"
-											className="w-full gap-4 border-0 bg-white text-black hover:bg-white/90 sm:w-auto"
-											variant="outline"
-										>
+										<Button size="lg" className="w-full gap-4 sm:w-auto">
 											Call Now <PhoneCall className="h-5 w-5" />
 										</Button>
 									</Link>
 									<Link href="#properties">
 										<Button
 											size="lg"
-											className="w-full gap-4 border-0 bg-primary text-white hover:bg-primary/90 sm:w-auto"
+											variant="secondary"
+											className="w-full gap-4 shadow-inner sm:w-auto"
 										>
 											View Properties <MoveRight className="h-5 w-5" />
 										</Button>
