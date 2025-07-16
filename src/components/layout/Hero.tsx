@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { MoveRight, PhoneCall } from "lucide-react";
+import Image from "next/image";
 import { Navbar } from "./navbar";
 
 export const Hero = () => {
@@ -27,17 +28,32 @@ export const Hero = () => {
 				<div className="absolute inset-0 bg-black/60" />
 
 				{/* Content */}
-				<div className="relative z-10 flex min-h-screen items-center justify-center">
-					<div className="container mx-auto px-4 py-20">
+				<div className="relative z-10 flex min-h-screen justify-center md:items-center">
+					<div className="container mx-auto px-4 py-8 md:py-20">
 						<div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
 							<div className="flex flex-col gap-6 text-white">
-								<div className="flex flex-col gap-4">
-									<h1 className="font-bold font-playfair text-4xl tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+								<div className="flex flex-col items-center justify-center gap-6 md:items-start">
+									<div className="mb-20 flex flex-col items-center gap-2 md:hidden">
+										<Image
+											src={"/logo-min.svg"}
+											alt="logo"
+											width={50}
+											height={100}
+										/>
+										<Image
+											src={"/logo-text.svg"}
+											alt="logo"
+											className="invert"
+											width={350}
+											height={100}
+										/>
+									</div>
+									<h1 className="text-center font-bold font-playfair text-4xl tracking-tighter sm:text-4xl md:text-left md:text-6xl md:tracking-tight lg:text-7xl xl:text-8xl">
 										<span className="text-white">Your Dream Home </span>
 										<span className="text-primary-foreground/90">Awaits</span>
 									</h1>
 
-									<p className="text-lg text-white/90 leading-relaxed tracking-normal sm:text-xl md:max-w-lg md:text-2xl">
+									<p className="text-balance text-center text-lg text-white/90 leading-relaxed tracking-normal sm:text-xl md:max-w-lg md:text-left md:text-2xl">
 										Kuhn & Partners - Your trusted real estate experts in
 										finding the perfect property for you and your family.
 									</p>
@@ -63,40 +79,59 @@ export const Hero = () => {
 									</Link>
 								</div>
 							</div>
+							<div className="flex flex-col items-end">
+								<div className="flex flex-col items-center gap-6">
+									<div className="mb-8 hidden w-fit flex-col items-center gap-2 md:flex">
+										<Image
+											src={"/logo-min.svg"}
+											alt="logo"
+											width={60}
+											height={100}
+										/>
+										<Image
+											src={"/logo-text.svg"}
+											alt="logo"
+											className="invert"
+											width={400}
+											height={200}
+										/>
+									</div>
 
-							{/* Stats section */}
-							<div className="hidden justify-end lg:flex">
-								<div className="max-w-md rounded-lg bg-white/10 p-8 backdrop-blur-xs">
-									<div className="grid grid-cols-2 gap-6 text-center text-white">
-										<div>
-											<div className="font-bold text-3xl text-primary-foreground">
-												1000+
+									{/* Stats section */}
+									<div className="hidden justify-end lg:flex">
+										<div className="max-w-md rounded-lg bg-white/10 p-8 backdrop-blur-xs">
+											<div className="grid grid-cols-2 gap-6 text-center text-white">
+												<div>
+													<div className="font-bold text-3xl text-primary-foreground">
+														1000+
+													</div>
+													<div className="text-sm text-white/80">
+														Properties Sold
+													</div>
+												</div>
+												<div>
+													<div className="font-bold text-3xl text-primary-foreground">
+														20+
+													</div>
+													<div className="text-sm text-white/80">
+														Years Experience
+													</div>
+												</div>
+												<div>
+													<div className="font-bold text-3xl text-primary-foreground">
+														99%
+													</div>
+													<div className="text-sm text-white/80">
+														Client Satisfaction
+													</div>
+												</div>
+												<div>
+													<div className="font-bold text-3xl text-primary-foreground">
+														24/7
+													</div>
+													<div className="text-sm text-white/80">Support</div>
+												</div>
 											</div>
-											<div className="text-sm text-white/80">
-												Properties Sold
-											</div>
-										</div>
-										<div>
-											<div className="font-bold text-3xl text-primary-foreground">
-												20+
-											</div>
-											<div className="text-sm text-white/80">
-												Years Experience
-											</div>
-										</div>
-										<div>
-											<div className="font-bold text-3xl text-primary-foreground">
-												99%
-											</div>
-											<div className="text-sm text-white/80">
-												Client Satisfaction
-											</div>
-										</div>
-										<div>
-											<div className="font-bold text-3xl text-primary-foreground">
-												24/7
-											</div>
-											<div className="text-sm text-white/80">Support</div>
 										</div>
 									</div>
 								</div>

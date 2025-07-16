@@ -129,88 +129,93 @@ export const Navbar = () => {
 				"backdrop-blur-xs",
 			)}
 		>
-			<Link className="-mt-3 flex items-center gap-4 text-xl md:pl-4" href="/">
+			<Link
+				className="-mt-3 hidden items-center gap-4 text-xl md:flex md:pl-4"
+				href="/"
+			>
 				<Image
 					src={"/logo-text.svg"}
 					alt="logo"
-					className="hidden invert md:block"
+					className="invert "
 					width={200}
 					height={100}
-				/>
-				<Image
-					src={"/logo.svg"}
-					alt="logo"
-					className="md:hidden"
-					width={120}
-					height={20}
 				/>
 			</Link>
 
 			{/* <!-- Mobile --> */}
-			<div className="flex items-center gap-4 py-2 lg:hidden">
-				<div className="mr-4 flex items-center gap-2 md:hidden">
-					<Label>DE</Label>
-					<Switch
-						checked={isEnglish}
-						onCheckedChange={handleLocaleSwitch}
-						disabled={isPending}
-					/>
-					<Label>EN</Label>
-				</div>
-				<Sheet open={isOpen} onOpenChange={setIsOpen}>
-					<SheetTrigger asChild>
-						<Menu
-							className="cursor-pointer lg:hidden"
-							onClick={() => setIsOpen(!isOpen)}
+			<div className="flex w-full items-center justify-between gap-4 py-2 md:hidden">
+				<Image
+					src={"/logo-text.svg"}
+					alt="logo"
+					className="invert"
+					width={160}
+					height={100}
+				/>
+				<div className="flex items-center">
+					<div className="mr-4 flex items-center gap-2 md:hidden">
+						<Label>DE</Label>
+						<Switch
+							checked={isEnglish}
+							onCheckedChange={handleLocaleSwitch}
+							disabled={isPending}
 						/>
-					</SheetTrigger>
-					<MemoizedSheetContent
-						className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl border-secondary bg-transparent text-secondary/90 backdrop-blur-xs"
-						side="left"
-					>
-						<div>
-							<SheetHeader className="mb-12 ml-4">
-								<SheetTitle className="flex">
-									<Link
-										className="-ml-1 flex gap-3 self-start font-bold text-3xl text-secondary/90"
-										href="/"
-									>
-										Logo
+						<Label>EN</Label>
+					</div>
+					<Sheet open={isOpen} onOpenChange={setIsOpen}>
+						<SheetTrigger asChild>
+							<Menu
+								className="cursor-pointer lg:hidden"
+								onClick={() => setIsOpen(!isOpen)}
+							/>
+						</SheetTrigger>
+						<MemoizedSheetContent
+							className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl border-secondary bg-transparent text-secondary/90 backdrop-blur-xs"
+							side="left"
+						>
+							<div>
+								<SheetHeader className="mb-12 ml-4">
+									<SheetTitle className="flex">
+										<Link
+											className="-ml-1 flex gap-3 self-start font-bold text-3xl text-secondary/90"
+											href="/"
+										>
+											Logo
+										</Link>
+									</SheetTitle>
+								</SheetHeader>
+
+								<div className="flex flex-col gap-2">
+									{routeList.map(({ href, label }) => (
+										<Button
+											key={href}
+											asChild
+											className="justify-start text-lg"
+											variant="ghost"
+											onClick={() => setIsOpen(false)}
+										>
+											<Link href={href}>{label}</Link>
+										</Button>
+									))}
+								</div>
+							</div>
+
+							<MemoizedSheetFooter className="w-full flex-col items-start justify-start sm:flex-col">
+								<Separator className="mb-2" />
+								<div className="flex w-full items-center justify-between">
+									<Link className="mx-3" href={"/"}>
+										<Button
+											className="w-full justify-start"
+											size="sm"
+											variant="ghost"
+										>
+											<Home className="size-5" />
+										</Button>
 									</Link>
-								</SheetTitle>
-							</SheetHeader>
-
-							<div className="flex flex-col gap-2">
-								{routeList.map(({ href, label }) => (
-									<Button
-										key={href}
-										asChild
-										className="justify-start text-lg"
-										variant="ghost"
-										onClick={() => setIsOpen(false)}
-									>
-										<Link href={href}>{label}</Link>
-									</Button>
-								))}
-							</div>
-						</div>
-
-						<MemoizedSheetFooter className="w-full flex-col items-start justify-start sm:flex-col">
-							<Separator className="mb-2" />
-							<div className="flex w-full items-center justify-between">
-								<Link className="mx-3" href={"/"}>
-									<Button
-										className="w-full justify-start"
-										size="sm"
-										variant="ghost"
-									>
-										<Home className="size-5" />
-									</Button>
-								</Link>
-							</div>
-						</MemoizedSheetFooter>
-					</MemoizedSheetContent>
-				</Sheet>
+								</div>
+							</MemoizedSheetFooter>
+						</MemoizedSheetContent>
+					</Sheet>
+				</div>
 			</div>
 
 			{/* <!-- Desktop --> */}
