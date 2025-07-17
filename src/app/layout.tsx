@@ -39,7 +39,13 @@ export default async function RootLayout({
 			<head>
 				<meta name="apple-mobile-web-app-title" content="MyWebSite" />
 			</head>
-			<body className={cn("", font.variable, font2.variable)}>
+			<body
+				className={cn(
+					"bg-foreground text-background",
+					font.variable,
+					font2.variable,
+				)}
+			>
 				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth font-custom-secondary">
 					<Analytics />
 					<Script

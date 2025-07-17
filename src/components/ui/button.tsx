@@ -10,13 +10,13 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				default:
-					"bg-transparent backdrop-blur-3xl border border-secondary/20 shadow-inner shadow-accent/40 text-primary-foreground transition duration-400 hover:shadow-accent/60 hover:scale-105",
+					"bg-transparent backdrop-blur-3xl border border-secondary/20 shadow-inner shadow-accent/40 text-primary-foreground transition duration-400 hover:shadow-accent/60",
 				destructive:
 					"bg-destructive text-destructive-foreground hover:bg-destructive/90",
 				outline:
 					"border border-input bg-background hover:bg-accent hover:text-accent-foreground",
 				secondary:
-					"bg-transparent backdrop-blur-xs border border-secondary/30 text-primary-foreground transition duration-400 hover:scale-105",
+					"bg-transparent backdrop-blur-xs border border-secondary/30 text-primary-foreground transition duration-400",
 				ghost: "hover:bg-accent hover:text-accent-foreground",
 				link: "text-primary underline-offset-4 hover:underline",
 				expandIcon:

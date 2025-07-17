@@ -113,8 +113,8 @@ const certifications = [
 
 const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 	return (
-		<Card className="group overflow-hidden transition-shadow duration-300 hover:shadow-lg">
-			<CardHeader className="p-0">
+		<Card className="group flex flex-col overflow-hidden p-4 transition-shadow duration-300 hover:shadow-lg">
+			<CardHeader className="flex-grow p-0">
 				<div className="relative h-64 overflow-hidden">
 					<Image
 						src={member.image}
@@ -124,33 +124,23 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 					/>
 				</div>
 			</CardHeader>
-			<CardContent className="p-6">
+			<CardContent className="flex-grow p-6">
 				<h3 className="mb-1 font-playfair font-semibold text-xl">
 					{member.name}
 				</h3>
-				<p className="mb-3 font-medium text-primary">{member.role}</p>
+				<p className="mb-3 font-medium text-muted-foreground">{member.role}</p>
 				<p className="mb-4 text-muted-foreground text-sm">
 					{member.experience} of experience
 				</p>
 
 				<div className="mb-4 space-y-2">
 					<div className="flex items-center gap-2 text-sm">
-						<Phone className="h-4 w-4 text-primary" />
-						<a
-							href={`tel:${member.phone}`}
-							className="transition-colors hover:text-primary"
-						>
-							{member.phone}
-						</a>
+						<Phone className="h-4 w-4 text-muted-foreground" />
+						<a href={`tel:${member.phone}`}>{member.phone}</a>
 					</div>
 					<div className="flex items-center gap-2 text-sm">
-						<Mail className="h-4 w-4 text-primary" />
-						<a
-							href={`mailto:${member.email}`}
-							className="transition-colors hover:text-primary"
-						>
-							{member.email}
-						</a>
+						<Mail className="h-4 w-4 text-muted-foreground" />
+						<a href={`mailto:${member.email}`}>{member.email}</a>
 					</div>
 				</div>
 
@@ -165,15 +155,14 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 						))}
 					</div>
 				</div>
-
-				<Button asChild className="w-full">
-					<Link
-						href={`/contact?agent=${member.name.toLowerCase().replace(" ", "-")}`}
-					>
-						Contact {member.name.split(" ")[0]}
-					</Link>
-				</Button>
 			</CardContent>
+			<Button asChild className="w-full">
+				<Link
+					href={`/contact?agent=${member.name.toLowerCase().replace(" ", "-")}`}
+				>
+					Contact {member.name.split(" ")[0]}
+				</Link>
+			</Button>
 		</Card>
 	);
 };
@@ -185,7 +174,7 @@ const AchievementCard = ({
 		<Card className="text-center transition-shadow duration-300 hover:shadow-lg">
 			<CardContent className="p-6">
 				<div className="mb-4 flex justify-center">
-					<div className="rounded-full bg-primary/10 p-3 text-primary">
+					<div className="rounded-full bg-secondary/10 p-3 text-secondary">
 						{achievement.icon}
 					</div>
 				</div>
@@ -201,7 +190,7 @@ const AchievementCard = ({
 
 export const About = () => {
 	return (
-		<section id="about" className="bg-white py-16">
+		<section id="about" className="py-16">
 			<div className="container mx-auto px-4">
 				{/* Header */}
 				<div className="mb-16 text-center">
@@ -291,15 +280,15 @@ export const About = () => {
 								className="flex items-center gap-3 rounded-lg bg-gray-50 p-4"
 							>
 								<Shield className="h-5 w-5 shrink-0 text-primary" />
-								<span className="font-medium text-sm">{cert}</span>
+								<span className="font-medium text-primary text-sm">{cert}</span>
 							</div>
 						))}
 					</div>
 				</div>
 
 				{/* Call to Action */}
-				<div className="text-center">
-					<div className="mx-auto max-w-2xl rounded-lg bg-gray-50 p-8">
+				<div className="rounded-md text-center shadow shadow-accent/30 backdrop-blur-2xl">
+					<div className="mx-auto max-w-2xl rounded-lg p-8">
 						<h3 className="mb-4 font-bold font-playfair text-2xl">
 							Ready to Work with Us?
 						</h3>
@@ -308,13 +297,18 @@ export const About = () => {
 							sell your current home.
 						</p>
 						<div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
-							<Button size="lg" asChild>
+							<Button size="lg" className="hover:scale-105" asChild>
 								<Link href="/contact">
 									<Users className="mr-2 h-5 w-5" />
 									Get Started Today
 								</Link>
 							</Button>
-							<Button size="lg" variant="outline" asChild>
+							<Button
+								size="lg"
+								variant="secondary"
+								className="hover:scale-105"
+								asChild
+							>
 								<Link href="/properties">
 									<Building className="mr-2 h-5 w-5" />
 									View Properties

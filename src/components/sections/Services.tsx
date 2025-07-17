@@ -8,6 +8,7 @@ import {
 	Calculator,
 	FileText,
 	Home,
+	PhoneCallIcon,
 	Search,
 	TrendingUp,
 	Users,
@@ -99,7 +100,7 @@ const services: ServiceProps[] = [
 
 const ServiceCard = ({ service }: { service: ServiceProps }) => {
 	return (
-		<Card className="group relative h-full overflow-hidden transition-all duration-300 hover:shadow-lg">
+		<Card className="group relative h-full overflow-hidden transition-all duration-300 hover:shadow-accent/60">
 			{service.popular && (
 				<div className="absolute top-4 right-4 z-10">
 					<Badge variant="default" className="bg-primary">
@@ -109,7 +110,7 @@ const ServiceCard = ({ service }: { service: ServiceProps }) => {
 			)}
 			<CardHeader>
 				<div className="mb-3 flex items-center gap-3">
-					<div className="rounded-lg bg-primary/10 p-2 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+					<div className="rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary group-hover:text-white">
 						{service.icon}
 					</div>
 					<CardTitle className="font-playfair text-xl">
@@ -129,7 +130,7 @@ const ServiceCard = ({ service }: { service: ServiceProps }) => {
 					))}
 				</ul>
 				<Button
-					variant="outline"
+					variant="secondary"
 					className="w-full transition-colors group-hover:bg-primary group-hover:text-white"
 					asChild
 				>
@@ -142,7 +143,7 @@ const ServiceCard = ({ service }: { service: ServiceProps }) => {
 
 export const Services = () => {
 	return (
-		<section id="services" className="bg-white py-16">
+		<section id="services" className="py-16">
 			<div className="container mx-auto px-4">
 				<div className="mb-12 text-center">
 					<h2 className="mb-4 font-bold font-playfair text-3xl sm:text-4xl md:text-5xl">
@@ -163,7 +164,7 @@ export const Services = () => {
 
 				{/* Call to Action */}
 				<div className="mt-16 text-center">
-					<div className="rounded-lg bg-gray-50 p-8">
+					<div className="rounded-lg p-8">
 						<h3 className="mb-4 font-bold font-playfair text-2xl">
 							Ready to Get Started?
 						</h3>
@@ -178,8 +179,11 @@ export const Services = () => {
 									Free Consultation
 								</Link>
 							</Button>
-							<Button size="lg" variant="outline" asChild>
-								<Link href="tel:+17326148835">Call (732) 614-8835</Link>
+							<Button size="lg" variant="secondary" asChild>
+								<Link href="tel:+17326148835">
+									<PhoneCallIcon className="mr-2 h-5 w-5" />
+									Call (732) 614-8835
+								</Link>
 							</Button>
 						</div>
 					</div>

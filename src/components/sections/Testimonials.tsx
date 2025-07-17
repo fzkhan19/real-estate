@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
 	Award,
+	Building,
 	Calendar,
 	MapPin,
 	Quote,
@@ -147,12 +148,14 @@ const TestimonialCard = ({
 	};
 
 	return (
-		<Card className="h-full transition-shadow duration-300 hover:shadow-lg">
+		<Card className="h-full transition-shadow duration-300 hover:shadow-accent/60">
 			<CardHeader className="pb-4">
 				<div className="flex items-start gap-4">
 					<Avatar className="h-12 w-12">
 						<AvatarImage src={testimonial.image} alt={testimonial.name} />
-						<AvatarFallback>{getInitials(testimonial.name)}</AvatarFallback>
+						<AvatarFallback className="text-primary">
+							{getInitials(testimonial.name)}
+						</AvatarFallback>
 					</Avatar>
 					<div className="flex-1">
 						<div className="mb-1 flex items-center justify-between">
@@ -200,14 +203,12 @@ const TestimonialCard = ({
 
 const StatCard = ({ stat }: { stat: StatProps }) => {
 	return (
-		<Card className="text-center transition-shadow duration-300 hover:shadow-lg">
+		<Card className="text-center transition-shadow duration-300 hover:shadow-accent/60">
 			<CardContent className="p-6">
 				<div className="mb-4 flex justify-center">
-					<div className="rounded-full bg-primary/10 p-3 text-primary">
-						{stat.icon}
-					</div>
+					<div className="rounded-full bg-primary/10 p-3">{stat.icon}</div>
 				</div>
-				<div className="mb-2 font-bold text-3xl text-primary">{stat.value}</div>
+				<div className="mb-2 font-bold text-3xl">{stat.value}</div>
 				<h3 className="mb-1 font-playfair font-semibold text-lg">
 					{stat.label}
 				</h3>
@@ -219,7 +220,7 @@ const StatCard = ({ stat }: { stat: StatProps }) => {
 
 export const Testimonials = () => {
 	return (
-		<section id="testimonials" className="bg-gray-50 py-16">
+		<section id="testimonials" className="py-16">
 			<div className="container mx-auto px-4">
 				{/* Header */}
 				<div className="mb-12 text-center">
@@ -258,7 +259,7 @@ export const Testimonials = () => {
 							<Card
 								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								key={index}
-								className="text-center transition-shadow duration-300 hover:shadow-lg"
+								className="text-center transition-shadow duration-300 hover:shadow-accent/60"
 							>
 								<CardContent className="p-6">
 									<h4 className="mb-2 font-semibold text-lg">
@@ -286,8 +287,8 @@ export const Testimonials = () => {
 				</div>
 
 				{/* Call to Action */}
-				<div className="text-center">
-					<div className="mx-auto max-w-2xl rounded-lg bg-white p-8">
+				<div className="rounded-md text-center shadow shadow-accent/30 backdrop-blur-2xl">
+					<div className="mx-auto max-w-2xl rounded-lg p-8">
 						<h3 className="mb-4 font-bold font-playfair text-2xl">
 							Ready to Join Our Happy Clients?
 						</h3>
@@ -297,14 +298,22 @@ export const Testimonials = () => {
 							rave about.
 						</p>
 						<div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
-							<Button size="lg" asChild>
+							<Button size="lg" className="hover:scale-105" asChild>
 								<Link href="/contact">
 									<Users className="mr-2 h-5 w-5" />
 									Start Your Journey
 								</Link>
 							</Button>
-							<Button size="lg" variant="outline" asChild>
-								<Link href="/properties">View Properties</Link>
+							<Button
+								size="lg"
+								variant="secondary"
+								className="hover:scale-105"
+								asChild
+							>
+								<Link href="/properties">
+									<Building className="mr-2 h-5 w-5" />
+									View Properties
+								</Link>
 							</Button>
 						</div>
 					</div>

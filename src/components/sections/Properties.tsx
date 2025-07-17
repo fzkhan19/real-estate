@@ -8,7 +8,15 @@ import {
 	CardFooter,
 	CardHeader,
 } from "@/components/ui/card";
-import { Bath, Bed, Eye, Heart, MapPin, Square } from "lucide-react";
+import {
+	ArrowUpRight,
+	Bath,
+	Bed,
+	Eye,
+	Heart,
+	MapPin,
+	Square,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -102,14 +110,14 @@ const featuredProperties: PropertyProps[] = [
 
 const PropertyCard = ({ property }: { property: PropertyProps }) => {
 	return (
-		<Card className="group overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+		<Card className="group overflow-hidden transition-shadow duration-300 hover:shadow-accent/60">
 			<CardHeader className="relative p-0">
 				<div className="relative h-64 overflow-hidden">
 					<Image
 						src={property.image}
 						alt={property.title}
 						fill
-						className="object-cover transition-transform duration-300 group-hover:scale-105"
+						className="object-cover transition-transform duration-1000 group-hover:scale-105"
 					/>
 					<div className="absolute top-4 left-4 flex gap-2">
 						<Badge
@@ -153,9 +161,7 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 				<h3 className="mb-2 font-playfair font-semibold text-xl">
 					{property.title}
 				</h3>
-				<div className="mb-4 font-bold text-2xl text-primary">
-					{property.price}
-				</div>
+				<div className="mb-4 font-bold text-2xl">{property.price}</div>
 				<div className="flex items-center gap-4 text-muted-foreground text-sm">
 					<div className="flex items-center gap-1">
 						<Bed className="h-4 w-4" />
@@ -182,7 +188,7 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 
 export const Properties = () => {
 	return (
-		<section id="properties" className="bg-gray-50 py-16">
+		<section id="properties" className="py-16">
 			<div className="container mx-auto px-4">
 				<div className="mb-12 text-center">
 					<h2 className="mb-4 font-bold font-playfair text-3xl sm:text-4xl md:text-5xl">
@@ -201,8 +207,15 @@ export const Properties = () => {
 				</div>
 
 				<div className="mt-12 text-center">
-					<Button size="lg" variant="outline" asChild>
-						<Link href="/properties">View All Properties</Link>
+					<Button
+						size="lg"
+						variant="secondary"
+						className="hover:scale-105"
+						asChild
+					>
+						<Link href="/properties">
+							View All Properties <ArrowUpRight className="h-5 w-5" />
+						</Link>
 					</Button>
 				</div>
 			</div>
