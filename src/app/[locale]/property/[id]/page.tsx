@@ -345,9 +345,14 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 	};
 }
 
-export default async function PropertyPage({
-	params,
-}: { params: { id: string } }) {
+interface PropertyPageProps {
+	params: {
+		id: string;
+		locale: string;
+	};
+}
+
+export default async function PropertyPage({ params }: PropertyPageProps) {
 	const t = await getTranslations("PropertyPage"); // Initialize t here
 	const property = allProperties.find((p) => p.id === params.id);
 
