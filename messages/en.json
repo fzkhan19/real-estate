@@ -2,105 +2,344 @@
   "notFound": {
     "notFound": "Oops! The page you're looking for doesn't exist.",
     "brokenLink": "It might have been removed, or the link may be broken.",
-    "backHome":"Go Back Home"
-  },
-  "hero": {
-    "parkingNotice": "Parking available on the right side of the road.",
-    "title": "Phone, Laptop & PC Repairs",
-    "subtitle": "You Can Trust",
-    "description": "Don't let technical issues disrupt your life. Our skilled technicians provide fast, reliable repairs for all your devices - smartphones, laptops, and PCs. From cracked screens to software troubleshooting, hardware upgrades to virus removal, we'll get your technology working like new again.",
-    "bookRepair": "Book a repair",
-    "getQuote": "Get a quote",
-    "altText": "tech repair"
+    "backHome": "Go Back Home"
   },
   "navigation": {
-    "ourServices": "Our Services",
-    "priceList": "Price List",
-    "testimonials": "Testimonials",
+    "properties": "Properties",
+    "ourServices": "Services",
+    "valuation": "Valuation",
+    "aboutUs": "About Us",
     "contactUs": "Contact Us",
     "loading": "Loading..."
   },
-  "services": {
-    "title": "Our Repair Services",
-    "subtitle": "Professional repair services for all your devices",
-    "mobile": "Mobile Phone Repairs",
-    "laptop": "Laptop & PC Repairs",
-    "software": "Software Services",
-    "bookService": "Book a Service",
-    "mobileServices": {
-      "screenRepair": "Screen Repair",
-      "waterDamage": "Water-Damage Repair",
-      "cameraRepair": "Camera Repair",
-      "batteryReplacement": "Battery Replacement",
-      "buttonRepair": "Button Repair",
-      "chargePortRepair": "Charge Port Repair",
-      "speakerRepair": "Microphone/Speaker Repair",
-      "carrierUnlock": "Unlock your carrier service"
+  "AboutPage": {
+    "metadata": {
+      "title": "About Us - Kuhn & Partners Real Estate",
+      "description": "Learn more about Kuhn & Partners, your trusted real estate experts."
     },
-    "laptopServices": {
-      "hardwareUpgrades": "Hardware Upgrades",
-      "batteryReplacement": "Battery Replacement",
-      "hardDriveServices": "Hard Drive Services",
-      "ramUpgrade": "RAM Upgrade"
+    "experience": " of experience",
+    "specialties": "Specialties:",
+    "contactAgent": "Contact ",
+    "header": {
+      "title": "About Kuhn & Partners",
+      "subtitle": "Your trusted real estate experts with over 20 years of combined experience in the New York market"
     },
-    "softwareServices": {
-      "virusRemoval": "Virus Removal",
-      "softwareInstallation": "Software Installation",
-      "systemOptimization": "System Optimization",
-      "dataRecovery": "Data Recovery",
-      "osInstall": "Operating System Install",
-      "diagnosticScan": "Diagnostic Scan",
-      "driverUpdates": "Driver Updates"
+    "story": {
+      "title": "Our Story",
+      "p1": "Founded in 2008, Kuhn & Partners has grown from a small local agency to one of New York's most respected real estate firms. Our journey began with a simple mission: to provide exceptional service and expertise to every client.",
+      "p2": "Over the years, we've built our reputation on trust, integrity, and results. Our team of dedicated professionals combines deep market knowledge with innovative marketing strategies to help our clients achieve their real estate goals.",
+      "p3": "Today, we're proud to serve families, investors, and businesses throughout Manhattan, Brooklyn, and the surrounding areas. Our commitment to excellence has earned us numerous awards and, more importantly, the trust of our clients."
+    },
+    "achievements": {
+      "title": "Our Achievements",
+      "topFirmTitle": "Top Real Estate Firm",
+      "topFirmDescription": "Awarded by NYC Real Estate Board",
+      "salesTitle": "$500M+ in Sales",
+      "salesDescription": "Lifetime transaction volume",
+      "clientsTitle": "1000+ Happy Clients",
+      "clientsDescription": "Successfully served families",
+      "licensedTitle": "Licensed & Insured",
+      "licensedDescription": "Full compliance and protection",
+      "licensedYear": "Always"
+    },
+    "team": {
+      "title": "Meet Our Team"
+    },
+    "certifications": {
+      "title": "Certifications & Memberships",
+      "nar": "National Association of Realtors (NAR)",
+      "nysar": "New York State Association of Realtors",
+      "mar": "Manhattan Association of Realtors",
+      "crs": "Certified Residential Specialist (CRS)",
+      "abr": "Accredited Buyer's Representative (ABR)",
+      "gri": "Graduate, Realtor Institute (GRI)"
+    },
+    "cta": {
+      "title": "Ready to Work with Us?",
+      "description": "Let our experienced team help you find your perfect property or sell your current home.",
+      "getStarted": "Get Started Today",
+      "viewProperties": "View Properties"
     }
   },
-  "prices": {
-    "title": "Our Price List",
-    "subtitle": "Competitive pricing for quality repairs",
-    "iphone": "iPhone Repairs",
-    "samsung": "Samsung Repairs",
-    "search": "Search...",
-    "model": "Model",
-    "screenOem": "Screen Oem",
-    "batteryOem": "Battery Oem",
-    "backCover": "Back Cover",
-    "display": "Display",
-    "battery": "Battery",
-    "chargingPort": "Charging Port"
-  },
-  "testimonials": {
-    "title": "Customer Testimonials",
-    "subtitle": "What our customers say about us"
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Get in touch with us for any inquiries",
-    "sendMessage": "Send us a message",
-    "contactInfo": "Contact Information",
-    "form": {
-      "name": "Your Name",
-      "email": "Your Email",
-      "phone": "Your Phone",
-      "subject": "Subject",
-      "message": "Your Message",
-      "sendButton": "Send Message"
+  "ContactPage": {
+    "metadata": {
+      "title": "Contact Us - Kuhn & Partners Real Estate",
+      "description": "Get in touch with Kuhn & Partners for all your real estate inquiries."
     },
-    "info": {
+    "formAlert": "Thank you for your message! We'll get back to you soon.",
+    "header": {
+      "title": "Get in Touch",
+      "subtitle": "Ready to start your real estate journey? Contact us today for a free consultation and personalized service."
+    },
+    "formCardTitle": "Send Us a Message",
+    "form": {
+      "firstName": "First Name *",
+      "lastName": "Last Name *",
+      "email": "Email Address *",
+      "phone": "Phone Number",
+      "helpQuestion": "How can we help you? *",
+      "selectReason": "Select a reason",
+      "message": "Message *",
+      "messagePlaceholder": "Please provide any additional details about your request...",
+      "newsletter": "I'd like to receive market updates and property alerts",
+      "sending": "Sending...",
+      "sendMessage": "Send Message"
+    },
+    "contactReasons": [
+      "Buying a Property",
+      "Selling a Property",
+      "Property Valuation",
+      "Investment Consultation",
+      "General Inquiry",
+      "Schedule a Viewing",
+      "Market Analysis",
+      "Other"
+    ],
+    "officeInfo": {
+      "ourOffices": "Our Offices",
       "address": "Address",
       "phone": "Phone",
       "email": "Email",
-      "businessHours": "Business Hours",
-      "location": "Location",
-      "hours": "Monday - Friday: 10:15 - 19:00\nSaturday: 10:15 AM - 17:00 PM\nSunday: Closed"
+      "hours": "Hours",
+      "parking": "Parking",
+      "available": "Available",
+      "streetParkingOnly": "Street parking only",
+      "getDirections": "Get Directions",
+      "manhattanOffice": "Manhattan Office",
+      "brooklynOffice": "Brooklyn Office",
+      "officeHoursManhattan1": "Monday - Friday: 9:00 AM - 7:00 PM",
+      "officeHoursManhattan2": "Saturday: 10:00 AM - 5:00 PM",
+      "officeHoursManhattan3": "Sunday: 12:00 PM - 4:00 PM",
+      "officeHoursBrooklyn1": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "officeHoursBrooklyn2": "Saturday: 10:00 AM - 4:00 PM",
+      "officeHoursBrooklyn3": "Sunday: By Appointment"
+    },
+    "quickContact": {
+      "title": "Need Immediate Assistance?",
+      "emergencyLine": "Emergency Line",
+      "generalInquiries": "General Inquiries",
+      "callNow": "Call Now"
+    },
+    "mapPlaceholder": {
+      "title": "Find Us",
+      "comingSoon": "Interactive Map Coming Soon",
+      "clickDirections": "Click \"Get Directions\" above for now"
     }
   },
-  "footer": {
-    "salesSupport": "Sales & Technical Support",
-    "address": "Address",
-    "addressText": "Phone Empire, Kaiserstraße 22, 66849 Landstuhl, Germany",
-    "contactInfo": "Contact Information",
-    "telephone": "Telephone: +49 017670440689",
-    "email": "E-Mail: phoneempire@gmx.de",
-    "copyright": "© 2027 PHONE EMPIRE",
-    "builtBy": "This website is built by FAIZ KHAN"
+  "PropertiesPage": {
+    "beds": " beds",
+    "baths": " baths",
+    "sqft": " sqft",
+    "viewDetails": "View Details",
+    "featuredProperties": "Featured Properties",
+    "featuredPropertiesSubtitle": "Discover our handpicked selection of premium properties in prime locations",
+    "viewAllProperties": "View All Properties",
+    "status": {
+      "forSale": "For Sale",
+      "sold": "Sold",
+      "pending": "Pending"
+    },
+    "type": {
+      "singleFamily": "Single Family",
+      "condo": "Condo",
+      "townhouse": "Townhouse",
+      "apartment": "Apartment",
+      "loft": "Loft",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "studio": "Studio"
+    },
+    "header": {
+      "title": "Properties",
+      "subtitle": "Discover your perfect home from our curated collection of premium properties"
+    },
+    "filters": {
+      "searchPlaceholder": "Search properties...",
+      "propertyType": "Property Type",
+      "allTypes": "All Types",
+      "bedrooms": "Bedrooms",
+      "any": "Any",
+      "status": "Status",
+      "allStatus": "All Status",
+      "filterButton": "Filter",
+      "resetButton": "Reset",
+      "priceRange": "Price Range:"
+    },
+    "results": {
+      "showingProperties": "Showing {current} of {total} properties",
+      "newestFirst": "Newest First",
+      "priceLowToHigh": "Price: Low to High",
+      "priceHighToLow": "Price: High to Low",
+      "squareFootage": "Square Footage",
+      "noPropertiesFound": "No properties found matching your criteria.",
+      "clearFilters": "Clear Filters"
+    }
+  },
+  "PropertyDetailPage": {
+    "backToProperties": "← Back to Properties",
+    "overview": "Overview",
+    "price": "Price",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "squareFootage": "Sq. Ft.",
+    "yearBuilt": "Year Built",
+    "propertyType": "Property Type",
+    "description": "Description",
+    "featuresAndAmenities": "Features & Amenities",
+    "contactAgent": "Contact Agent",
+    "phone": "Phone",
+    "email": "Email",
+    "inquireAboutProperty": "Inquire About This Property"
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Our Services - Kuhn & Partners Real Estate",
+      "description": "Explore the comprehensive real estate services offered by Kuhn & Partners."
+    },
+    "mostPopular": "Most Popular",
+    "learnMore": "Learn More",
+    "header": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive real estate services designed to meet all your property needs"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Contact us today for a free consultation and let us help you achieve your real estate goals.",
+      "freeConsultation": "Free Consultation",
+      "callNow": "Call Now"
+    },
+    "servicesList": {
+      "propertyBuying": {
+        "title": "Property Buying",
+        "description": "Find your perfect home with our expert guidance and market knowledge.",
+        "features": [
+          "Property Search & Analysis",
+          "Market Evaluation",
+          "Negotiation Support",
+          "Legal Documentation"
+        ]
+      },
+      "propertySelling": {
+        "title": "Property Selling",
+        "description": "Maximize your property value with our proven selling strategies.",
+        "features": [
+          "Property Valuation",
+          "Marketing & Listing",
+          "Professional Photography",
+          "Transaction Management"
+        ]
+      },
+      "propertyValuation": {
+        "title": "Property Valuation",
+        "description": "Get accurate property valuations from certified professionals.",
+        "features": [
+          "Comparative Market Analysis",
+          "Professional Appraisal",
+          "Investment Analysis",
+          "Market Trends Report"
+        ]
+      },
+      "propertySearch": {
+        "title": "Property Search",
+        "description": "Comprehensive property search tailored to your specific needs.",
+        "features": [
+          "Custom Search Criteria",
+          "Off-Market Properties",
+          "Virtual Tours",
+          "Neighborhood Analysis"
+        ]
+      },
+      "investmentConsulting": {
+        "title": "Investment Consulting",
+        "description": "Expert advice for real estate investment opportunities.",
+        "features": [
+          "ROI Analysis",
+          "Market Forecasting",
+          "Portfolio Management",
+          "Risk Assessment"
+        ]
+      },
+      "legalServices": {
+        "title": "Legal Services",
+        "description": "Complete legal support for all your real estate transactions.",
+        "features": [
+          "Contract Review",
+          "Title Search",
+          "Closing Services",
+          "Legal Documentation"
+        ]
+      }
+    }
+  },
+  "ValuationPage": {
+    "metadata": {
+      "title": "Property Valuation - Kuhn & Partners Real Estate",
+      "description": "Request a free, accurate, and professional property valuation from Kuhn & Partners."
+    },
+    "formAlert": "Your valuation request has been submitted! We'll get back to you soon.",
+    "header": {
+      "title": "Property Valuation",
+      "subtitle": "Get a free, accurate, and professional valuation of your property."
+    },
+    "formCardTitle": "Request a Free Valuation",
+    "form": {
+      "fullName": "Full Name *",
+      "email": "Email Address *",
+      "phone": "Phone Number",
+      "address": "Property Address *",
+      "propertyType": "Property Type *",
+      "selectType": "Select type",
+      "singleFamily": "Single Family",
+      "condo": "Condo",
+      "townhouse": "Townhouse",
+      "apartment": "Apartment",
+      "loft": "Loft",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "studio": "Studio",
+      "commercial": "Commercial",
+      "land": "Land",
+      "bedrooms": "Bedrooms",
+      "selectNumber": "Select #",
+      "bathrooms": "Bathrooms",
+      "approxSquareFootage": "Approx. Square Footage",
+      "yearBuilt": "Year Built",
+      "additionalInformation": "Additional Information",
+      "messagePlaceholder": "Any other details about your property or specific requests...",
+      "submitting": "Submitting...",
+      "submitRequest": "Submit Valuation Request"
+    },
+    "contactCard": {
+      "title": "Contact Our Valuation Team",
+      "phone": "Phone",
+      "email": "Email",
+      "officeAddress": "Office Address",
+      "addressText": "123 Fifth Avenue, Suite 1500, New York, NY 10011"
+    },
+    "whyValuation": {
+      "title": "Why Get a Professional Valuation?",
+      "reasons": [
+        "Accurate market pricing for selling.",
+        "Informed decisions for buying.",
+        "Understanding your property's true value.",
+        "Financial planning and investment insights."
+      ]
+    },
+    "valuationProcess": {
+      "title": "Our Valuation Process",
+      "steps": [
+        "Submit your property details via the form.",
+        "Our experts review your information and market data.",
+        "We schedule a property visit (if necessary).",
+        "Receive a comprehensive valuation report.",
+        "Discuss the report and next steps with our team."
+      ]
+    }
+  },
+  "SearchPage": {
+    "metadata": {
+      "title": "Search Properties - Kuhn & Partners Real Estate",
+      "description": "Find your dream property with Kuhn & Partners' advanced search tools."
+    }
   }
 }

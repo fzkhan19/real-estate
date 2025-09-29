@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -13,16 +12,8 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import {
-	Building,
-	Car,
-	Clock,
-	Mail,
-	MapPin,
-	MessageSquare,
-	Phone,
-	Send,
-} from "lucide-react";
+import { Building, Car, Clock, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 interface OfficeProps {
@@ -49,19 +40,6 @@ const offices: OfficeProps[] = [
 		parking: true,
 		image: "/offices/manhattan.jpg",
 	},
-	{
-		name: "Brooklyn Office",
-		address: "456 Court Street, Brooklyn, NY 11201",
-		phone: "(732) 614-8836",
-		email: "brooklyn@kuhnandpartners.com",
-		hours: [
-			"Monday - Friday: 9:00 AM - 6:00 PM",
-			"Saturday: 10:00 AM - 4:00 PM",
-			"Sunday: By Appointment",
-		],
-		parking: false,
-		image: "/offices/brooklyn.jpg",
-	},
 ];
 
 const contactReasons = [
@@ -76,30 +54,33 @@ const contactReasons = [
 ];
 
 const OfficeCard = ({ office }: { office: OfficeProps }) => {
+	const t = useTranslations("ContactPage");
 	return (
-		<Card className="h-full transition-shadow duration-300 hover:shadow-lg">
+		<Card className="h-full">
 			<CardHeader>
 				<CardTitle className="flex items-center gap-2 font-playfair text-xl">
-					<Building className="h-5 w-5 text-primary" />
-					{office.name}
+					<Building className="h-5 w-5 text-primary-foreground" />
+					{office.name === "Manhattan Office"
+						? t("officeInfo.manhattanOffice")
+						: t("officeInfo.brooklynOffice")}
 				</CardTitle>
 			</CardHeader>
-			<CardContent className="space-y-4">
+			<CardContent className="flex flex-col gap-4">
 				<div className="flex items-start gap-3">
-					<MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+					<MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary-foreground" />
 					<div>
-						<p className="font-medium">Address</p>
+						<p className="font-medium">{t("officeInfo.address")}</p>
 						<p className="text-muted-foreground text-sm">{office.address}</p>
 					</div>
 				</div>
 
 				<div className="flex items-center gap-3">
-					<Phone className="h-5 w-5 text-primary" />
+					<Phone className="h-5 w-5 text-primary-foreground" />
 					<div>
-						<p className="font-medium">Phone</p>
+						<p className="font-medium">{t("officeInfo.phone")}</p>
 						<a
 							href={`tel:${office.phone}`}
-							className="text-primary text-sm hover:underline"
+							className="text-muted-foreground text-sm hover:underline"
 						>
 							{office.phone}
 						</a>
@@ -107,12 +88,12 @@ const OfficeCard = ({ office }: { office: OfficeProps }) => {
 				</div>
 
 				<div className="flex items-center gap-3">
-					<Mail className="h-5 w-5 text-primary" />
+					<Mail className="h-5 w-5 text-primary-foreground" />
 					<div>
-						<p className="font-medium">Email</p>
+						<p className="font-medium">{t("officeInfo.email")}</p>
 						<a
 							href={`mailto:${office.email}`}
-							className="text-primary text-sm hover:underline"
+							className="text-muted-foreground text-sm hover:underline"
 						>
 							{office.email}
 						</a>
@@ -120,39 +101,60 @@ const OfficeCard = ({ office }: { office: OfficeProps }) => {
 				</div>
 
 				<div className="flex items-start gap-3">
-					<Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+					<Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary-foreground" />
 					<div>
-						<p className="font-medium">Hours</p>
+						<p className="font-medium">{t("officeInfo.hours")}</p>
 						<div className="space-y-1">
-							{office.hours.map((hour, index) => (
-								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-								<p key={index} className="text-muted-foreground text-sm">
-									{hour}
-								</p>
-							))}
+							{office.name === "Manhattan Office" ? (
+								<>
+									<p className="text-muted-foreground text-sm">
+										{t("officeInfo.officeHoursManhattan1")}
+									</p>
+									<p className="text-muted-foreground text-sm">
+										{t("officeInfo.officeHoursManhattan2")}
+									</p>
+									<p className="text-muted-foreground text-sm">
+										{t("officeInfo.officeHoursManhattan3")}
+									</p>
+								</>
+							) : (
+								<>
+									<p className="text-muted-foreground text-sm">
+										{t("officeInfo.officeHoursBrooklyn1")}
+									</p>
+									<p className="text-muted-foreground text-sm">
+										{t("officeInfo.officeHoursBrooklyn2")}
+									</p>
+									<p className="text-muted-foreground text-sm">
+										{t("officeInfo.officeHoursBrooklyn3")}
+									</p>
+								</>
+							)}
 						</div>
 					</div>
 				</div>
 
 				<div className="flex items-center gap-3">
-					<Car className="h-5 w-5 text-primary" />
+					<Car className="h-5 w-5 text-primary-foreground" />
 					<div>
-						<p className="font-medium">Parking</p>
+						<p className="font-medium">{t("officeInfo.parking")}</p>
 						<p className="text-muted-foreground text-sm">
-							{office.parking ? "Available" : "Street parking only"}
+							{office.parking
+								? t("officeInfo.available")
+								: t("officeInfo.streetParkingOnly")}
 						</p>
 					</div>
 				</div>
 
 				<div className="pt-4">
-					<Button className="w-full" variant="outline" asChild>
+					<Button className="w-full" asChild>
 						<a
 							href={`https://maps.google.com/?q=${encodeURIComponent(office.address)}`}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							<MapPin className="mr-2 h-4 w-4" />
-							Get Directions
+							{t("officeInfo.getDirections")}
 						</a>
 					</Button>
 				</div>
@@ -173,6 +175,7 @@ export const Contact = () => {
 	});
 
 	const [isSubmitting, setIsSubmitting] = useState(false);
+	const t = useTranslations("ContactPage");
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -193,7 +196,7 @@ export const Contact = () => {
 		});
 
 		setIsSubmitting(false);
-		alert("Thank you for your message! We'll get back to you soon.");
+		alert(t("formAlert"));
 	};
 
 	const handleInputChange = (field: string, value: string | boolean) => {
@@ -209,29 +212,27 @@ export const Contact = () => {
 				{/* Header */}
 				<div className="mb-12 text-center">
 					<h2 className="mb-4 font-bold font-playfair text-3xl sm:text-4xl md:text-5xl">
-						Get in Touch
+						{t("header.title")}
 					</h2>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						Ready to start your real estate journey? Contact us today for a free
-						consultation and personalized service.
+						{t("header.subtitle")}
 					</p>
 				</div>
 
 				<div className="grid gap-12 lg:grid-cols-2">
-					{/* Contact Form */}
-					<div>
+					<div className="flex flex-col gap-8">
+						{/* Contact Form */}
 						<Card>
 							<CardHeader>
 								<CardTitle className="flex items-center gap-2 font-playfair text-2xl">
-									<MessageSquare className="h-6 w-6 text-primary" />
-									Send Us a Message
+									{t("formCardTitle")}
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<form onSubmit={handleSubmit} className="space-y-6">
+								<form onSubmit={handleSubmit} className="flex flex-col gap-4">
 									<div className="grid gap-4 md:grid-cols-2">
 										<div>
-											<Label htmlFor="firstName">First Name *</Label>
+											<Label htmlFor="firstName">{t("form.firstName")}</Label>
 											<Input
 												id="firstName"
 												type="text"
@@ -240,10 +241,11 @@ export const Contact = () => {
 													handleInputChange("firstName", e.target.value)
 												}
 												required
+												className=""
 											/>
 										</div>
 										<div>
-											<Label htmlFor="lastName">Last Name *</Label>
+											<Label htmlFor="lastName">{t("form.lastName")}</Label>
 											<Input
 												id="lastName"
 												type="text"
@@ -252,12 +254,13 @@ export const Contact = () => {
 													handleInputChange("lastName", e.target.value)
 												}
 												required
+												className=""
 											/>
 										</div>
 									</div>
 
 									<div>
-										<Label htmlFor="email">Email Address *</Label>
+										<Label htmlFor="email">{t("form.email")}</Label>
 										<Input
 											id="email"
 											type="email"
@@ -266,11 +269,12 @@ export const Contact = () => {
 												handleInputChange("email", e.target.value)
 											}
 											required
+											className=""
 										/>
 									</div>
 
 									<div>
-										<Label htmlFor="phone">Phone Number</Label>
+										<Label htmlFor="phone">{t("form.phone")}</Label>
 										<Input
 											id="phone"
 											type="tel"
@@ -278,24 +282,27 @@ export const Contact = () => {
 											onChange={(e) =>
 												handleInputChange("phone", e.target.value)
 											}
+											className=""
 										/>
 									</div>
 
 									<div>
-										<Label htmlFor="reason">How can we help you? *</Label>
+										<Label htmlFor="reason">{t("form.helpQuestion")}</Label>
 										<Select
 											value={formData.reason}
 											onValueChange={(value) =>
 												handleInputChange("reason", value)
 											}
 										>
-											<SelectTrigger>
-												<SelectValue placeholder="Select a reason" />
+											<SelectTrigger className="">
+												<SelectValue placeholder={t("form.selectReason")} />
 											</SelectTrigger>
-											<SelectContent>
+											<SelectContent className="">
 												{contactReasons.map((reason) => (
 													<SelectItem key={reason} value={reason}>
-														{reason}
+														{t(
+															`contactReasons.${contactReasons.indexOf(reason)}`,
+														)}
 													</SelectItem>
 												))}
 											</SelectContent>
@@ -303,7 +310,7 @@ export const Contact = () => {
 									</div>
 
 									<div>
-										<Label htmlFor="message">Message *</Label>
+										<Label htmlFor="message">{t("form.message")}</Label>
 										<Textarea
 											id="message"
 											value={formData.message}
@@ -311,22 +318,10 @@ export const Contact = () => {
 												handleInputChange("message", e.target.value)
 											}
 											rows={4}
-											placeholder="Please provide any additional details about your request..."
+											placeholder={t("form.messagePlaceholder")}
 											required
+											className=""
 										/>
-									</div>
-
-									<div className="flex items-center space-x-2">
-										<Checkbox
-											id="newsletter"
-											checked={formData.newsletter}
-											onCheckedChange={(checked) =>
-												handleInputChange("newsletter", checked as boolean)
-											}
-										/>
-										<Label htmlFor="newsletter" className="text-sm">
-											I'd like to receive market updates and property alerts
-										</Label>
 									</div>
 
 									<Button
@@ -335,48 +330,34 @@ export const Contact = () => {
 										disabled={isSubmitting}
 									>
 										{isSubmitting ? (
-											"Sending..."
+											t("form.sending")
 										) : (
 											<>
 												<Send className="mr-2 h-4 w-4" />
-												Send Message
+												{t("form.sendMessage")}
 											</>
 										)}
 									</Button>
 								</form>
 							</CardContent>
 						</Card>
-					</div>
-
-					{/* Office Information */}
-					<div className="space-y-6">
-						<div>
-							<h3 className="mb-6 font-bold font-playfair text-2xl">
-								Our Offices
-							</h3>
-							<div className="space-y-6">
-								{offices.map((office, index) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-									<OfficeCard key={index} office={office} />
-								))}
-							</div>
-						</div>
-
 						{/* Quick Contact */}
 						<Card>
 							<CardHeader>
 								<CardTitle className="font-playfair text-xl">
-									Need Immediate Assistance?
+									{t("quickContact.title")}
 								</CardTitle>
 							</CardHeader>
-							<CardContent className="space-y-4">
+							<CardContent className="flex flex-col gap-4">
 								<div className="flex items-center gap-3">
-									<Phone className="h-5 w-5 text-primary" />
+									<Phone className="h-5 w-5 text-muted-foreground" />
 									<div>
-										<p className="font-medium">Emergency Line</p>
+										<p className="font-medium text-primary-foreground/70">
+											{t("quickContact.emergencyLine")}
+										</p>
 										<a
 											href="tel:+17326148835"
-											className="text-primary hover:underline"
+											className="text-primary-foreground hover:underline"
 										>
 											(732) 614-8835
 										</a>
@@ -384,12 +365,14 @@ export const Contact = () => {
 								</div>
 
 								<div className="flex items-center gap-3">
-									<Mail className="h-5 w-5 text-primary" />
+									<Mail className="h-5 w-5 text-muted-foreground" />
 									<div>
-										<p className="font-medium">General Inquiries</p>
+										<p className="font-medium text-primary-foreground/70">
+											{t("quickContact.generalInquiries")}
+										</p>
 										<a
 											href="mailto:info@kuhnandpartners.com"
-											className="text-primary hover:underline"
+											className="text-primary-foreground hover:underline"
 										>
 											info@kuhnandpartners.com
 										</a>
@@ -400,25 +383,40 @@ export const Contact = () => {
 									<Button asChild className="w-full">
 										<a href="tel:+17326148835">
 											<Phone className="mr-2 h-4 w-4" />
-											Call Now
+											{t("quickContact.callNow")}
 										</a>
 									</Button>
 								</div>
 							</CardContent>
 						</Card>
+					</div>
+
+					{/* Office Information */}
+					<div className="flex flex-col gap-8">
+						<div>
+							<div className="space-y-6">
+								{offices.map((office) => (
+									<OfficeCard key={office.name} office={office} />
+								))}
+							</div>
+						</div>
 
 						{/* Map Placeholder */}
 						<Card>
 							<CardHeader>
-								<CardTitle className="font-playfair text-xl">Find Us</CardTitle>
+								<CardTitle className="font-playfair text-xl">
+									{t("mapPlaceholder.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent>
 								<div className="flex aspect-video items-center justify-center rounded-lg bg-gray-100">
 									<div className="text-center">
 										<MapPin className="mx-auto mb-2 h-12 w-12 text-gray-400" />
-										<p className="text-gray-500">Interactive Map Coming Soon</p>
+										<p className="text-gray-500">
+											{t("mapPlaceholder.comingSoon")}
+										</p>
 										<p className="text-gray-400 text-sm">
-											Click "Get Directions" above for now
+											{t("mapPlaceholder.clickDirections")}
 										</p>
 									</div>
 								</div>

@@ -1,8 +1,47 @@
-import { PropertyDetail } from "@/components/sections/PropertyDetail";
-import { getTranslations } from "next-intl/server";
+"use client";
 
-// This data would typically come from an API or database
-const allProperties = [
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+	Bath,
+	Bed,
+	Calendar,
+	DollarSign,
+	Home,
+	Info,
+	Mail,
+	MapPin,
+	Phone,
+	Square,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
+
+interface PropertyProps {
+	id: string;
+	title: string;
+	location: string;
+	price: number;
+	beds: number;
+	baths: number;
+	sqft: number;
+	image: string;
+	type: string;
+	status: string;
+	yearBuilt: number;
+	description: string;
+	features?: string[];
+	gallery?: string[];
+	agent?: {
+		name: string;
+		phone: string;
+		email: string;
+	};
+}
+
+const allProperties: PropertyProps[] = [
 	{
 		id: "1",
 		title: "Modern Family Home",
@@ -311,54 +350,226 @@ const allProperties = [
 	},
 ];
 
-export async function generateStaticParams() {
-	const params = allProperties.map((property) => ({
-		id: property.id,
-	}));
+const formatPrice = (price: number) => {
+	return new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: "USD",
+		minimumFractionDigits: 0,
+		maximumFractionDigits: 0,
+	}).format(price);
+};
 
-	// Assuming you have 'en' and 'de' locales
-	const locales = ["en", "de"];
-	const staticParams = [];
+export const PropertyDetail = ({ property }: { property: PropertyProps }) => {
+	const t = useTranslations("PropertyDetailPage");
+	return (
+		<section className="py-16">
+			<div className="container mx-auto px-4">
+				{/* Back Button */}
+				<div className="mb-6">
+					<Button variant="outline" asChild>
+						<Link href="/properties">{t("backToProperties")}</Link>
+					</Button>
+				</div>
 
-	for (const locale of locales) {
-		for (const param of params) {
-			staticParams.push({ locale, id: param.id });
-		}
-	}
-	return staticParams;
-}
+				{/* Property Header */}
+				<div className="mb-8">
+					<h1 className="mb-2 font-bold font-playfair text-4xl">
+						{property.title}
+					</h1>
+					<div className="mb-4 flex items-center gap-2 text-muted-foreground">
+						<MapPin className="h-5 w-5" />
+						<span className="text-lg">{property.location}</span>
+					</div>
+					<div className="flex items-center gap-4">
+						<Badge
+							variant={
+								property.status === "For Sale"
+									? "default"
+									: property.status === "Sold"
+										? "destructive"
+										: "secondary"
+							}
+							className="text-lg"
+						>
+							{property.status}
+						</Badge>
+						<Badge variant="outline" className="bg-white/90 text-lg">
+							{property.type}
+						</Badge>
+					</div>
+				</div>
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-	const t = await getTranslations("PropertyPage");
-	const property = allProperties.find((p) => p.id === params.id);
+				{/* Property Gallery */}
+				{property.gallery && property.gallery.length > 0 && (
+					<div className="mb-8 grid gap-4 lg:grid-cols-2">
+						<div className="relative aspect-video overflow-hidden rounded-lg">
+							<Image
+								src={property.gallery[0]}
+								alt={property.title}
+								fill
+								className="object-cover"
+							/>
+						</div>
+						<div className="grid grid-cols-2 gap-4">
+							{property.gallery.slice(1, 5).map((img, index) => (
+								<div
+									key={img}
+									className="relative aspect-video overflow-hidden rounded-lg"
+								>
+									<Image
+										src={img}
+										alt={`${property.title} gallery image ${index + 2}`}
+										fill
+										className="object-cover"
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+				)}
 
-	if (!property) {
-		return {
-			title: t("metadata.notFoundTitle"),
-			description: t("metadata.notFoundDescription"),
-		};
-	}
+				<div className="grid gap-8 lg:grid-cols-3">
+					{/* Property Details */}
+					<div className="lg:col-span-2">
+						<Card className="mb-8">
+							<CardHeader>
+								<CardTitle className="font-playfair text-2xl">
+									{t("overview")}
+								</CardTitle>
+							</CardHeader>
+							<CardContent className="grid grid-cols-2 gap-4 md:grid-cols-3">
+								<div className="flex items-center gap-2">
+									<DollarSign className="h-5 w-5 text-primary" />
+									<div>
+										<p className="font-medium text-sm">{t("price")}</p>
+										<p className="font-bold text-xl">
+											{formatPrice(property.price)}
+										</p>
+									</div>
+								</div>
+								<div className="flex items-center gap-2">
+									<Bed className="h-5 w-5 text-primary" />
+									<div>
+										<p className="font-medium text-sm">{t("bedrooms")}</p>
+										<p className="font-bold text-xl">{property.beds}</p>
+									</div>
+								</div>
+								<div className="flex items-center gap-2">
+									<Bath className="h-5 w-5 text-primary" />
+									<div>
+										<p className="font-medium text-sm">{t("bathrooms")}</p>
+										<p className="font-bold text-xl">{property.baths}</p>
+									</div>
+								</div>
+								<div className="flex items-center gap-2">
+									<Square className="h-5 w-5 text-primary" />
+									<div>
+										<p className="font-medium text-sm">{t("squareFootage")}</p>
+										<p className="font-bold text-xl">{property.sqft}</p>
+									</div>
+								</div>
+								<div className="flex items-center gap-2">
+									<Calendar className="h-5 w-5 text-primary" />
+									<div>
+										<p className="font-medium text-sm">{t("yearBuilt")}</p>
+										<p className="font-bold text-xl">{property.yearBuilt}</p>
+									</div>
+								</div>
+								<div className="flex items-center gap-2">
+									<Home className="h-5 w-5 text-primary" />
+									<div>
+										<p className="font-medium text-sm">{t("propertyType")}</p>
+										<p className="font-bold text-xl">{property.type}</p>
+									</div>
+								</div>
+							</CardContent>
+						</Card>
 
-	return {
-		title: `${property.title} - ${t("metadata.titleSuffix")}`,
-		description: property.description,
-	};
-}
+						<Card className="mb-8">
+							<CardHeader>
+								<CardTitle className="font-playfair text-2xl">
+									{t("description")}
+								</CardTitle>
+							</CardHeader>
+							<CardContent>
+								<p className="text-muted-foreground">{property.description}</p>
+							</CardContent>
+						</Card>
 
-export default async function PropertyPage({
-	params,
-}: { params: { id: string } }) {
-	const t = await getTranslations("PropertyPage"); // Initialize t here
-	const property = allProperties.find((p) => p.id === params.id);
+						{property.features && property.features.length > 0 && (
+							<Card className="mb-8">
+								<CardHeader>
+									<CardTitle className="font-playfair text-2xl">
+										{t("featuresAndAmenities")}
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+										{property.features.map((feature) => (
+											<div key={feature} className="flex items-center gap-2">
+												<Info className="h-4 w-4 text-primary" />
+												<span className="text-muted-foreground">{feature}</span>
+											</div>
+										))}
+									</div>
+								</CardContent>
+							</Card>
+						)}
+					</div>
 
-	if (!property) {
-		// This should ideally lead to a 404 page
-		return (
-			<div className="flex min-h-[calc(100vh-200px)] items-center justify-center">
-				<h1 className="font-bold text-2xl">{t("metadata.notFoundTitle")}</h1>
+					{/* Agent Contact */}
+					{property.agent && (
+						<div>
+							<Card>
+								<CardHeader>
+									<CardTitle className="font-playfair text-2xl">
+										{t("contactAgent")}
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<div className="mb-4 text-center">
+										<Image
+											src="/team/michael.jpg" // Placeholder, ideally agent image from data
+											alt={property.agent.name}
+											width={100}
+											height={100}
+											className="mx-auto mb-2 rounded-full"
+										/>
+										<h3 className="font-playfair font-semibold text-lg">
+											{property.agent.name}
+										</h3>
+									</div>
+									<div className="space-y-3">
+										<div className="flex items-center gap-3">
+											<Phone className="h-5 w-5 text-primary" />
+											<a
+												href={`tel:${property.agent.phone}`}
+												className="text-primary hover:underline"
+											>
+												{property.agent.phone}
+											</a>
+										</div>
+										<div className="flex items-center gap-3">
+											<Mail className="h-5 w-5 text-primary" />
+											<a
+												href={`mailto:${property.agent.email}`}
+												className="text-primary hover:underline"
+											>
+												{property.agent.email}
+											</a>
+										</div>
+										<Button asChild className="w-full">
+											<Link href={`/contact?agent=${property.agent.name}`}>
+												{t("inquireAboutProperty")}
+											</Link>
+										</Button>
+									</div>
+								</CardContent>
+							</Card>
+						</div>
+					)}
+				</div>
 			</div>
-		);
-	}
-
-	return <PropertyDetail property={property} />;
-}
+		</section>
+	);
+};

@@ -27,6 +27,7 @@ import {
 	Search,
 	Square,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -42,7 +43,7 @@ interface PropertyProps {
 	sqft: number;
 	image: string;
 	type: string;
-	status: "For Sale" | "Sold" | "Pending";
+	status: string;
 	yearBuilt: number;
 	description: string;
 }
@@ -61,7 +62,7 @@ const allProperties: PropertyProps[] = [
 		status: "For Sale",
 		yearBuilt: 2020,
 		description:
-			"A stunning modern family home with contemporary design and premium finishes.",
+			"A stunning modern family home with contemporary design and premium finishes. Located in a vibrant neighborhood with easy access to parks, schools, and downtown amenities. Features a spacious open-plan living area, gourmet kitchen, and a private backyard perfect for entertaining. Energy-efficient appliances and smart home technology included.",
 	},
 	{
 		id: "2",
@@ -76,7 +77,7 @@ const allProperties: PropertyProps[] = [
 		status: "For Sale",
 		yearBuilt: 2019,
 		description:
-			"Exclusive penthouse with panoramic city views and luxury amenities.",
+			"Exclusive penthouse with panoramic city views and luxury amenities. This exquisite property offers unparalleled elegance and comfort. Enjoy breathtaking sunsets from your private terrace. Building features include a 24/7 concierge, state-of-the-art gym, and rooftop pool.",
 	},
 	{
 		id: "3",
@@ -89,9 +90,6 @@ const allProperties: PropertyProps[] = [
 		image: "/stock/property3.jpg",
 		type: "Townhouse",
 		status: "Sold",
-		yearBuilt: 2018,
-		description:
-			"Charming townhouse with classic architecture and modern updates.",
 	},
 	{
 		id: "4",
@@ -104,8 +102,6 @@ const allProperties: PropertyProps[] = [
 		image: "/stock/property4.jpg",
 		type: "Apartment",
 		status: "Pending",
-		yearBuilt: 2021,
-		description: "Bright and spacious apartment in a prime Chelsea location.",
 	},
 	{
 		id: "5",
@@ -118,8 +114,6 @@ const allProperties: PropertyProps[] = [
 		image: "/stock/property5.jpg",
 		type: "Loft",
 		status: "For Sale",
-		yearBuilt: 2017,
-		description: "Artistic loft with high ceilings and industrial charm.",
 	},
 	{
 		id: "6",
@@ -132,8 +126,6 @@ const allProperties: PropertyProps[] = [
 		image: "/stock/property6.jpg",
 		type: "Villa",
 		status: "For Sale",
-		yearBuilt: 2022,
-		description: "Stunning waterfront villa with private beach access.",
 	},
 	{
 		id: "7",
@@ -146,9 +138,6 @@ const allProperties: PropertyProps[] = [
 		image: "/stock/property7.jpg",
 		type: "Townhouse",
 		status: "For Sale",
-		yearBuilt: 1920,
-		description:
-			"Beautifully restored historic brownstone with original details.",
 	},
 	{
 		id: "8",
@@ -161,8 +150,6 @@ const allProperties: PropertyProps[] = [
 		image: "/stock/property8.jpg",
 		type: "Studio",
 		status: "For Sale",
-		yearBuilt: 2023,
-		description: "Efficient studio apartment with smart home features.",
 	},
 	{
 		id: "9",
@@ -175,8 +162,6 @@ const allProperties: PropertyProps[] = [
 		image: "/stock/property9.jpg",
 		type: "Penthouse",
 		status: "For Sale",
-		yearBuilt: 2021,
-		description: "Exclusive duplex penthouse with private terrace.",
 	},
 ];
 
@@ -189,6 +174,7 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 			maximumFractionDigits: 0,
 		}).format(price);
 	};
+	const t = useTranslations("PropertiesPage");
 
 	return (
 		<Card className="group overflow-hidden transition-shadow duration-300 hover:shadow-lg">
@@ -210,25 +196,35 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 										: "secondary"
 							}
 						>
-							{property.status}
+							{property.status === "For Sale"
+								? t("status.forSale")
+								: property.status === "Sold"
+									? t("status.sold")
+									: t("status.pending")}
 						</Badge>
 						<Badge variant="outline" className="bg-white/90">
-							{property.type}
+							{property.type === "Single Family"
+								? t("type.singleFamily")
+								: property.type === "Condo"
+									? t("type.condo")
+									: property.type === "Townhouse"
+										? t("type.townhouse")
+										: property.type === "Apartment"
+											? t("type.apartment")
+											: property.type === "Loft"
+												? t("type.loft")
+												: property.type === "Villa"
+													? t("type.villa")
+													: property.type === "Penthouse"
+														? t("type.penthouse")
+														: t("type.studio")}
 						</Badge>
 					</div>
 					<div className="absolute top-4 right-4 flex gap-2">
-						<Button
-							size="sm"
-							variant="ghost"
-							className="h-8 w-8 bg-white/90 p-0 hover:bg-white"
-						>
+						<Button size="sm" variant="ghost" className="h-8 w-8 p-0">
 							<Heart className="h-4 w-4" />
 						</Button>
-						<Button
-							size="sm"
-							variant="ghost"
-							className="h-8 w-8 bg-white/90 p-0 hover:bg-white"
-						>
+						<Button size="sm" variant="ghost" className="h-8 w-8 p-0">
 							<Eye className="h-4 w-4" />
 						</Button>
 					</div>
@@ -251,21 +247,21 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 				<div className="flex items-center gap-4 text-muted-foreground text-sm">
 					<div className="flex items-center gap-1">
 						<Bed className="h-4 w-4" />
-						{property.beds} beds
+						{property.beds} {t("beds")}
 					</div>
 					<div className="flex items-center gap-1">
 						<Bath className="h-4 w-4" />
-						{property.baths} baths
+						{property.baths} {t("baths")}
 					</div>
 					<div className="flex items-center gap-1">
 						<Square className="h-4 w-4" />
-						{property.sqft} sqft
+						{property.sqft} {t("sqft")}
 					</div>
 				</div>
 			</CardContent>
 			<CardFooter className="p-4 pt-0">
 				<Button asChild className="w-full">
-					<Link href={`/property/${property.id}`}>View Details</Link>
+					<Link href={`/property/${property.id}`}>{t("viewDetails")}</Link>
 				</Button>
 			</CardFooter>
 		</Card>
@@ -279,6 +275,7 @@ export default function PropertiesPage() {
 	const [propertyType, setPropertyType] = useState("all");
 	const [bedrooms, setBedrooms] = useState("all");
 	const [status, setStatus] = useState("all");
+	const t = useTranslations("PropertiesPage");
 
 	const handleSearch = () => {
 		let filtered = allProperties;
@@ -323,29 +320,26 @@ export default function PropertiesPage() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<div className="min-h-screen">
 			{/* Header */}
-			<div className="border-b bg-white shadow-xs">
+			<div className="border-b shadow-xs">
 				<div className="container mx-auto px-4 py-8">
 					<h1 className="mb-2 font-bold font-playfair text-3xl sm:text-4xl">
-						Properties
+						{t("header.title")}
 					</h1>
-					<p className="text-muted-foreground">
-						Discover your perfect home from our curated collection of premium
-						properties
-					</p>
+					<p className="text-muted-foreground">{t("header.subtitle")}</p>
 				</div>
 			</div>
 
 			{/* Filters */}
-			<div className="border-b bg-white shadow-xs">
+			<div className="border-b shadow-xs">
 				<div className="container mx-auto px-4 py-6">
 					<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
 						<div className="lg:col-span-2">
 							<div className="relative">
 								<Search className="absolute top-3 left-3 h-4 w-4 text-muted-foreground" />
 								<Input
-									placeholder="Search properties..."
+									placeholder={t("filters.searchPlaceholder")}
 									value={searchTerm}
 									onChange={(e) => setSearchTerm(e.target.value)}
 									className="pl-10"
@@ -355,54 +349,56 @@ export default function PropertiesPage() {
 
 						<Select value={propertyType} onValueChange={setPropertyType}>
 							<SelectTrigger>
-								<SelectValue placeholder="Property Type" />
+								<SelectValue placeholder={t("filters.propertyType")} />
 							</SelectTrigger>
 							<SelectContent>
-								<SelectItem value="all">All Types</SelectItem>
-								<SelectItem value="Single Family">Single Family</SelectItem>
-								<SelectItem value="Condo">Condo</SelectItem>
-								<SelectItem value="Townhouse">Townhouse</SelectItem>
-								<SelectItem value="Apartment">Apartment</SelectItem>
-								<SelectItem value="Loft">Loft</SelectItem>
-								<SelectItem value="Villa">Villa</SelectItem>
-								<SelectItem value="Penthouse">Penthouse</SelectItem>
-								<SelectItem value="Studio">Studio</SelectItem>
+								<SelectItem value="all">{t("filters.allTypes")}</SelectItem>
+								<SelectItem value="Single Family">
+									{t("type.singleFamily")}
+								</SelectItem>
+								<SelectItem value="Condo">{t("type.condo")}</SelectItem>
+								<SelectItem value="Townhouse">{t("type.townhouse")}</SelectItem>
+								<SelectItem value="Apartment">{t("type.apartment")}</SelectItem>
+								<SelectItem value="Loft">{t("type.loft")}</SelectItem>
+								<SelectItem value="Villa">{t("type.villa")}</SelectItem>
+								<SelectItem value="Penthouse">{t("type.penthouse")}</SelectItem>
+								<SelectItem value="Studio">{t("type.studio")}</SelectItem>
 							</SelectContent>
 						</Select>
 
 						<Select value={bedrooms} onValueChange={setBedrooms}>
 							<SelectTrigger>
-								<SelectValue placeholder="Bedrooms" />
+								<SelectValue placeholder={t("filters.bedrooms")} />
 							</SelectTrigger>
 							<SelectContent>
-								<SelectItem value="all">Any</SelectItem>
-								<SelectItem value="1">1+ Bedrooms</SelectItem>
-								<SelectItem value="2">2+ Bedrooms</SelectItem>
-								<SelectItem value="3">3+ Bedrooms</SelectItem>
-								<SelectItem value="4">4+ Bedrooms</SelectItem>
-								<SelectItem value="5">5+ Bedrooms</SelectItem>
+								<SelectItem value="all">{t("filters.any")}</SelectItem>
+								<SelectItem value="1">1+ {t("beds")}</SelectItem>
+								<SelectItem value="2">2+ {t("beds")}</SelectItem>
+								<SelectItem value="3">3+ {t("beds")}</SelectItem>
+								<SelectItem value="4">4+ {t("beds")}</SelectItem>
+								<SelectItem value="5">5+ {t("beds")}</SelectItem>
 							</SelectContent>
 						</Select>
 
 						<Select value={status} onValueChange={setStatus}>
 							<SelectTrigger>
-								<SelectValue placeholder="Status" />
+								<SelectValue placeholder={t("filters.status")} />
 							</SelectTrigger>
 							<SelectContent>
-								<SelectItem value="all">All Status</SelectItem>
-								<SelectItem value="For Sale">For Sale</SelectItem>
-								<SelectItem value="Sold">Sold</SelectItem>
-								<SelectItem value="Pending">Pending</SelectItem>
+								<SelectItem value="all">{t("filters.allStatus")}</SelectItem>
+								<SelectItem value="For Sale">{t("status.forSale")}</SelectItem>
+								<SelectItem value="Sold">{t("status.sold")}</SelectItem>
+								<SelectItem value="Pending">{t("status.pending")}</SelectItem>
 							</SelectContent>
 						</Select>
 
 						<div className="flex gap-2">
 							<Button onClick={handleSearch} className="flex-1">
 								<Filter className="mr-2 h-4 w-4" />
-								Filter
+								{t("filters.filterButton")}
 							</Button>
 							<Button onClick={resetFilters} variant="outline">
-								Reset
+								{t("filters.resetButton")}
 							</Button>
 						</div>
 					</div>
@@ -411,7 +407,7 @@ export default function PropertiesPage() {
 					<div className="mt-4 border-t pt-4">
 						<div className="flex items-center gap-4">
 							<span className="min-w-[80px] font-medium text-sm">
-								Price Range:
+								{t("filters.priceRange")}
 							</span>
 							<div className="flex-1 px-4">
 								<Slider
@@ -436,18 +432,24 @@ export default function PropertiesPage() {
 			<div className="container mx-auto px-4 py-8">
 				<div className="mb-6 flex items-center justify-between">
 					<p className="text-muted-foreground">
-						Showing {filteredProperties.length} of {allProperties.length}{" "}
-						properties
+						{t("results.showingProperties", {
+							current: filteredProperties.length,
+							total: allProperties.length,
+						})}
 					</p>
 					<Select defaultValue="newest">
 						<SelectTrigger className="w-48">
 							<SelectValue />
 						</SelectTrigger>
 						<SelectContent>
-							<SelectItem value="newest">Newest First</SelectItem>
-							<SelectItem value="price-low">Price: Low to High</SelectItem>
-							<SelectItem value="price-high">Price: High to Low</SelectItem>
-							<SelectItem value="sqft">Square Footage</SelectItem>
+							<SelectItem value="newest">{t("results.newestFirst")}</SelectItem>
+							<SelectItem value="price-low">
+								{t("results.priceLowToHigh")}
+							</SelectItem>
+							<SelectItem value="price-high">
+								{t("results.priceHighToLow")}
+							</SelectItem>
+							<SelectItem value="sqft">{t("results.squareFootage")}</SelectItem>
 						</SelectContent>
 					</Select>
 				</div>
@@ -455,10 +457,10 @@ export default function PropertiesPage() {
 				{filteredProperties.length === 0 ? (
 					<div className="py-12 text-center">
 						<p className="text-lg text-muted-foreground">
-							No properties found matching your criteria.
+							{t("results.noPropertiesFound")}
 						</p>
 						<Button onClick={resetFilters} className="mt-4">
-							Clear Filters
+							{t("results.clearFilters")}
 						</Button>
 					</div>
 				) : (

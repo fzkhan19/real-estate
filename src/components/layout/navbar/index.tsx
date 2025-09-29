@@ -43,19 +43,23 @@ const CustomNavigationMenu = React.memo(() => {
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
-				href: "#services",
+				href: "/properties",
+				label: t("properties"),
+			},
+			{
+				href: "/services",
 				label: t("ourServices"),
 			},
 			{
-				href: "#prices",
-				label: t("priceList"),
+				href: "/valuation",
+				label: t("valuation"),
 			},
 			{
-				href: "#testimonials",
-				label: t("testimonials"),
+				href: "/about",
+				label: t("aboutUs"),
 			},
 			{
-				href: "#contact",
+				href: "/contact",
 				label: t("contactUs"),
 			},
 		],
@@ -98,19 +102,23 @@ export const Navbar = () => {
 	const routeList: RouteProps[] = useMemo(
 		() => [
 			{
-				href: "#services",
+				href: "/properties",
+				label: t("properties"),
+			},
+			{
+				href: "/services",
 				label: t("ourServices"),
 			},
 			{
-				href: "#prices",
-				label: t("priceList"),
+				href: "/valuation",
+				label: t("valuation"),
 			},
 			{
-				href: "#testimonials",
-				label: t("testimonials"),
+				href: "/about",
+				label: t("aboutUs"),
 			},
 			{
-				href: "#contact",
+				href: "/contact",
 				label: t("contactUs"),
 			},
 		],
@@ -120,7 +128,7 @@ export const Navbar = () => {
 	return (
 		<header
 			className={cn(
-				"sticky top-0 right-0 left-0 z-40 flex w-full items-center justify-between md:mx-auto",
+				"absolute top-0 right-0 left-0 z-40 flex w-full items-center justify-between md:mx-auto",
 				"border border-secondary p-4",
 				"text-background dark:text-foreground",
 				"border-0 hover:shadow-primary/20",

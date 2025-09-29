@@ -11,6 +11,7 @@ import {
 	TrendingUp,
 	Users,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -112,6 +113,7 @@ const certifications = [
 ];
 
 const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
+	const t = useTranslations("AboutPage");
 	return (
 		<Card className="group flex flex-col overflow-hidden p-4 transition-shadow duration-300 hover:shadow-lg">
 			<CardHeader className="flex-grow p-0">
@@ -130,7 +132,7 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 				</h3>
 				<p className="mb-3 font-medium text-muted-foreground">{member.role}</p>
 				<p className="mb-4 text-muted-foreground text-sm">
-					{member.experience} of experience
+					{member.experience} {t("experience")}
 				</p>
 
 				<div className="mb-4 space-y-2">
@@ -145,11 +147,10 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 				</div>
 
 				<div className="mb-4">
-					<h4 className="mb-2 font-medium">Specialties:</h4>
+					<h4 className="mb-2 font-medium">{t("specialties")}</h4>
 					<div className="flex flex-wrap gap-1">
 						{member.specialties.map((specialty, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Badge key={index} variant="secondary" className="text-xs">
+							<Badge key={specialty} variant="secondary" className="text-xs">
 								{specialty}
 							</Badge>
 						))}
@@ -160,7 +161,7 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 				<Link
 					href={`/contact?agent=${member.name.toLowerCase().replace(" ", "-")}`}
 				>
-					Contact {member.name.split(" ")[0]}
+					{t("contactAgent")} {member.name.split(" ")[0]}
 				</Link>
 			</Button>
 		</Card>
@@ -170,6 +171,7 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 const AchievementCard = ({
 	achievement,
 }: { achievement: AchievementProps }) => {
+	const t = useTranslations("AboutPage");
 	return (
 		<Card className="text-center transition-shadow duration-300 hover:shadow-lg">
 			<CardContent className="p-6">
@@ -179,53 +181,58 @@ const AchievementCard = ({
 					</div>
 				</div>
 				<h3 className="mb-2 font-playfair font-semibold text-lg">
-					{achievement.title}
+					{achievement.title === "Top Real Estate Firm"
+						? t("achievements.topFirmTitle")
+						: achievement.title === "$500M+ in Sales"
+							? t("achievements.salesTitle")
+							: achievement.title === "1000+ Happy Clients"
+								? t("achievements.clientsTitle")
+								: t("achievements.licensedTitle")}
 				</h3>
-				<p className="mb-2 text-muted-foreground">{achievement.description}</p>
-				<Badge variant="outline">{achievement.year}</Badge>
+				<p className="mb-2 text-muted-foreground">
+					{achievement.description === "Awarded by NYC Real Estate Board"
+						? t("achievements.topFirmDescription")
+						: achievement.description === "Lifetime transaction volume"
+							? t("achievements.salesDescription")
+							: achievement.description === "Successfully served families"
+								? t("achievements.clientsDescription")
+								: t("achievements.licensedDescription")}
+				</p>
+				<Badge variant="outline">
+					{achievement.year === "Always"
+						? t("achievements.licensedYear")
+						: achievement.year}
+				</Badge>
 			</CardContent>
 		</Card>
 	);
 };
 
 export const About = () => {
+	const t = useTranslations("AboutPage");
 	return (
 		<section id="about" className="py-16">
 			<div className="container mx-auto px-4">
 				{/* Header */}
 				<div className="mb-16 text-center">
 					<h2 className="mb-4 font-bold font-playfair text-3xl sm:text-4xl md:text-5xl">
-						About Kuhn & Partners
+						{t("header.title")}
 					</h2>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						Your trusted real estate experts with over 20 years of combined
-						experience in the New York market
+						{t("header.subtitle")}
 					</p>
 				</div>
 
 				{/* Company Story */}
 				<div className="mb-16 grid items-center gap-12 lg:grid-cols-2">
 					<div>
-						<h3 className="mb-6 font-bold font-playfair text-2xl">Our Story</h3>
+						<h3 className="mb-6 font-bold font-playfair text-2xl">
+							{t("story.title")}
+						</h3>
 						<div className="space-y-4 text-muted-foreground">
-							<p>
-								Founded in 2008, Kuhn & Partners has grown from a small local
-								agency to one of New York's most respected real estate firms.
-								Our journey began with a simple mission: to provide exceptional
-								service and expertise to every client.
-							</p>
-							<p>
-								Over the years, we've built our reputation on trust, integrity,
-								and results. Our team of dedicated professionals combines deep
-								market knowledge with innovative marketing strategies to help
-								our clients achieve their real estate goals.
-							</p>
-							<p>
-								Today, we're proud to serve families, investors, and businesses
-								throughout Manhattan, Brooklyn, and the surrounding areas. Our
-								commitment to excellence has earned us numerous awards and, more
-								importantly, the trust of our clients.
-							</p>
+							<p>{t("story.p1")}</p>
+							<p>{t("story.p2")}</p>
+							<p>{t("story.p3")}</p>
 						</div>
 					</div>
 					<div className="relative">
@@ -244,12 +251,14 @@ export const About = () => {
 				{/* Achievements */}
 				<div className="mb-16">
 					<h3 className="mb-8 text-center font-bold font-playfair text-2xl">
-						Our Achievements
+						{t("achievements.title")}
 					</h3>
 					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 						{achievements.map((achievement, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<AchievementCard key={index} achievement={achievement} />
+							<AchievementCard
+								key={achievement.title}
+								achievement={achievement}
+							/>
 						))}
 					</div>
 				</div>
@@ -257,12 +266,11 @@ export const About = () => {
 				{/* Team */}
 				<div className="mb-16">
 					<h3 className="mb-8 text-center font-bold font-playfair text-2xl">
-						Meet Our Team
+						{t("team.title")}
 					</h3>
 					<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 						{teamMembers.map((member, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<TeamMemberCard key={index} member={member} />
+							<TeamMemberCard key={member.name} member={member} />
 						))}
 					</div>
 				</div>
@@ -270,17 +278,28 @@ export const About = () => {
 				{/* Certifications */}
 				<div className="mb-16">
 					<h3 className="mb-8 text-center font-bold font-playfair text-2xl">
-						Certifications & Memberships
+						{t("certifications.title")}
 					</h3>
 					<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 						{certifications.map((cert, index) => (
 							<div
-								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-								key={index}
+								key={cert}
 								className="flex items-center gap-3 rounded-lg bg-gray-50 p-4"
 							>
 								<Shield className="h-5 w-5 shrink-0 text-primary" />
-								<span className="font-medium text-primary text-sm">{cert}</span>
+								<span className="font-medium text-primary text-sm">
+									{cert === "National Association of Realtors (NAR)"
+										? t("certifications.nar")
+										: cert === "New York State Association of Realtors"
+											? t("certifications.nysar")
+											: cert === "Manhattan Association of Realtors"
+												? t("certifications.mar")
+												: cert === "Certified Residential Specialist (CRS)"
+													? t("certifications.crs")
+													: cert === "Accredited Buyer's Representative (ABR)"
+														? t("certifications.abr")
+														: t("certifications.gri")}
+								</span>
 							</div>
 						))}
 					</div>
@@ -290,17 +309,14 @@ export const About = () => {
 				<div className="rounded-md text-center shadow shadow-accent/30 backdrop-blur-2xl">
 					<div className="mx-auto max-w-2xl rounded-lg p-8">
 						<h3 className="mb-4 font-bold font-playfair text-2xl">
-							Ready to Work with Us?
+							{t("cta.title")}
 						</h3>
-						<p className="mb-6 text-muted-foreground">
-							Let our experienced team help you find your perfect property or
-							sell your current home.
-						</p>
+						<p className="mb-6 text-muted-foreground">{t("cta.description")}</p>
 						<div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
 							<Button size="lg" className="hover:scale-105" asChild>
 								<Link href="/contact">
 									<Users className="mr-2 h-5 w-5" />
-									Get Started Today
+									{t("cta.getStarted")}
 								</Link>
 							</Button>
 							<Button
@@ -311,7 +327,7 @@ export const About = () => {
 							>
 								<Link href="/properties">
 									<Building className="mr-2 h-5 w-5" />
-									View Properties
+									{t("cta.viewProperties")}
 								</Link>
 							</Button>
 						</div>

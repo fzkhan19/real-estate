@@ -1,4 +1,5 @@
 import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
 import { routing } from "@/i18n/routing";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -20,6 +21,7 @@ export default async function LocaleLayout({
 
 	return (
 		<>
+			<Navbar />
 			{children}
 			<Footer />
 		</>

@@ -4,103 +4,391 @@
     "brokenLink": "Sie wurde möglicherweise entfernt, oder der Link ist defekt.",
     "backHome": "Zurück zur Startseite"
   },
-  "hero": {
-    "parkingNotice": "Parkplätze auf der rechten Seite der Straße verfügbar",
-    "title": "Handy-, Laptop- und PC-Reparaturen",
-    "subtitle": "Denen Sie vertrauen können",
-    "description": "Lassen Sie sich nicht von technischen Problemen aus der Ruhe bringen. Unsere erfahrenen Techniker bieten schnelle, zuverlässige Reparaturen für alle Ihre Geräte - Smartphones, Laptops und PCs. Von gesprungenen Bildschirmen über Software-Fehlerbehebung bis hin zu Hardware-Upgrades und Virenentfernung - wir bringen Ihre Technologie wieder wie neu zum Laufen.",
-    "bookRepair": "Reparatur buchen",
-    "getQuote": "Angebot erhalten",
-    "altText": "Tech-Reparatur"
-  },
   "navigation": {
-    "ourServices": "Unsere Dienstleistungen",
-    "priceList": "Preisliste",
-    "testimonials": "Kundenbewertungen",
+    "properties": "Immobilien",
+    "ourServices": "Dienstleistungen",
+    "valuation": "Bewertung",
+    "aboutUs": "Über Uns",
     "contactUs": "Kontakt",
     "loading": "Wird geladen..."
   },
-  "services": {
-    "title": "Unsere Reparaturdienstleistungen",
-    "subtitle": "Professionelle Reparaturdienstleistungen für alle Ihre Geräte",
-    "mobile": "Handy-Reparaturen",
-    "laptop": "Laptop- und PC-Reparaturen",
-    "software": "Software-Dienstleistungen",
-    "bookService": "Service buchen",
-    "mobileServices": {
-      "screenRepair": "Bildschirm-Reparatur",
-      "waterDamage": "Wasserschaden-Reparatur",
-      "cameraRepair": "Kamera-Reparatur",
-      "batteryReplacement": "Akku-Austausch",
-      "buttonRepair": "Taste-Reparatur",
-      "chargePortRepair": "Ladeanschluss-Reparatur",
-      "speakerRepair": "Mikrofon/Lautsprecher-Reparatur",
-      "carrierUnlock": "Deine Mobilfunkanbieter entsperren"
+  "AboutPage": {
+    "metadata": {
+      "title": "Über Uns - Kuhn & Partner Immobilien",
+      "description": "Erfahren Sie mehr über Kuhn & Partner, Ihre vertrauenswürdigen Immobilienexperten."
     },
-    "laptopServices": {
-      "hardwareUpgrades": "Hardware-Upgrades",
-      "batteryReplacement": "Akku-Austausch",
-      "hardDriveServices": "Festplatten-Services",
-      "ramUpgrade": "RAM-Upgrade"
+    "experience": " Jahre Erfahrung",
+    "specialties": "Spezialgebiete:",
+    "contactAgent": "Kontakt ",
+    "header": {
+      "title": "Über Kuhn & Partner",
+      "subtitle": "Ihre vertrauenswürdigen Immobilienexperten mit über 20 Jahren kombinierter Erfahrung auf dem New Yorker Markt"
     },
-    "softwareServices": {
-      "virusRemoval": "Virenentfernung",
-      "softwareInstallation": "Software-Installation",
-      "systemOptimization": "System-Optimierung",
-      "dataRecovery": "Datenrettung",
-      "osInstall": "Betriebssystem-Installation",
-      "diagnosticScan": "Diagnose-Scan",
-      "driverUpdates": "Treiber-Updates"
+    "story": {
+      "title": "Unsere Geschichte",
+      "p1": "Gegründet im Jahr 2008, hat sich Kuhn & Partner von einer kleinen lokalen Agentur zu einem der angesehensten Immobilienunternehmen New Yorks entwickelt. Unsere Reise begann mit einer einfachen Mission: jedem Kunden außergewöhnlichen Service und Fachwissen zu bieten.",
+      "p2": "Im Laufe der Jahre haben wir unseren Ruf auf Vertrauen, Integrität und Ergebnissen aufgebaut. Unser Team engagierter Fachleute kombiniert tiefgreifende Marktkenntnisse mit innovativen Marketingstrategien, um unseren Kunden zu helfen, ihre Immobilienziele zu erreichen.",
+      "p3": "Heute sind wir stolz darauf, Familien, Investoren und Unternehmen in ganz Manhattan, Brooklyn und den umliegenden Gebieten zu dienen. Unser Engagement für Exzellenz hat uns zahlreiche Auszeichnungen und, was noch wichtiger ist, das Vertrauen unserer Kunden eingebracht."
+    },
+    "achievements": {
+      "title": "Unsere Erfolge",
+      "topFirmTitle": "Top Immobilienunternehmen",
+      "topFirmDescription": "Ausgezeichnet vom NYC Real Estate Board",
+      "salesTitle": "Über 500 Mio. $ Umsatz",
+      "salesDescription": "Lebenslanges Transaktionsvolumen",
+      "clientsTitle": "Über 1000 zufriedene Kunden",
+      "clientsDescription": "Erfolgreich bediente Familien",
+      "licensedTitle": "Lizenziert & Versichert",
+      "licensedDescription": "Volle Konformität und Schutz",
+      "licensedYear": "Immer"
+    },
+    "team": {
+      "title": "Unser Team"
+    },
+    "certifications": {
+      "title": "Zertifizierungen & Mitgliedschaften",
+      "nar": "Nationale Vereinigung der Immobilienmakler (NAR)",
+      "nysar": "New York State Vereinigung der Immobilienmakler",
+      "mar": "Manhattan Vereinigung der Immobilienmakler",
+      "crs": "Zertifizierter Wohnimmobilienexperte (CRS)",
+      "abr": "Akkreditierter Käufervertreter (ABR)",
+      "gri": "Absolvent des Realtor Institute (GRI)"
+    },
+    "cta": {
+      "title": "Bereit zur Zusammenarbeit?",
+      "description": "Lassen Sie sich von unserem erfahrenen Team helfen, Ihre perfekte Immobilie zu finden oder Ihr aktuelles Zuhause zu verkaufen.",
+      "getStarted": "Jetzt starten",
+      "viewProperties": "Immobilien ansehen"
     }
   },
-  "prices": {
-    "title": "Unsere Preisliste",
-    "subtitle": "Wettbewerbsfähige Preise für qualitativ hochwertige Reparaturen",
-    "iphone": "iPhone-Reparaturen",
-    "samsung": "Samsung-Reparaturen",
-    "search": "Suchen...",
-    "model": "Modell",
-    "screenOem": "Bildschirm Original",
-    "batteryOem": "Akku Original",
-    "backCover": "Rückseite",
-    "display": "Display",
-    "battery": "Akku",
-    "chargingPort": "Ladeanschluss"
-  },
-  "testimonials": {
-    "title": "Kundenbewertungen",
-    "subtitle": "Was unsere Kunden über uns sagen"
-  },
-  "contact": {
-    "title": "Kontakt",
-    "subtitle": "Kontaktieren Sie uns für alle Anfragen",
-    "sendMessage": "Senden Sie uns eine Nachricht",
-    "contactInfo": "Kontaktinformationen",
-    "form": {
-      "name": "Ihr Name",
-      "email": "Ihre E-Mail",
-      "phone": "Ihr Telefon",
-      "subject": "Betreff",
-      "message": "Ihre Nachricht",
-      "sendButton": "Nachricht senden"
+  "ContactPage": {
+    "metadata": {
+      "title": "Kontakt - Kuhn & Partner Immobilien",
+      "description": "Kontaktieren Sie Kuhn & Partner für alle Ihre Immobilienanfragen."
     },
-    "info": {
+    "formAlert": "Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.",
+    "header": {
+      "title": "Kontakt aufnehmen",
+      "subtitle": "Bereit für Ihre Immobilienreise? Kontaktieren Sie uns noch heute für eine kostenlose Beratung und persönlichen Service."
+    },
+    "formCardTitle": "Senden Sie uns eine Nachricht",
+    "form": {
+      "firstName": "Vorname *",
+      "lastName": "Nachname *",
+      "email": "E-Mail-Adresse *",
+      "phone": "Telefonnummer",
+      "helpQuestion": "Wie können wir Ihnen helfen? *",
+      "selectReason": "Grund auswählen",
+      "message": "Nachricht *",
+      "messagePlaceholder": "Bitte geben Sie weitere Details zu Ihrer Anfrage an...",
+      "newsletter": "Ich möchte Markt-Updates und Immobilienbenachrichtigungen erhalten",
+      "sending": "Senden...",
+      "sendMessage": "Nachricht senden"
+    },
+    "contactReasons": [
+      "Immobilie kaufen",
+      "Immobilie verkaufen",
+      "Immobilienbewertung",
+      "Investitionsberatung",
+      "Allgemeine Anfrage",
+      "Besichtigungstermin vereinbaren",
+      "Marktanalyse",
+      "Sonstiges"
+    ],
+    "officeInfo": {
+      "ourOffices": "Unsere Büros",
       "address": "Adresse",
       "phone": "Telefon",
       "email": "E-Mail",
-      "businessHours": "Geschäftszeiten",
-      "location": "Standort",
-      "hours": "Montag - Freitag: 10:15 - 19:00 Uhr\nSamstag: 10:15 - 17:00 Uhr\nSonntag: Geschlossen"
+      "hours": "Öffnungszeiten",
+      "parking": "Parken",
+      "available": "Verfügbar",
+      "streetParkingOnly": "Nur Straßenparkplätze",
+      "getDirections": "Wegbeschreibung abrufen",
+      "manhattanOffice": "Manhattan Büro",
+      "brooklynOffice": "Brooklyn Büro",
+      "officeHoursManhattan1": "Montag - Freitag: 9:00 - 19:00 Uhr",
+      "officeHoursManhattan2": "Samstag: 10:00 - 17:00 Uhr",
+      "officeHoursManhattan3": "Sonntag: 12:00 - 16:00 Uhr",
+      "officeHoursBrooklyn1": "Montag - Freitag: 9:00 - 18:00 Uhr",
+      "officeHoursBrooklyn2": "Samstag: 10:00 - 16:00 Uhr",
+      "officeHoursBrooklyn3": "Sonntag: Nach Vereinbarung"
+    },
+    "quickContact": {
+      "title": "Benötigen Sie sofortige Hilfe?",
+      "emergencyLine": "Notrufnummer",
+      "generalInquiries": "Allgemeine Anfragen",
+      "callNow": "Jetzt anrufen"
+    },
+    "mapPlaceholder": {
+      "title": "Finden Sie uns",
+      "comingSoon": "Interaktive Karte demnächst verfügbar",
+      "clickDirections": "Klicken Sie vorerst auf \"Wegbeschreibung abrufen\""
     }
   },
-  "footer": {
-    "salesSupport": "Verkauf & Technischer Support",
-    "address": "Adresse",
-    "addressText": "Phone Empire, Kaiserstraße 22, 66849 Landstuhl, Deutschland",
-    "contactInfo": "Kontaktinformationen",
-    "telephone": "Telefon: +49 017670440689",
-    "email": "E-Mail: phoneempire@gmx.de",
-    "copyright": "© 2027 PHONE EMPIRE",
-    "builtBy": "Diese Website wurde von FAIZ KHAN erstellt"
+  "PropertiesPage": {
+    "beds": " Betten",
+    "baths": " Bäder",
+    "sqft": " qm",
+    "viewDetails": "Details anzeigen",
+    "featuredProperties": "Ausgewählte Immobilien",
+    "featuredPropertiesSubtitle": "Entdecken Sie unsere handverlesene Auswahl an Premium-Immobilien in Top-Lagen",
+    "viewAllProperties": "Alle Immobilien anzeigen",
+    "status": {
+      "forSale": "Zum Verkauf",
+      "sold": "Verkauft",
+      "pending": "Ausstehend"
+    },
+    "type": {
+      "singleFamily": "Einfamilienhaus",
+      "condo": "Eigentumswohnung",
+      "townhouse": "Stadthaus",
+      "apartment": "Wohnung",
+      "loft": "Loft",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "studio": "Studio"
+    },
+    "header": {
+      "title": "Immobilien",
+      "subtitle": "Entdecken Sie Ihr perfektes Zuhause aus unserer kuratierten Auswahl an Premium-Immobilien"
+    },
+    "filters": {
+      "searchPlaceholder": "Immobilien suchen...",
+      "propertyType": "Immobilientyp",
+      "allTypes": "Alle Typen",
+      "bedrooms": "Schlafzimmer",
+      "any": "Beliebig",
+      "status": "Status",
+      "allStatus": "Alle Status",
+      "filterButton": "Filtern",
+      "resetButton": "Zurücksetzen",
+      "priceRange": "Preisspanne:"
+    },
+    "results": {
+      "showingProperties": "Zeige {current} von {total} Immobilien",
+      "newestFirst": "Neueste zuerst",
+      "priceLowToHigh": "Preis: Niedrig zu Hoch",
+      "priceHighToLow": "Preis: Hoch zu Niedrig",
+      "squareFootage": "Quadratmeterzahl",
+      "noPropertiesFound": "Keine Immobilien gefunden, die Ihren Kriterien entsprechen.",
+      "clearFilters": "Filter löschen"
+    }
+  },
+  "PropertyDetailPage": {
+    "backToProperties": "← Zurück zu Immobilien",
+    "overview": "Übersicht",
+    "price": "Preis",
+    "bedrooms": "Schlafzimmer",
+    "bathrooms": "Badezimmer",
+    "squareFootage": "Fläche",
+    "yearBuilt": "Baujahr",
+    "propertyType": "Immobilientyp",
+    "description": "Beschreibung",
+    "featuresAndAmenities": "Merkmale & Annehmlichkeiten",
+    "contactAgent": "Agent kontaktieren",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "inquireAboutProperty": "Anfrage zu dieser Immobilie"
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Unsere Dienstleistungen - Kuhn & Partner Immobilien",
+      "description": "Entdecken Sie die umfassenden Immobiliendienstleistungen von Kuhn & Partner."
+    },
+    "mostPopular": "Am beliebtesten",
+    "learnMore": "Mehr erfahren",
+    "header": {
+      "title": "Unsere Dienstleistungen",
+      "subtitle": "Umfassende Immobiliendienstleistungen, die alle Ihre Bedürfnisse erfüllen"
+    },
+    "cta": {
+      "title": "Bereit zum Starten?",
+      "description": "Kontaktieren Sie uns noch heute für eine kostenlose Beratung und lassen Sie uns Ihnen helfen, Ihre Immobilienziele zu erreichen.",
+      "freeConsultation": "Kostenlose Beratung",
+      "callNow": "Jetzt anrufen"
+    },
+    "servicesList": {
+      "propertyBuying": {
+        "title": "Immobilienkauf",
+        "description": "Finden Sie Ihr perfektes Zuhause mit unserer fachkundigen Beratung und Marktkenntnis.",
+        "features": [
+          "Immobiliensuche & -analyse",
+          "Marktbewertung",
+          "Verhandlungsunterstützung",
+          "Rechtsdokumentation"
+        ]
+      },
+      "propertySelling": {
+        "title": "Immobilienverkauf",
+        "description": "Maximieren Sie Ihren Immobilienwert mit unseren bewährten Verkaufsstrategien.",
+        "features": [
+          "Immobilienbewertung",
+          "Marketing & Listing",
+          "Professionelle Fotografie",
+          "Transaktionsmanagement"
+        ]
+      },
+      "propertyValuation": {
+        "title": "Immobilienbewertung",
+        "description": "Erhalten Sie genaue Immobilienbewertungen von zertifizierten Fachleuten.",
+        "features": [
+          "Vergleichende Marktanalyse",
+          "Professionelle Bewertung",
+          "Investitionsanalyse",
+          "Markttrendbericht"
+        ]
+      },
+      "propertySearch": {
+        "title": "Immobiliensuche",
+        "description": "Umfassende Immobiliensuche, zugeschnitten auf Ihre spezifischen Bedürfnisse.",
+        "features": [
+          "Benutzerdefinierte Suchkriterien",
+          "Off-Market-Immobilien",
+          "Virtuelle Touren",
+          "Nachbarschaftsanalyse"
+        ]
+      },
+      "investmentConsulting": {
+        "title": "Investitionsberatung",
+        "description": "Fachkundige Beratung für Immobilieninvestitionsmöglichkeiten.",
+        "features": [
+          "ROI-Analyse",
+          "Marktprognose",
+          "Portfolio-Management",
+          "Risikobewertung"
+        ]
+      },
+      "legalServices": {
+        "title": "Rechtsdienstleistungen",
+        "description": "Umfassende rechtliche Unterstützung für alle Ihre Immobilientransaktionen.",
+        "features": [
+          "Vertragsprüfung",
+          "Titelrecherche",
+          "Abschlussdienstleistungen",
+          "Rechtsdokumentation"
+        ]
+      }
+    }
+  },
+  "ValuationPage": {
+    "metadata": {
+      "title": "Immobilienbewertung - Kuhn & Partner Immobilien",
+      "description": "Fordern Sie eine kostenlose, genaue und professionelle Immobilienbewertung von Kuhn & Partner an."
+    },
+    "formAlert": "Ihre Bewertungsanfrage wurde übermittelt! Wir werden uns in Kürze bei Ihnen melden.",
+    "header": {
+      "title": "Immobilienbewertung",
+      "subtitle": "Erhalten Sie eine kostenlose, genaue und professionelle Bewertung Ihrer Immobilie."
+    },
+    "formCardTitle": "Kostenlose Bewertung anfordern",
+    "form": {
+      "fullName": "Vollständiger Name *",
+      "email": "E-Mail-Adresse *",
+      "phone": "Telefonnummer",
+      "address": "Immobilienadresse *",
+      "propertyType": "Immobilientyp *",
+      "selectType": "Typ auswählen",
+      "singleFamily": "Einfamilienhaus",
+      "condo": "Eigentumswohnung",
+      "townhouse": "Stadthaus",
+      "apartment": "Wohnung",
+      "loft": "Loft",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "studio": "Studio",
+      "commercial": "Gewerbe",
+      "land": "Grundstück",
+      "bedrooms": "Schlafzimmer",
+      "selectNumber": "Anzahl auswählen",
+      "bathrooms": "Badezimmer",
+      "approxSquareFootage": "Ca. Quadratmeterzahl",
+      "yearBuilt": "Baujahr",
+      "additionalInformation": "Zusätzliche Informationen",
+      "messagePlaceholder": "Weitere Details zu Ihrer Anfrage an...",
+      "submitting": "Wird übermittelt...",
+      "submitRequest": "Bewertungsanfrage senden"
+    },
+    "contactCard": {
+      "title": "Unser Bewertungsteam kontaktieren",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "officeAddress": "Büroadresse",
+      "addressText": "123 Fifth Avenue, Suite 1500, New York, NY 10011"
+    },
+    "whyValuation": {
+      "title": "Warum eine professionelle Bewertung?",
+      "reasons": [
+        "Genaue Marktpreise für den Verkauf.",
+        "Fundierte Entscheidungen für den Kauf.",
+        "Verständnis des wahren Werts Ihrer Immobilie.",
+        "Finanzplanung und Investitionseinblicke."
+      ]
+    },
+    "valuationProcess": {
+      "title": "Unser Bewertungsprozess",
+      "steps": [
+        "Geben Sie Ihre Objektdaten über das Formular ein.",
+        "Unsere Experten prüfen Ihre Informationen und Marktdaten.",
+        "Wir vereinbaren bei Bedarf einen Objektbesuch.",
+        "Sie erhalten einen umfassenden Bewertungsbericht.",
+        "Besprechen Sie den Bericht und die nächsten Schritte mit unserem Team."
+      ]
+    }
+  },
+  "SearchPage": {
+    "metadata": {
+      "title": "Immobilien suchen - Kuhn & Partner Immobilien",
+      "description": "Finden Sie Ihre Traumimmobilie mit den erweiterten Suchwerkzeugen von Kuhn & Partner."
+    }
+  },
+  "PropertiesPage": {
+    "beds": " Betten",
+    "baths": " Bäder",
+    "sqft": " qm",
+    "viewDetails": "Details anzeigen",
+    "featuredProperties": "Ausgewählte Immobilien",
+    "featuredPropertiesSubtitle": "Entdecken Sie unsere handverlesene Auswahl an Premium-Immobilien in Top-Lagen",
+    "viewAllProperties": "Alle Immobilien anzeigen",
+    "status": {
+      "forSale": "Zum Verkauf",
+      "sold": "Verkauft",
+      "pending": "Ausstehend"
+    },
+    "type": {
+      "singleFamily": "Einfamilienhaus",
+      "condo": "Eigentumswohnung",
+      "townhouse": "Stadthaus",
+      "apartment": "Wohnung",
+      "loft": "Loft",
+      "villa": "Villa",
+      "penthouse": "Penthouse",
+      "studio": "Studio"
+    },
+    "header": {
+      "title": "Immobilien",
+      "subtitle": "Entdecken Sie Ihr perfektes Zuhause aus unserer kuratierten Auswahl an Premium-Immobilien"
+    },
+    "filters": {
+      "searchPlaceholder": "Immobilien suchen...",
+      "propertyType": "Immobilientyp",
+      "allTypes": "Alle Typen",
+      "bedrooms": "Schlafzimmer",
+      "any": "Beliebig",
+      "status": "Status",
+      "allStatus": "Alle Status",
+      "filterButton": "Filtern",
+      "resetButton": "Zurücksetzen",
+      "priceRange": "Preisspanne:"
+    },
+    "results": {
+      "showingProperties": "Zeige {current} von {total} Immobilien",
+      "newestFirst": "Neueste zuerst",
+      "priceLowToHigh": "Preis: Niedrig zu Hoch",
+      "priceHighToLow": "Preis: Hoch zu Niedrig",
+      "squareFootage": "Quadratmeterzahl",
+      "noPropertiesFound": "Keine Immobilien gefunden, die Ihren Kriterien entsprechen.",
+      "clearFilters": "Filter löschen"
+    }
   }
 }

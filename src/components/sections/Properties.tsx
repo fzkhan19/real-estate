@@ -17,6 +17,7 @@ import {
 	MapPin,
 	Square,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -109,6 +110,7 @@ const featuredProperties: PropertyProps[] = [
 ];
 
 const PropertyCard = ({ property }: { property: PropertyProps }) => {
+	const t = useTranslations("PropertiesPage");
 	return (
 		<Card className="group overflow-hidden transition-shadow duration-300 hover:shadow-accent/60">
 			<CardHeader className="relative p-0">
@@ -117,7 +119,7 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 						src={property.image}
 						alt={property.title}
 						fill
-						className="object-cover transition-transform duration-1000 group-hover:scale-105"
+						className="object-cover brightness-75 transition-transform duration-1000 group-hover:scale-105 group-hover:brightness-100"
 					/>
 					<div className="absolute top-4 left-4 flex gap-2">
 						<Badge
@@ -129,25 +131,38 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 										: "secondary"
 							}
 						>
-							{property.status}
+							{property.status === "For Sale"
+								? t("status.forSale")
+								: property.status === "Sold"
+									? t("status.sold")
+									: t("status.pending")}
 						</Badge>
-						<Badge variant="outline" className="bg-white/90">
-							{property.type}
+						<Badge
+							variant="outline"
+							className="bg-white/90 text-muted-foreground"
+						>
+							{property.type === "Single Family"
+								? t("type.singleFamily")
+								: property.type === "Condo"
+									? t("type.condo")
+									: property.type === "Townhouse"
+										? t("type.townhouse")
+										: property.type === "Apartment"
+											? t("type.apartment")
+											: property.type === "Loft"
+												? t("type.loft")
+												: property.type === "Villa"
+													? t("type.villa")
+													: property.type === "Penthouse"
+														? t("type.penthouse")
+														: t("type.studio")}
 						</Badge>
 					</div>
 					<div className="absolute top-4 right-4 flex gap-2">
-						<Button
-							size="sm"
-							variant="ghost"
-							className="h-8 w-8 bg-white/90 p-0 hover:bg-white"
-						>
+						<Button size="sm" variant="ghost" className="h-8 w-8 p-0">
 							<Heart className="h-4 w-4" />
 						</Button>
-						<Button
-							size="sm"
-							variant="ghost"
-							className="h-8 w-8 bg-white/90 p-0 hover:bg-white"
-						>
+						<Button size="sm" variant="ghost" className="h-8 w-8 p-0">
 							<Eye className="h-4 w-4" />
 						</Button>
 					</div>
@@ -165,21 +180,21 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 				<div className="flex items-center gap-4 text-muted-foreground text-sm">
 					<div className="flex items-center gap-1">
 						<Bed className="h-4 w-4" />
-						{property.beds} beds
+						{property.beds} {t("beds")}
 					</div>
 					<div className="flex items-center gap-1">
 						<Bath className="h-4 w-4" />
-						{property.baths} baths
+						{property.baths} {t("baths")}
 					</div>
 					<div className="flex items-center gap-1">
 						<Square className="h-4 w-4" />
-						{property.sqft} sqft
+						{property.sqft} {t("sqft")}
 					</div>
 				</div>
 			</CardContent>
 			<CardFooter className="p-4 pt-0">
 				<Button asChild className="w-full">
-					<Link href={`/property/${property.id}`}>View Details</Link>
+					<Link href={`/property/${property.id}`}>{t("viewDetails")}</Link>
 				</Button>
 			</CardFooter>
 		</Card>
@@ -187,16 +202,16 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 };
 
 export const Properties = () => {
+	const t = useTranslations("PropertiesPage");
 	return (
 		<section id="properties" className="py-16">
 			<div className="container mx-auto px-4">
 				<div className="mb-12 text-center">
 					<h2 className="mb-4 font-bold font-playfair text-3xl sm:text-4xl md:text-5xl">
-						Featured Properties
+						{t("featuredProperties")}
 					</h2>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						Discover our handpicked selection of premium properties in prime
-						locations
+						{t("featuredPropertiesSubtitle")}
 					</p>
 				</div>
 
@@ -214,7 +229,7 @@ export const Properties = () => {
 						asChild
 					>
 						<Link href="/properties">
-							View All Properties <ArrowUpRight className="h-5 w-5" />
+							{t("viewAllProperties")} <ArrowUpRight className="h-5 w-5" />
 						</Link>
 					</Button>
 				</div>
