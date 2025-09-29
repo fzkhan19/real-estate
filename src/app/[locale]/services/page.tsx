@@ -10,5 +10,5 @@ export async function generateMetadata() {
 }
 
 export default function ServicesPage() {
-	return <Services />;
+	return <div className="mt-18 min-h-screen">{<Services />}</div>;
 }

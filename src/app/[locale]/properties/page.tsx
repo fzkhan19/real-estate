@@ -44,8 +44,8 @@ interface PropertyProps {
 	image: string;
 	type: string;
 	status: string;
-	yearBuilt: number;
-	description: string;
+	yearBuilt?: number;
+	description?: string;
 }
 
 const allProperties: PropertyProps[] = [
@@ -127,42 +127,6 @@ const allProperties: PropertyProps[] = [
 		type: "Villa",
 		status: "For Sale",
 	},
-	{
-		id: "7",
-		title: "Historic Brownstone",
-		location: "Brooklyn, NY",
-		price: 2300000,
-		beds: 4,
-		baths: 3,
-		sqft: 2000,
-		image: "/stock/property7.jpg",
-		type: "Townhouse",
-		status: "For Sale",
-	},
-	{
-		id: "8",
-		title: "Modern Studio",
-		location: "Midtown, NY",
-		price: 850000,
-		beds: 1,
-		baths: 1,
-		sqft: 600,
-		image: "/stock/property8.jpg",
-		type: "Studio",
-		status: "For Sale",
-	},
-	{
-		id: "9",
-		title: "Duplex Penthouse",
-		location: "Tribeca, NY",
-		price: 6200000,
-		beds: 4,
-		baths: 3,
-		sqft: 2800,
-		image: "/stock/property9.jpg",
-		type: "Penthouse",
-		status: "For Sale",
-	},
 ];
 
 const PropertyCard = ({ property }: { property: PropertyProps }) => {
@@ -202,7 +166,7 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 									? t("status.sold")
 									: t("status.pending")}
 						</Badge>
-						<Badge variant="outline" className="bg-white/90">
+						<Badge variant="outline" className="bg-white/90 text-primary/80">
 							{property.type === "Single Family"
 								? t("type.singleFamily")
 								: property.type === "Condo"
@@ -241,7 +205,7 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
 				<p className="mb-3 line-clamp-2 text-muted-foreground text-sm">
 					{property.description}
 				</p>
-				<div className="mb-4 font-bold text-2xl text-primary">
+				<div className="mb-4 font-bold text-2xl text-primary-foreground">
 					{formatPrice(property.price)}
 				</div>
 				<div className="flex items-center gap-4 text-muted-foreground text-sm">
@@ -320,7 +284,7 @@ export default function PropertiesPage() {
 	};
 
 	return (
-		<div className="min-h-screen">
+		<div className="mt-20 min-h-screen">
 			{/* Header */}
 			<div className="border-b shadow-xs">
 				<div className="container mx-auto px-4 py-8">
@@ -397,7 +361,7 @@ export default function PropertiesPage() {
 								<Filter className="mr-2 h-4 w-4" />
 								{t("filters.filterButton")}
 							</Button>
-							<Button onClick={resetFilters} variant="outline">
+							<Button onClick={resetFilters} variant="secondary">
 								{t("filters.resetButton")}
 							</Button>
 						</div>

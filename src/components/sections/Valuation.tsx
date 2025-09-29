@@ -66,7 +66,7 @@ export const Valuation = () => {
 	};
 
 	return (
-		<section id="valuation" className="py-16">
+		<section id="valuation" className="mt-18 py-16">
 			<div className="container mx-auto px-4">
 				{/* Header */}
 				<div className="mb-12 text-center">
@@ -84,12 +84,12 @@ export const Valuation = () => {
 						<Card>
 							<CardHeader>
 								<CardTitle className="flex items-center gap-2 font-playfair text-2xl">
-									<Building className="h-6 w-6 text-primary" />
+									<Building className="h-6 w-6 text-primary-foreground" />
 									{t("formCardTitle")}
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<form onSubmit={handleSubmit} className="space-y-6">
+								<form onSubmit={handleSubmit} className="flex flex-col gap-4">
 									<div className="grid gap-4 md:grid-cols-2">
 										<div>
 											<Label htmlFor="name">{t("form.fullName")}</Label>
@@ -291,45 +291,49 @@ export const Valuation = () => {
 					</div>
 
 					{/* Contact Info / Map Placeholder */}
-					<div className="space-y-6">
+					<div className="flex flex-col gap-8">
 						<Card>
 							<CardHeader>
 								<CardTitle className="font-playfair text-xl">
 									{t("contactCard.title")}
 								</CardTitle>
 							</CardHeader>
-							<CardContent className="space-y-4">
+							<CardContent className="flex flex-col gap-4">
 								<div className="flex items-center gap-3">
-									<Phone className="h-5 w-5 text-primary" />
+									<Phone className="h-5 w-5 text-primary-foreground" />
 									<div>
-										<p className="font-medium">{t("contactCard.phone")}</p>
+										<p className="font-medium text-primary-foreground/70">
+											{t("contactCard.phone")}
+										</p>
 										<a
 											href="tel:+17326148835"
-											className="text-primary hover:underline"
+											className="text-primary-foreground hover:underline"
 										>
 											(732) 614-8835
 										</a>
 									</div>
 								</div>
 								<div className="flex items-center gap-3">
-									<Mail className="h-5 w-5 text-primary" />
+									<Mail className="h-5 w-5 text-primary-foreground" />
 									<div>
-										<p className="font-medium">{t("contactCard.email")}</p>
+										<p className="font-medium text-primary-foreground/70">
+											{t("contactCard.email")}
+										</p>
 										<a
 											href="mailto:valuation@kuhnandpartners.com"
-											className="text-primary hover:underline"
+											className="text-primary-foreground hover:underline"
 										>
 											valuation@kuhnandpartners.com
 										</a>
 									</div>
 								</div>
 								<div className="flex items-center gap-3">
-									<MapPin className="h-5 w-5 text-primary" />
+									<MapPin className="h-5 w-5 text-primary-foreground" />
 									<div>
-										<p className="font-medium">
+										<p className="font-medium text-primary-foreground/70">
 											{t("contactCard.officeAddress")}
 										</p>
-										<p className="text-muted-foreground text-sm">
+										<p className="text-primary-foreground text-sm">
 											{t("contactCard.addressText")}
 										</p>
 									</div>

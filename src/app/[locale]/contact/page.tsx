@@ -10,5 +10,9 @@ export async function generateMetadata() {
 }
 
 export default function ContactPage() {
-	return <Contact />;
+	return (
+		<div className="mt-18 min-h-screen">
+			<Contact />
+		</div>
+	);
 }

@@ -2,7 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@radix-ui/react-label";
 import {
+	ArrowUpRightIcon,
 	Award,
 	Facebook,
 	Instagram,
@@ -14,6 +16,7 @@ import {
 	Shield,
 	Twitter,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -70,7 +73,7 @@ const socialLinks = [
 export const Footer = () => {
 	const [email, setEmail] = useState("");
 	const [isSubscribing, setIsSubscribing] = useState(false);
-
+	const t = useTranslations("footer");
 	const handleNewsletterSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		setIsSubscribing(true);
@@ -89,25 +92,25 @@ export const Footer = () => {
 				<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 					{/* Company Info */}
 					<div className="lg:col-span-1">
-						<div className="mb-4 flex items-center gap-2">
-							<div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+						<div className="mb-2 flex gap-2">
+							<div className="flex h-10 w-10 justify-center rounded-full bg-primary">
 								<span className="font-bold font-playfair text-lg text-white">
 									K&P
 								</span>
 							</div>
-							<span className="font-bold font-playfair text-xl">
+							<span className="font-bold font-playfair text-lg">
 								Kuhn & Partners
 							</span>
 						</div>
-						<p className="mb-6 text-gray-300 text-sm leading-relaxed">
+						<p className="mb-16 text-gray-300 text-sm leading-relaxed">
 							Your trusted real estate experts in New York. We've been helping
 							families find their perfect homes and investors build their
 							portfolios since 2008.
 						</p>
 
-						<div className="space-y-3">
+						<div className="flex flex-col gap-2">
 							<div className="flex items-center gap-3">
-								<Phone className="h-4 w-4 shrink-0 text-primary" />
+								<Phone className="h-4 w-4 shrink-0 text-primary-foreground" />
 								<a
 									href="tel:+17326148835"
 									className="text-gray-300 text-sm transition-colors hover:text-white"
@@ -116,7 +119,7 @@ export const Footer = () => {
 								</a>
 							</div>
 							<div className="flex items-center gap-3">
-								<Mail className="h-4 w-4 shrink-0 text-primary" />
+								<Mail className="h-4 w-4 shrink-0 text-primary-foreground" />
 								<a
 									href="mailto:info@kuhnandpartners.com"
 									className="text-gray-300 text-sm transition-colors hover:text-white"
@@ -125,7 +128,7 @@ export const Footer = () => {
 								</a>
 							</div>
 							<div className="flex items-start gap-3">
-								<MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+								<MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-foreground" />
 								<div className="text-gray-300 text-sm">
 									<p>123 Fifth Avenue, Suite 1500</p>
 									<p>New York, NY 10011</p>
@@ -194,15 +197,18 @@ export const Footer = () => {
 
 				{/* Newsletter Signup */}
 				<div className="mt-12 border-gray-800 border-t pt-8">
-					<div className="mx-auto max-w-md text-center">
+					<div className="mx-auto flex max-w-md flex-col items-center gap-2 text-center">
 						<h3 className="mb-2 font-playfair font-semibold text-lg">
 							Stay Updated
 						</h3>
-						<p className="mb-4 text-gray-300 text-sm">
+						<p className="mb-4 text-pretty text-gray-300 text-sm">
 							Get the latest property listings and market insights delivered to
 							your inbox.
 						</p>
-						<form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+						<form
+							onSubmit={handleNewsletterSubmit}
+							className="flex w-full gap-2"
+						>
 							<Input
 								type="email"
 								placeholder="Enter your email"
@@ -257,7 +263,21 @@ export const Footer = () => {
 						</div>
 					</div>
 				</div>
-
+				<div className="order-2 flex flex-col md:order-1">
+					<Label className="self-start font-normal text-sm md:self-end">
+						{t("copyright")}
+					</Label>
+					<Label className="self-center pt-6 font-normal text-base md:mt-8 md:self-end">
+						<Link
+							className="rounded-sm bg-blue-50 p-1 font-semibold text-primary underline decoration-primary"
+							href="https://faiz-khan.com"
+							target="_blank"
+						>
+							{t("builtBy")}
+							<ArrowUpRightIcon className="-mt-1 inline-block size-6 text-primary" />
+						</Link>
+					</Label>
+				</div>
 				{/* Copyright */}
 				<div className="mt-8 border-gray-800 border-t pt-8 text-center">
 					<div className="flex flex-col items-center justify-between gap-4 md:flex-row">

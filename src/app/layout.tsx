@@ -46,7 +46,7 @@ export default async function RootLayout({
 					font2.variable,
 				)}
 			>
-				<main className="no-scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth font-custom-secondary">
+				<main className="scrollbar overflow-x-hidden overflow-y-scroll scroll-smooth font-custom-secondary">
 					<Analytics />
 					<Script
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>

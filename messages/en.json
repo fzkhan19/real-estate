@@ -341,5 +341,8 @@
       "title": "Search Properties - Kuhn & Partners Real Estate",
       "description": "Find your dream property with Kuhn & Partners' advanced search tools."
     }
+  },
+  "footer":{
+    "builtBy": "This website is built by FAIZ KHAN"
   }
 }

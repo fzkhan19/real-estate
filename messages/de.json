@@ -342,53 +342,7 @@
       "description": "Finden Sie Ihre Traumimmobilie mit den erweiterten Suchwerkzeugen von Kuhn & Partner."
     }
   },
-  "PropertiesPage": {
-    "beds": " Betten",
-    "baths": " Bäder",
-    "sqft": " qm",
-    "viewDetails": "Details anzeigen",
-    "featuredProperties": "Ausgewählte Immobilien",
-    "featuredPropertiesSubtitle": "Entdecken Sie unsere handverlesene Auswahl an Premium-Immobilien in Top-Lagen",
-    "viewAllProperties": "Alle Immobilien anzeigen",
-    "status": {
-      "forSale": "Zum Verkauf",
-      "sold": "Verkauft",
-      "pending": "Ausstehend"
-    },
-    "type": {
-      "singleFamily": "Einfamilienhaus",
-      "condo": "Eigentumswohnung",
-      "townhouse": "Stadthaus",
-      "apartment": "Wohnung",
-      "loft": "Loft",
-      "villa": "Villa",
-      "penthouse": "Penthouse",
-      "studio": "Studio"
-    },
-    "header": {
-      "title": "Immobilien",
-      "subtitle": "Entdecken Sie Ihr perfektes Zuhause aus unserer kuratierten Auswahl an Premium-Immobilien"
-    },
-    "filters": {
-      "searchPlaceholder": "Immobilien suchen...",
-      "propertyType": "Immobilientyp",
-      "allTypes": "Alle Typen",
-      "bedrooms": "Schlafzimmer",
-      "any": "Beliebig",
-      "status": "Status",
-      "allStatus": "Alle Status",
-      "filterButton": "Filtern",
-      "resetButton": "Zurücksetzen",
-      "priceRange": "Preisspanne:"
-    },
-    "results": {
-      "showingProperties": "Zeige {current} von {total} Immobilien",
-      "newestFirst": "Neueste zuerst",
-      "priceLowToHigh": "Preis: Niedrig zu Hoch",
-      "priceHighToLow": "Preis: Hoch zu Niedrig",
-      "squareFootage": "Quadratmeterzahl",
-      "noPropertiesFound": "Keine Immobilien gefunden, die Ihren Kriterien entsprechen.",
-      "clearFilters": "Filter löschen"
-    }
+  "footer":{
+    "builtBy": "Diese Website wurde von FAIZ KHAN erstellt"
   }
 }

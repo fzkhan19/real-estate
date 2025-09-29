@@ -10,5 +10,5 @@ export async function generateMetadata() {
 }
 
 export default function AboutPage() {
-	return <About />;
+	return <div className="mt-18 min-h-screen">{<About />}</div>;
 }
