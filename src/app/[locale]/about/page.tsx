@@ -1,5 +1,6 @@
 import { About } from "@/components/sections/About";
 import { getTranslations } from "next-intl/server";
+export const runtime = "edge";
 
 export async function generateMetadata() {
 	const t = await getTranslations("AboutPage");

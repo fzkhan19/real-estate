@@ -1,5 +1,6 @@
 import { PropertyDetail } from "@/components/sections/PropertyDetail";
 import { getTranslations } from "next-intl/server";
+export const runtime = "edge";
 
 // This data would typically come from an API or database
 const allProperties = [

@@ -1,5 +1,6 @@
 import { Contact } from "@/components/sections/Contact";
 import { getTranslations } from "next-intl/server";
+export const runtime = "edge";
 
 export async function generateMetadata() {
 	const t = await getTranslations("ContactPage");
