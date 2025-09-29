@@ -311,53 +311,22 @@ const allProperties = [
 	},
 ];
 
-export async function generateStaticParams() {
-	const params = allProperties.map((property) => ({
-		id: property.id,
-	}));
-
-	// Assuming you have 'en' and 'de' locales
-	const locales = ["en", "de"];
-	const staticParams = [];
-
-	for (const locale of locales) {
-		for (const param of params) {
-			staticParams.push({ locale, id: param.id });
-		}
-	}
-	return staticParams;
-}
-
-export async function generateMetadata({ params }: { params: { id: string } }) {
-	const t = await getTranslations("PropertyPage");
-	const property = allProperties.find((p) => p.id === params.id);
-
-	if (!property) {
-		return {
-			title: t("metadata.notFoundTitle"),
-			description: t("metadata.notFoundDescription"),
-		};
-	}
-
-	return {
-		title: `${property.title} - ${t("metadata.titleSuffix")}`,
-		description: property.description,
-	};
-}
-
+// --- your types ---
 interface PropertyPageProps {
-	params: {
-		id: string;
+	params: Promise<{
 		locale: string;
-	};
+		id: string;
+	}>;
+	// searchParams?: { [key: string]: string | string[] | undefined };
 }
 
+// ✅ Explicit props typing for page
 export default async function PropertyPage({ params }: PropertyPageProps) {
-	const t = await getTranslations("PropertyPage"); // Initialize t here
-	const property = allProperties.find((p) => p.id === params.id);
+	const resolvedParams = await params;
+	const t = await getTranslations("PropertyPage");
+	const property = allProperties.find((p) => p.id === resolvedParams.id);
 
 	if (!property) {
-		// This should ideally lead to a 404 page
 		return (
 			<div className="flex min-h-[calc(100vh-200px)] items-center justify-center">
 				<h1 className="font-bold text-2xl">{t("metadata.notFoundTitle")}</h1>

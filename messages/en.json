@@ -343,6 +343,7 @@
     }
   },
   "footer":{
-    "builtBy": "This website is built by FAIZ KHAN"
+    "builtBy": "This website is built by FAIZ KHAN",
+    "copyright": "© 2027 Kuhn & Partners. All rights reserved."
   }
 }
